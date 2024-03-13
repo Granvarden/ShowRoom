@@ -5,6 +5,7 @@ public class Customer implements Human{
     private String email;
     private int customerNumber;
     private String name;
+    private Book awd;
 
     //constructor
     public Customer(String phoneNumber, int moneyBudget, String email, String name) {
@@ -51,12 +52,24 @@ public class Customer implements Human{
         System.out.println("Your test drive request has been successfully sent to the manager. Thank you." + "Your date at " + tryDate);
     }
     
+
     public Book Booking(Car car, Customer customer, LocalDate bookingDate) {
         car.book();
         customerNumber +=1;
         int bookingId = customerNumber;
         Book booking = new Book(bookingId, car, customer, bookingDate);
         System.out.println("Thank you for booking! " + "Your date at " + bookingDate);
+        awd = booking;
         return booking;
+        
     }
-} 
+
+    public void showDetails(){
+        System.out.println("Name : " + this.name);
+        System.out.println("Phonenumber : " + this.phoneNumber);
+        System.out.println("Email : " + this.email);
+        System.out.println(awd);
+    }
+    
+
+}
