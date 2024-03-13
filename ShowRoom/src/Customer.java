@@ -46,9 +46,9 @@ public class Customer implements Human{
 
     }
 
-    public void tryCar(Car car){
+    public void tryCar(Car car, LocalDate tryDate){
         System.out.println("Test driving car: " + car.getName());
-        System.out.println("Your test drive request has been successfully sent to the manager. Thank you.");
+        System.out.println("Your test drive request has been successfully sent to the manager. Thank you." + "Your date at " + tryDate);
     }
     
     public Book Booking(Car car, Customer customer, LocalDate bookingDate) {
@@ -56,6 +56,7 @@ public class Customer implements Human{
         customerNumber +=1;
         int bookingId = customerNumber;
         Book booking = new Book(bookingId, car, customer, bookingDate);
+        System.out.println("Thank you for booking! " + "Your date at " + bookingDate);
         return booking;
     }
 } 
