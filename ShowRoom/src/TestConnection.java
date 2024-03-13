@@ -13,7 +13,7 @@ public class TestConnection {
         Statement s = null;
         try {
             //Class.forName("com.mysql.cj.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root","1234");
+            connect = DriverManager.getConnection("jdbc:mysql://192.168.56.1/mydb", "root","root");
             s = connect.createStatement();
             String sql = "select * from employees";
             ResultSet rec = s.executeQuery(sql);
