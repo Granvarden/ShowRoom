@@ -1,8 +1,9 @@
+import java.time.LocalDate;
 public class Book {
    private int bookingid;
    private Car car;
    private Customer customer;
-   private Date bookingDate;
+   private LocalDate bookingDate;
 
    public int getBookingid(){
       return bookingid;
@@ -13,7 +14,7 @@ public class Book {
    public Customer getCustomer(){
       return customer;
    }
-   public Date getBookingDate(){
+   public LocalDate getBookingDate(){
       return bookingDate;
    }
 
