@@ -10,13 +10,10 @@ public abstract class Car extends Vehicle{
     public void book(){
         this.booked = true;
     }
-    public  void cancelBooking(){
+    public  void cancleBooking(){
         this.booked = false;
     }
-    @Override
-    public void showDetails(){
-        System.out.println("A car type is " + type + ".");
-    }
+    public abstract void showDetails();
     public boolean isBooked(){
         return booked;
     }  

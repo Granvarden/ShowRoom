@@ -20,7 +20,5 @@ public abstract class Vehicle {
     protected int getPrice(){
         return price;
     }
-    public void showDetails(){
-        System.out.println(name + "have a " + cc + " cc.");
-    }
+    public abstract void showDetails();
 }
