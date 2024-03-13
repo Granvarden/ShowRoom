@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.time.LocalDate;
 public class Customer implements Human{
     private String phoneNumber;
     private int moneyBudget;
@@ -51,7 +51,7 @@ public class Customer implements Human{
         System.out.println("Your test drive request has been successfully sent to the manager. Thank you.");
     }
     
-    public Book Booking(Car car, Customer customer, Date bookingDate) {
+    public Book Booking(Car car, Customer customer, LocalDate bookingDate) {
         car.book();
         customerNumber +=1;
         int bookingId = customerNumber;
