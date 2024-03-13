@@ -5,19 +5,16 @@ public class Book {
    private Date bookingDate;
 
    public int getBookingid(){
-
+      return bookingid;
    }
-
    public Car getCar(){
-
+      return car;
    }
-
    public Customer getCustomer(){
-
+      return customer;
    }
-
    public Date getBookingDate(){
-
+      return bookingDate;
    }
 
 }
