@@ -10,7 +10,7 @@ public abstract class Car extends Vehicle{
     public void book(){
         this.booked = true;
     }
-    public  void cancleBooking(){
+    public  void cancelBooking(){
         this.booked = false;
     }
     @Override
