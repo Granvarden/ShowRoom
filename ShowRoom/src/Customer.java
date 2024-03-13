@@ -61,15 +61,11 @@ public class Customer implements Human{
         System.out.println("Thank you for booking! " + "Your date at " + bookingDate);
         awd = booking;
         return booking;
-        
     }
 
     public void showDetails(){
         System.out.println("Name : " + this.name);
         System.out.println("Phonenumber : " + this.phoneNumber);
         System.out.println("Email : " + this.email);
-        System.out.println(awd);
     }
-    
-
 }

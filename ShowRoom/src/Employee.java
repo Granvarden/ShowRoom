@@ -8,6 +8,12 @@ public class Employee implements Human{
         this.available = true;
         this.queue = 0;
     }
+    
+    public Employee(String name, int queue, boolean available) {
+        this.name = name;
+        this.queue = queue;
+        this.available = available;
+    }
 
     // setter
     @Override
@@ -39,6 +45,13 @@ public class Employee implements Human{
     // getter
     public int getQueue() {
         return queue;
+    }
+    
+    //methods
+    public void showDetails(){
+        System.out.println("Name : " + this.name);
+        System.out.println("Queue : " + this.queue);
+        System.out.println("Status : " + (this.available ? "available" : "not available"));
     }
 }
 
