@@ -48,14 +48,13 @@ public class Customer implements Human{
 
     public void tryCar(Car car){
         System.out.println("Test driving car: " + car.getName());
-        System.out.println("Car details : " + car.showDetails());
         System.out.println("Your test drive request has been successfully sent to the manager. Thank you.");
     }
     
     public Book Booking(Car car, Customer customer, Date bookingDate) {
         car.book();
         customerNumber +=1;
-        int bookingId = customerNumber; //จำนวนลูกข้าที่จอง
+        int bookingId = customerNumber;
         Book booking = new Book(bookingId, car, customer, bookingDate);
         return booking;
     }
