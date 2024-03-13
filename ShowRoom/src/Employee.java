@@ -10,11 +10,13 @@ public class Employee implements Human{
     }
 
     // setter
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
     // getter
+    @Override
     public String getName() {
         return this.name; 
     }

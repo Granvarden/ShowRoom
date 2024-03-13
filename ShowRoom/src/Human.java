@@ -1,5 +1,5 @@
 public interface Human {
     //methods
-    public void setname(String name);
-    public String getname();
+    public void setName(String name);
+    public String getName();
 }
