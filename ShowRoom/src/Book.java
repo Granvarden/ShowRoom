@@ -5,6 +5,12 @@ public class Book {
    private Customer customer;
    private LocalDate bookingDate;
 
+   public Book(int bookingid, Car car, Customer customer, LocalDate bookingDate) {
+      this.bookingid = bookingid;
+      this.car = car;
+      this.customer = customer;
+      this.bookingDate = bookingDate;
+   }
    public int getBookingid(){
       return bookingid;
    }
