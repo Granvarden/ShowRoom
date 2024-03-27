@@ -1,13 +1,15 @@
 public class Admin {
     
-    private String username;
-    private String password;
+    private String username = "Admin";
+    private String password = "1234";
 
-    public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public String getUsername(){
+        return username;
     }
-
+    
+    public String getPassword(){
+        return password;
+    }
     
     public void addCar(Car car) {
         
@@ -44,7 +46,6 @@ public class Admin {
     
     public void cancelBooking(Book booking) {
         Car car_1 = booking.getCar();
-        car_1.cancelBooking();
     }
   
 }
