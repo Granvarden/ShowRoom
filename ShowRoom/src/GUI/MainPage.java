@@ -4,6 +4,7 @@ import javax.swing.UIManager;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
+    //test
     /**
      * Creates new form MainPage
      */
