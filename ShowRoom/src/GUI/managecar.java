@@ -2,9 +2,12 @@ package GUI;
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import Class.TestConnection;
 
 public class managecar extends javax.swing.JInternalFrame {
-
+    TestConnection db;
     /**
      * Creates new form managecar
      */
@@ -21,7 +24,31 @@ public class managecar extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        DefaultTableModel model = null;
+        try {
+            db = new TestConnection();
+            ResultSet rs = db.getConnect("select * from car");
+            String[] colname = {"id", "name", "type", "cc", "price", "stock", "wheel", "door", "capacity"};
+            int i = 0;
+            model = new DefaultTableModel(colname, 0);
+            while (rs.next()) {
+                i++;
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                String type = rs.getString("type");
+                String cc = rs.getString("cc");
+                String price = rs.getString("price");
+                String stock = rs.getString("stock");
+                String wheel = rs.getString("wheel");
+                String door = rs.getString("door");
+                String capacity = rs.getString("capacity");
+                String[] row = {id, name, type, cc, price, stock, wheel, door, capacity};
+                model.addRow(row);
 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -36,34 +63,24 @@ public class managecar extends javax.swing.JInternalFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(569, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(569, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         pack();

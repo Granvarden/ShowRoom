@@ -1,9 +1,14 @@
 package GUI;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import java.awt.*;
+import javax.swing.*;
 
 public class DetailCar extends javax.swing.JFrame {
-    public DetailCar() {
+    private JLabel lb;
+    private String name;
+    public DetailCar(String name) {
+        this.name = name;
         initComponents();
     }
 
@@ -65,7 +70,7 @@ public class DetailCar extends javax.swing.JFrame {
                 .addGap(269, 269, 269)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(117, 117, 117))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );

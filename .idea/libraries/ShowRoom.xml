@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ShowRoom">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ShowRoom/dist/ShowRoom.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

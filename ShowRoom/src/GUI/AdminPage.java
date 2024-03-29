@@ -2,13 +2,16 @@ package GUI;
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import java.sql.*;
+import Class.TestConnection;
 
 public class AdminPage extends javax.swing.JFrame {
-
+    private TestConnection db;
     /**
      * Creates new form AdminPage
      */
     public AdminPage() {
+        db = new TestConnection();
         initComponents();
     }
 
