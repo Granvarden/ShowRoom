@@ -21,5 +21,5 @@ public abstract class Car extends Vehicle{
     public abstract void showDetails();
     public boolean isBooked(){
         return booked;
-    }  
+    }
 }
