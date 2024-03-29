@@ -8,27 +8,36 @@ import java.sql.*;
  * @author Kacha
  */
 public class TestConnection {
-    public static void main(String[] args) {
-        Connection connect = null;
-        Statement s = null;
+    public Connection conn = null;
+    public Statement stm;
+    public ResultSet rs;
+    private String url = "jdbc:mysql://localhost:3306/mydb";
+    private String username = "root";
+    private String password = "1234";
+    public ResultSet getConnect(String sql){
         try {
-            //Class.forName("com.mysql.cj.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://192.168.56.1/mydb", "root","1234");
-            s = connect.createStatement();
-            String sql = "select * from employees";
-            ResultSet rec = s.executeQuery(sql);
-            while (rec.next()){
-                System.out.println(rec.getInt(1) + " " + rec.getString(2) + " " + rec.getString(3) + " " + rec.getInt(4) + " " + rec.getBoolean("free"));
-            }
-        } catch (Exception e){
-            System.out.println(e);
-        }
-        try {
-            if (connect != null) {
-                connect.close();
-            }
+            conn = DriverManager.getConnection(url, username, password);
+            stm = conn.createStatement();
+            rs = stm.executeQuery(sql);
         } catch (SQLException e){
-            System.out.println(e);
+            e.printStackTrace();
+        }
+        return rs;
+    }
+    public void getUpdate(String sql){
+        try {
+            stm = conn.createStatement();
+            stm.executeUpdate(sql);   
+        } catch (SQLException e){
+            e.printStackTrace();
         }
     }
+    public void disconnect(){
+        try{
+            stm.close();
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+    }
+}
 }
