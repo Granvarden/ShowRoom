@@ -85,6 +85,11 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         jButton5.setText("Detail");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Test drive");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +144,11 @@ public class MainPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jPanel5);
 
         jButton9.setText("Detail");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Test drive");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -274,6 +284,18 @@ public class MainPage extends javax.swing.JFrame {
         btd1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison();
+        cfd.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+         CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison();
+        cfd.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
