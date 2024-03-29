@@ -17,7 +17,7 @@ public class SedanCar extends Car{
         }catch(SQLException e){
             e.printStackTrace();
         }
-        
+        db.disconnect();
         //if(this.isBooked() == true) {
         //    System.out.println("The car is booked.");
         //} else {
