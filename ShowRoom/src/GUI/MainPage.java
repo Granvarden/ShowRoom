@@ -237,9 +237,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        for (int i = 0; i < 10; i++) {
-            jPanel5.add(new CarCard());
-        }
+        
     }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
