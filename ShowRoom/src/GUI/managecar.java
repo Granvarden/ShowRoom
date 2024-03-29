@@ -1,11 +1,15 @@
 package GUI;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 public class managecar extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form managecar
      */
     public managecar() {
+       
         initComponents();
     }
 
