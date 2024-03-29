@@ -1,4 +1,4 @@
-
+package GUI;
 public class CarCard extends javax.swing.JPanel {
 
     /**

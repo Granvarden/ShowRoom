@@ -1,3 +1,5 @@
+package Class;
+
 public class FinanceCompany {
     private String name;
 

@@ -1,5 +1,5 @@
-
-
+package GUI;
+import Class.Admin;
 
 public class LoginPage extends javax.swing.JFrame {
     private Admin admin;

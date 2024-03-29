@@ -1,3 +1,5 @@
+package Class;
+
 import java.time.LocalDate;
 public class Book {
    private int bookingid;

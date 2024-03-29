@@ -1,3 +1,5 @@
+package Class;
+
 import java.sql.*;
 public class TestClass {
     private TestConnection db;

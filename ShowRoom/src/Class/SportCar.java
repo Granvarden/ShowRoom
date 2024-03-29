@@ -1,10 +1,12 @@
+package Class;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SUVCar extends Car{
+public class SportCar extends Car{
     private TestConnection db;
-    public SUVCar(String name, int cc, int price, String type, boolean booked) {
+    public SportCar(String name, int cc, int price, String type, boolean booked) {
         super(name, cc, price, type, booked);
     }
     @Override
@@ -29,7 +31,7 @@ public class SUVCar extends Car{
         //System.out.println("Price: " + super.getPrice());
     }
     public static void main(String[] args) {
-        SedanCar x = new SedanCar("C-HR", 1000, 1000, "SUV", false);
+        SedanCar x = new SedanCar("GR86", 1000, 1000, "Sport", false);
         x.showDetails();
     }
 }

@@ -1,8 +1,5 @@
+package GUI;
 
-/**
- *
- * @author admin
- */
 public class AdminPage extends javax.swing.JFrame {
 
     /**

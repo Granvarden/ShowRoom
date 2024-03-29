@@ -1,3 +1,4 @@
+package GUI;
 
 public class managecar extends javax.swing.JInternalFrame {
 

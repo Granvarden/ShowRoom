@@ -1,3 +1,4 @@
+package GUI;
 
 public class manageemployees extends javax.swing.JInternalFrame {
 

@@ -1,3 +1,5 @@
+package Class;
+
 public class Employee implements Human{
     private boolean available;
     private int queue;

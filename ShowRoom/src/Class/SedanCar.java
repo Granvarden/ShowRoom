@@ -1,3 +1,5 @@
+package Class;
+
 import java.sql.*;
 public class SedanCar extends Car{
     private TestConnection db;

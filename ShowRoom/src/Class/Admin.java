@@ -1,3 +1,5 @@
+package Class;
+
 public class Admin {
     
     private String username = "Admin";
