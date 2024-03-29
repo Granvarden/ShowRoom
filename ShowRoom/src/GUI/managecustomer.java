@@ -3,12 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package GUI;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import Class.TestConnection;
 
 /**
  *
  * @author admin
  */
 public class managecustomer extends javax.swing.JInternalFrame {
+    TestConnection db;
+    private JScrollPane jScrollPane1;
+    private JTable jTable1;
 
     /**
      * Creates new form managecustomer
@@ -25,6 +32,30 @@ public class managecustomer extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        DefaultTableModel model = null;
+        try{
+            db = new TestConnection();
+            ResultSet rs = db.getConnect("select * from customer");
+            String[] colname = {"id", "name", "surname", "phone", "email", "budget"};
+            int i = 0;
+            model = new DefaultTableModel(colname, 0);
+            while (rs.next()){
+                i++;
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                String surname = rs.getString("surname");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+                String budget = rs.getString("budget");
+                String[] row = {id, name, surname, phone, email, budget};
+                model.addRow(row);
+            }
+        } catch (SQLException e){
+                e.printStackTrace();
+        }
+        db.disconnect();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -33,15 +64,27 @@ public class managecustomer extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(1088, 692));
         setPreferredSize(new java.awt.Dimension(1077, 687));
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1076, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(569, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         pack();

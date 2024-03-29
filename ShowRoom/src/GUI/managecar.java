@@ -49,6 +49,7 @@ public class managecar extends javax.swing.JInternalFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        db.disconnect();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
