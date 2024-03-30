@@ -154,7 +154,7 @@ public class AdminPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jDesktopPane1.removeAll();
-        managecar c1 = new managecar();
+        managecar c1 = new managecar(jDesktopPane1);
         jDesktopPane1.add(c1).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

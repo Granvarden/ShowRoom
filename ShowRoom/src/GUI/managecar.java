@@ -9,14 +9,20 @@ import Class.Admin;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JDesktopPane;
 import javax.swing.JTable;
 
 public class managecar extends javax.swing.JInternalFrame {
     TestConnection db;
     DefaultTableModel model = null;
+    JDesktopPane p;
     /**
      * Creates new form manageCar
      */
+    public managecar(JDesktopPane p) {
+        this.p = p;
+        forTable();
+    }
     public managecar() {
         forTable();
     }
@@ -303,23 +309,26 @@ public class managecar extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jTextFieldNameDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(86, 86, 86)
-                        .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                        .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(59, 59, 59))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldNameDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -382,10 +391,10 @@ public class managecar extends javax.swing.JInternalFrame {
     private void jButtonConfirmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmAddActionPerformed
             Admin x = new Admin();
             x.addCar(String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldType.getText()), String.valueOf(jTextFieldCC.getText()), String.valueOf(jTextFieldPrice.getText()), String.valueOf(jTextFieldStock.getText()), String.valueOf(jTextFieldWheel.getText()), String.valueOf(jTextFieldDoor.getText()), String.valueOf(jTextFieldCapacity.getText()));
-            forTable();
-            initComponents();
+            p.removeAll();
+            managecar c1 = new managecar();
+            p.add(c1).setVisible(true);
 
-            
             //try{
             
             //} catch (SQLException e){
@@ -397,8 +406,9 @@ public class managecar extends javax.swing.JInternalFrame {
     private void jButtonConfirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDeleteActionPerformed
         Admin x = new Admin();
         x.removeCar(String.valueOf(jTextFieldNameDelete.getText()));
-        forTable();
-        initComponents();
+        p.removeAll();
+        managecar c1 = new managecar();
+        p.add(c1).setVisible(true);
     }//GEN-LAST:event_jButtonConfirmDeleteActionPerformed
     //public void actionPerformed(ActionEvent e) {
     //    if (e.getSource().equals(jButtonConfirmAdd)){
