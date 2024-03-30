@@ -278,16 +278,20 @@ public class Register extends javax.swing.JFrame {
 
     private void jButtonSummitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSummitActionPerformed
         if ("".equals(jTextFieldName.getText()) || "".equals(jTextFieldLastName.getText()) || "".equals(jTextFieldPhoneNumber.getText())
-                    || "".equals(jTextFieldEmail.getText()) || "".equals(jTextFieldUsername.getText()) || "".equals(jTextFieldPassword.getText())) {
-                jLabelError.setText("Please Don't Left The Blank!!!");
-            } else {
-                try {
-                    int phonenumber = Integer.parseInt(jTextFieldPhoneNumber.getText());
-                    jLabelError.setText("");
-                } catch (NumberFormatException ex) {
-                    jLabelError.setText("Please Enter Number Only!!!");
-                }
-            }
+                   || "".equals(jTextFieldEmail.getText()) || "".equals(jTextFieldUsername.getText()) || "".equals(jTextFieldPassword.getText())) {
+               jLabelError.setText("Please Don't Left The Blank!!!");
+           } 
+        else {
+               try {
+                   int phoneNumber = Integer.parseInt(jTextFieldPhoneNumber.getText());
+                   jLabelError.setText("");
+
+                   Customer customer = new Customer(jTextFieldPhoneNumber.getText(), 0, jTextFieldEmail.getText(), jTextFieldName.getText());
+
+               } catch (NumberFormatException ex) {
+                   jLabelError.setText("Please Enter Number Only!!!");
+               }
+           }
     }//GEN-LAST:event_jButtonSummitActionPerformed
 
     private void jTextFieldPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPhoneNumberActionPerformed
