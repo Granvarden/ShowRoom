@@ -1,17 +1,24 @@
 package GUI;
+import Class.*;
 public class CarCard extends javax.swing.JPanel {
 
     private MainPage main;
     private CarFullDetailsAndComparison cfd;
+    private Vehicle vhi;
     public CarCard(CarFullDetailsAndComparison cfd) {
         this.cfd = cfd;
         initComponents();
     }
-    public CarCard(MainPage main) {
+    public CarCard(MainPage main, Vehicle vhi) {
         this.main = main;
+        this.vhi = vhi;
         initComponents();
+        priceTag.setText(String.valueOf(vhi.getPrice()));
+        carName.setText(String.valueOf(vhi.getName()));
     }
-
+    public Vehicle getCar(){
+        return vhi;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -21,30 +28,33 @@ public class CarCard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        picture = new javax.swing.JLabel();
+        detailbutton = new javax.swing.JButton();
+        testDriveButton = new javax.swing.JButton();
+        priceTag = new javax.swing.JLabel();
+        carName = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel1.setText("picture");
+        picture.setText("picture");
 
-        jButton1.setText("Detail");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        detailbutton.setText("Detail");
+        detailbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                detailbuttonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Test drive");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        testDriveButton.setText("Test drive");
+        testDriveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                testDriveButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Price");
+        priceTag.setText("Price");
+
+        carName.setText("carname");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -54,53 +64,59 @@ public class CarCard extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addGap(6, 6, 6)
+                        .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(priceTag, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(testDriveButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(detailbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(carName, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(carName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel2))
+                    .addComponent(detailbutton)
+                    .addComponent(testDriveButton)
+                    .addComponent(priceTag))
                 .addGap(17, 17, 17))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void testDriveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testDriveButtonActionPerformed
         BookingAndTestDrive btd1 = new BookingAndTestDrive();
         btd1.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_testDriveButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
         
         try {
             cfd.getDetail();
         } catch (Exception e) {
-            CarFullDetailsAndComparison detail = new CarFullDetailsAndComparison();
+            CarFullDetailsAndComparison detail = new CarFullDetailsAndComparison(vhi);
             detail.setVisible(true);
             main.setVisible(false);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_detailbuttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel carName;
+    private javax.swing.JButton detailbutton;
+    private javax.swing.JLabel picture;
+    private javax.swing.JLabel priceTag;
+    private javax.swing.JButton testDriveButton;
     // End of variables declaration//GEN-END:variables
 }

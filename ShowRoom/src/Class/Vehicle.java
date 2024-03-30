@@ -3,8 +3,8 @@ package Class;
 public abstract class Vehicle {
     private String name;
     private int cc;
-    private int price;
-    protected Vehicle(String name, int cc, int price){
+    private double price;
+    protected Vehicle(String name, int cc, double price){
         this.name = name;
         this.cc = cc;
         this.price = price;
@@ -12,19 +12,19 @@ public abstract class Vehicle {
     protected void setName(String name){
         this.name = name;
     }
-    protected String getName(){
+    public String getName(){
         return name;
     }
     protected void setCC(int cc){
         this.cc = cc;
     }
-    protected int getCC(){
+    public int getCC(){
         return cc;
     }
-    protected void setPrice(int price){
+    protected void setPrice(double price){
         this.price = price;
     }
-    protected int getPrice(){
+    public double getPrice(){
         return price;
     }
     public abstract void showDetails();

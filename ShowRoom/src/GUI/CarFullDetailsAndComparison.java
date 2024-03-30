@@ -1,5 +1,5 @@
 package GUI;
-
+import Class.*;
 
 import java.awt.Color;
 import javax.swing.SwingUtilities;
@@ -9,6 +9,13 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
     /**
      * Creates new form MainPage
      */
+    public CarFullDetailsAndComparison(Vehicle vhiChoose) {
+        initComponents();
+        nameLabel.setText("Car name : " + vhiChoose.getName());
+        typeLabel.setText("Type : " + ((Car)vhiChoose).getType());
+        priceLabel.setText("Price : "  +  String.valueOf(vhiChoose.getPrice()));
+        ccLabel.setText("CC : " + vhiChoose.getCC());
+    }
     public CarFullDetailsAndComparison() {
         initComponents();
     }
@@ -30,16 +37,15 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        nameLabel = new javax.swing.JLabel();
+        typeLabel = new javax.swing.JLabel();
+        capaLebel = new javax.swing.JLabel();
+        ccLabel = new javax.swing.JLabel();
+        doorLabel = new javax.swing.JLabel();
+        wheelLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
+        testdrivebutton = new javax.swing.JButton();
+        bookbutton = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -116,33 +122,30 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
             .addGap(0, 171, Short.MAX_VALUE)
         );
 
-        jLabel19.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel19.setText("Car name :");
+        nameLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        nameLabel.setText("Car name :");
 
-        jLabel20.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel20.setText("Type :");
+        typeLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        typeLabel.setText("Type :");
 
-        jLabel21.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel21.setText("Speed :");
+        capaLebel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        capaLebel.setText("Capacity : ");
 
-        jLabel22.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel22.setText("Capacity : ");
+        ccLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        ccLabel.setText("CC :");
 
-        jLabel23.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel23.setText("CC :");
+        doorLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        doorLabel.setText("Doors :");
 
-        jLabel24.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel24.setText("Doors :");
+        wheelLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        wheelLabel.setText("Wheels :");
 
-        jLabel25.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel25.setText("Wheels :");
+        priceLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        priceLabel.setText("Price :");
 
-        jLabel26.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel26.setText("Price :");
+        testdrivebutton.setText("jButton4");
 
-        jButton4.setText("jButton4");
-
-        jButton5.setText("jButton4");
+        bookbutton.setText("jButton4");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -151,45 +154,42 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26))
+                    .addComponent(nameLabel)
+                    .addComponent(typeLabel)
+                    .addComponent(capaLebel)
+                    .addComponent(ccLabel)
+                    .addComponent(doorLabel)
+                    .addComponent(wheelLabel)
+                    .addComponent(priceLabel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap(108, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(testdrivebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel19)
+                .addComponent(nameLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel20)
+                .addComponent(typeLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel21)
+                .addComponent(capaLebel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel22)
+                .addComponent(ccLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel23)
+                .addComponent(doorLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel24)
+                .addComponent(wheelLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel25)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(priceLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(testdrivebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -394,7 +394,7 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 695, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -489,10 +489,12 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bookbutton;
+    private javax.swing.JLabel capaLebel;
+    private javax.swing.JLabel ccLabel;
+    private javax.swing.JLabel doorLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
@@ -505,14 +507,6 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel13;
@@ -526,5 +520,10 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JButton testdrivebutton;
+    private javax.swing.JLabel typeLabel;
+    private javax.swing.JLabel wheelLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,7 +3,7 @@ package Class;
 import java.sql.*;
 public class SedanCar extends Car{
     private TestConnection db;
-    public SedanCar(String name, int cc, int price, String type, boolean booked) {
+    public SedanCar(String name, int cc, double price, String type, boolean booked) {
         super(name, cc, price, type, booked);
     }
     @Override

@@ -1,5 +1,5 @@
 package GUI;
-
+import Class.*;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -267,8 +267,9 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
         for (int i = 0; i < 10; i++) {
-            jPanel5.add(new CarCard(this));
+            jPanel5.add(new CarCard(this, sedan));
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -285,13 +286,13 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison();
+        CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison(); //fixlater
         cfd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-         CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison();
+         CarFullDetailsAndComparison cfd = new CarFullDetailsAndComparison(); //fixlater
         cfd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
