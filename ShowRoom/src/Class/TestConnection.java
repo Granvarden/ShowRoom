@@ -28,6 +28,7 @@ public class TestConnection {
     }
     public void getUpdate(String sql){
         try {
+            conn = DriverManager.getConnection(url, username, password);
             stm = conn.createStatement();
             stm.executeUpdate(sql);   
         } catch (SQLException e){
@@ -36,6 +37,7 @@ public class TestConnection {
     }
     public void disconnect(){
         try{
+            conn = DriverManager.getConnection(url, username, password);
             stm.close();
             conn.close();
         } catch (SQLException e){

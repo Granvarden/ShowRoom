@@ -1,7 +1,7 @@
 package GUI;
 import java.sql.*;
 import Class.TestConnection;
-
+import Class.Admin;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -54,8 +54,6 @@ public class manageemployees extends javax.swing.JInternalFrame {
         jTextFieldName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldSurname = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextFieldAddID = new javax.swing.JTextField();
         jButtonComfirmadd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -94,12 +92,12 @@ public class manageemployees extends javax.swing.JInternalFrame {
 
         jTextFieldSurname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("ID");
-
-        jTextFieldAddID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
         jButtonComfirmadd.setText("Confirm");
+        jButtonComfirmadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComfirmaddActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,8 +109,7 @@ public class manageemployees extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextFieldAddID, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButtonComfirmadd, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,9 +121,7 @@ public class manageemployees extends javax.swing.JInternalFrame {
                                     .addComponent(jTextFieldSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(46, 46, 46))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,12 +139,8 @@ public class manageemployees extends javax.swing.JInternalFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonComfirmadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextFieldAddID))
+                .addGap(37, 37, 37)
+                .addComponent(jButtonComfirmadd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -297,8 +288,14 @@ public class manageemployees extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtoncomfirmworkActionPerformed
 
     private void jButtonConfirmDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDelActionPerformed
-        // TODO add your handling code here:
+        Admin x = new Admin();
+        x.delEm(String.valueOf(jTextFieldDelemployee.getText()));
     }//GEN-LAST:event_jButtonConfirmDelActionPerformed
+
+    private void jButtonComfirmaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComfirmaddActionPerformed
+        Admin x = new Admin();
+        x.addEm(String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldSurname.getText()));
+    }//GEN-LAST:event_jButtonComfirmaddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -308,7 +305,6 @@ public class manageemployees extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -318,7 +314,6 @@ public class manageemployees extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextFieldAddID;
     private javax.swing.JTextField jTextFieldDelemployee;
     private javax.swing.JTextField jTextFieldIDcustomer;
     private javax.swing.JTextField jTextFieldIDemployee;

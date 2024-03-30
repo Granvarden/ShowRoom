@@ -16,7 +16,7 @@ public class Employee implements Human{
         this.queue = queue;
         this.available = available;
     }
-
+    
     // setter
     @Override
     public void setName(String name) {

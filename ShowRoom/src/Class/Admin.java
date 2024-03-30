@@ -1,7 +1,8 @@
 package Class;
-
+import java.sql.*;
 public class Admin {
-    
+    private TestConnection db;
+    private ResultSet rs;
     private String username = "Admin";
     private String password = "1234";
 
@@ -12,14 +13,32 @@ public class Admin {
     public String getPassword(){
         return password;
     }
-    
-    public void addCar(Car car) {
+    public void calcelCus(String id){
         
+    }
+    public void addEm(String first_name, String last_name){
+            db = new TestConnection();
+            String sql = String.format("insert into employees (first_name, last_name) values('%s','%s')", first_name, last_name);
+            db.getUpdate(sql);
+    }
+    public void delEm(String id){
+        db = new TestConnection();
+        String sql = String.format("delete from employees where id = '%s'", id);
+        db.getUpdate(sql);
+    }
+    
+    public void addCar(String name, String type, String cc, String price, String stock, String wheel, String door, String capacity) {
+            db = new TestConnection();
+            String sql = String.format("insert into car (name, type, cc, price, stock, wheel, door, capacity) values('%s','%s','%s','%s','%s','%s','%s','%s')",name, type, cc, price, stock, wheel, door, capacity);
+            db.getUpdate(sql);
+
     }
 
     
-    public void removeCar(Car car) {
-        
+    public void removeCar(String name) {
+        db = new TestConnection();
+        String sql = String.format("delete from car where name = '%s'", name);
+        db.getUpdate(sql);
     }
 
    

@@ -85,6 +85,11 @@ public class managecustomer extends javax.swing.JInternalFrame {
         jLabel2.setText("Customer ID");
 
         jButtonConfirmDel.setText("Confirm");
+        jButtonConfirmDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmDelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,6 +141,10 @@ public class managecustomer extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConfirmDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonConfirmDelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,18 +5,23 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import Class.TestConnection;
+import Class.Admin;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JTable;
 
 public class managecar extends javax.swing.JInternalFrame {
     TestConnection db;
+    DefaultTableModel model = null;
     /**
-     * Creates new form managecar
+     * Creates new form manageCar
      */
     public managecar() {
-        
+        forTable();
+    }
+    public void forTable(){
         initComponents();
-        DefaultTableModel model = null;
         try {
             db = new TestConnection();
             ResultSet rs = db.getConnect("select * from car");
@@ -46,7 +51,6 @@ public class managecar extends javax.swing.JInternalFrame {
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -178,6 +182,11 @@ public class managecar extends javax.swing.JInternalFrame {
         Addpicture.setText("Add picture");
 
         jButtonConfirmAdd.setText("Confirm");
+        jButtonConfirmAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmAddActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,6 +290,11 @@ public class managecar extends javax.swing.JInternalFrame {
         });
 
         jButtonConfirmDelete.setText("Confirm");
+        jButtonConfirmDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -365,6 +379,40 @@ public class managecar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNameDeleteActionPerformed
 
+    private void jButtonConfirmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmAddActionPerformed
+            Admin x = new Admin();
+            x.addCar(String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldType.getText()), String.valueOf(jTextFieldCC.getText()), String.valueOf(jTextFieldPrice.getText()), String.valueOf(jTextFieldStock.getText()), String.valueOf(jTextFieldWheel.getText()), String.valueOf(jTextFieldDoor.getText()), String.valueOf(jTextFieldCapacity.getText()));
+            forTable();
+            initComponents();
+
+            
+            //try{
+            
+            //} catch (SQLException e){
+            //e.printStackTrace();
+            //}
+            //db.disconnect();
+    }//GEN-LAST:event_jButtonConfirmAddActionPerformed
+
+    private void jButtonConfirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDeleteActionPerformed
+        Admin x = new Admin();
+        x.removeCar(String.valueOf(jTextFieldNameDelete.getText()));
+        forTable();
+        initComponents();
+    }//GEN-LAST:event_jButtonConfirmDeleteActionPerformed
+    //public void actionPerformed(ActionEvent e) {
+    //    if (e.getSource().equals(jButtonConfirmAdd)){
+    //        Admin x = new Admin();
+    //        x.addCar(String.valueOf(jTextFieldName), String.valueOf(jTextFieldType), String.valueOf(jTextFieldCC), String.valueOf(jTextFieldPrice), String.valueOf(jTextFieldStock), String.valueOf(jTextFieldWheel), String.valueOf(jTextFieldDoor), String.valueOf(jTextFieldCapacity));
+    //    }
+    //    if (e.getSource().equals(jButtonConfirmDelete)){
+    //        Admin x = new Admin();
+    //        x.removeCar(String.valueOf(jTextFieldNameDelete));
+    //    }
+    //    if (e.getSource().equals(Addpicture)){
+            
+    //    }
+    //}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Addpicture;
