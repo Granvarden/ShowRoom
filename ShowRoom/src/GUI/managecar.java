@@ -23,9 +23,7 @@ public class managecar extends javax.swing.JInternalFrame {
         this.p = p;
         forTable();
     }
-    public managecar() {
-        forTable();
-    }
+    
     public void forTable(){
         initComponents();
         try {
@@ -392,7 +390,7 @@ public class managecar extends javax.swing.JInternalFrame {
             Admin x = new Admin();
             x.addCar(String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldType.getText()), String.valueOf(jTextFieldCC.getText()), String.valueOf(jTextFieldPrice.getText()), String.valueOf(jTextFieldStock.getText()), String.valueOf(jTextFieldWheel.getText()), String.valueOf(jTextFieldDoor.getText()), String.valueOf(jTextFieldCapacity.getText()));
             p.removeAll();
-            managecar c1 = new managecar();
+            managecar c1 = new managecar(p);
             p.add(c1).setVisible(true);
 
             //try{
@@ -407,7 +405,7 @@ public class managecar extends javax.swing.JInternalFrame {
         Admin x = new Admin();
         x.removeCar(String.valueOf(jTextFieldNameDelete.getText()));
         p.removeAll();
-        managecar c1 = new managecar();
+        managecar c1 = new managecar(p);
         p.add(c1).setVisible(true);
     }//GEN-LAST:event_jButtonConfirmDeleteActionPerformed
     //public void actionPerformed(ActionEvent e) {
