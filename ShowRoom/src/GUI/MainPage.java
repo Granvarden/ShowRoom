@@ -268,7 +268,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         for (int i = 0; i < 10; i++) {
-            jPanel5.add(new CarCard());
+            jPanel5.add(new CarCard(this));
         }
     }//GEN-LAST:event_formWindowOpened
 

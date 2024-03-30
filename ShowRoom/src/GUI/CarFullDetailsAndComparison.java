@@ -1,6 +1,7 @@
 package GUI;
 
 
+import java.awt.Color;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -439,7 +440,7 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         for (int i = 0; i < 10; i++) {
-            jPanel5.add(new CarCard());
+            jPanel5.add(new CarCard(this));
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -482,7 +483,11 @@ public class CarFullDetailsAndComparison extends javax.swing.JFrame {
         });
         
     }
-
+    
+    public void getDetail(){
+        jPanel13.setBackground(Color.red);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
