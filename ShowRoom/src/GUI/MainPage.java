@@ -104,7 +104,10 @@ public class MainPage extends javax.swing.JFrame {
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jLabel32 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        jTextFieldmin = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jTextFieldmax = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
         graceful = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         reservation = new javax.swing.JPanel();
@@ -725,7 +728,25 @@ public class MainPage extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel32.setText("Price");
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldmin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldminActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel39.setText("min");
+
+        jTextFieldmax.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldmax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldmaxActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel40.setText("max");
 
         javax.swing.GroupLayout fillterbarLayout = new javax.swing.GroupLayout(fillterbar);
         fillterbar.setLayout(fillterbarLayout);
@@ -737,13 +758,16 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(fillterbarLayout.createSequentialGroup()
                         .addGroup(fillterbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldmax, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(fillterbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldmin, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 21, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -763,8 +787,14 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldmax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout compareLayout = new javax.swing.GroupLayout(compare);
@@ -1170,6 +1200,14 @@ public class MainPage extends javax.swing.JFrame {
         Home.setVisible(false); 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jTextFieldminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldminActionPerformed
+
+    private void jTextFieldmaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldmaxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldmaxActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1279,7 +1317,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1306,7 +1346,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPaneHome;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -1317,6 +1356,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldSurname;
     private javax.swing.JTextField jTextFieldbudget;
     private javax.swing.JTextField jTextFielddate;
+    private javax.swing.JTextField jTextFieldmax;
+    private javax.swing.JTextField jTextFieldmin;
     private javax.swing.JTextField jTextFieldmonth;
     private javax.swing.JTextField jTextFieldplans;
     private javax.swing.JTextField jTextFieldyear;
