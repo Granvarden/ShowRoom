@@ -35,6 +35,7 @@ public class MainPage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         bookingandtest = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(50, 50));
@@ -151,21 +152,30 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout bookingandtestLayout = new javax.swing.GroupLayout(bookingandtest);
         bookingandtest.setLayout(bookingandtestLayout);
         bookingandtestLayout.setHorizontalGroup(
             bookingandtestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookingandtestLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jButton4)
-                .addContainerGap(1243, Short.MAX_VALUE))
+                .addGroup(bookingandtestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bookingandtestLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton4))
+                    .addGroup(bookingandtestLayout.createSequentialGroup()
+                        .addGap(539, 539, 539)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(790, Short.MAX_VALUE))
         );
         bookingandtestLayout.setVerticalGroup(
             bookingandtestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookingandtestLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jButton4)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addGap(93, 93, 93)
+                .addComponent(jLabel4)
+                .addContainerGap(522, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainLayout = new javax.swing.GroupLayout(Main);
@@ -300,6 +310,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
