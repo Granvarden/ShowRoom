@@ -887,6 +887,13 @@ public class MainPage extends javax.swing.JFrame {
                 jPanel5.add(new CarCard(this, car));
             }
         }
+        
+        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+            ArrayList<Car> cars = (sh.getAllCars()).get(i);
+            for (Car car : cars) {
+                jPanel7.add(new CarCard(this, car));
+            }
+        }
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -897,7 +904,7 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         compare.revalidate();
         Home.setVisible(false);
-        addDetail();
+        addDetailnewcar();
         for (int i = 0; i < (sh.getAllCars()).size();i++) {
             ArrayList<Car> cars = (sh.getAllCars()).get(i);
             for (Car car : cars) {
@@ -968,7 +975,7 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         compare.revalidate();
         Home.setVisible(false);
-        addDetail();
+        addDetailnewcar();
         for (int i = 0; i < (sh.getAllCars()).size();i++) {
             ArrayList<Car> cars = (sh.getAllCars()).get(i);
             for (Car car : cars) {
@@ -1020,14 +1027,17 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         Home.setVisible(false);
         //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
-        for (int i = 0; i < (sh.getAllCars()).size();i++) {
-            ArrayList<Car> cars = (sh.getAllCars()).get(i);
-            for (Car car : cars) {
-                jPanel7.add(new CarCard(this, car));
-            }
-        }
+        
         DetailCar dc = new DetailCar(cc.getCar());
         jDesktopPane2.add(dc).setVisible(true);
+    }
+    
+    public void addDetailnewcar(){
+        compare.setVisible(true);
+        Home.setVisible(false);
+        
+        
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Home;

@@ -24,15 +24,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="priceL" min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="wheelL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="doorL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="ccL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="capaL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="typeL" min="-2" pref="144" max="-2" attributes="0"/>
-                  <Component id="nameL" min="-2" pref="144" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="265" max="-2" attributes="0"/>
+                  <Component id="jLabel1" pref="265" max="32767" attributes="0"/>
+                  <Component id="nameL" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
