@@ -166,7 +166,7 @@ public class AdminPage extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jDesktopPane1.removeAll();
-        manageemployees m1 = new manageemployees();
+        manageemployees m1 = new manageemployees(jDesktopPane1);
         jDesktopPane1.add(m1).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -201,7 +201,8 @@ public class AdminPage extends javax.swing.JFrame {
             public void run() {
                 new AdminPage().setVisible(true);
             }
-        });
+        }
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

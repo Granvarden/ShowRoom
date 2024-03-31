@@ -7,10 +7,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class manageemployees extends javax.swing.JInternalFrame {
     TestConnection db;
+    JDesktopPane p;
     /**
-     * Creates new form manageemployees
+     * Creates new form manageEmployees
      */
-    public manageemployees() {
+    public void forTable(){
         initComponents();
         DefaultTableModel model = null;
         try {
@@ -36,8 +37,11 @@ public class manageemployees extends javax.swing.JInternalFrame {
         JTable jTable1 = new JTable();
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
+    }   
+    public manageemployees(JDesktopPane p){
+        this.p = p;
+        forTable();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -202,11 +206,21 @@ public class manageemployees extends javax.swing.JInternalFrame {
         jLabel6.setText("ID employee");
 
         jTextFieldIDemployee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextFieldIDemployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDemployeeActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("ID customer");
 
         jTextFieldIDcustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextFieldIDcustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDcustomerActionPerformed(evt);
+            }
+        });
 
         jButtoncomfirmwork.setText("Confirm");
         jButtoncomfirmwork.addActionListener(new java.awt.event.ActionListener() {
@@ -284,18 +298,36 @@ public class manageemployees extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtoncomfirmworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoncomfirmworkActionPerformed
-        // TODO add your handling code here:
+        Admin x = new Admin();
+        x.workEm(String.valueOf(jTextFieldIDemployee.getText()), String.valueOf(jTextFieldIDcustomer.getText()));
+        p.removeAll();
+        manageemployees m1 = new manageemployees(p);
+        p.add(m1).setVisible(true);
     }//GEN-LAST:event_jButtoncomfirmworkActionPerformed
 
     private void jButtonConfirmDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDelActionPerformed
         Admin x = new Admin();
         x.delEm(String.valueOf(jTextFieldDelemployee.getText()));
+        p.removeAll();
+        manageemployees m1 = new manageemployees(p);
+        p.add(m1).setVisible(true);
     }//GEN-LAST:event_jButtonConfirmDelActionPerformed
 
     private void jButtonComfirmaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComfirmaddActionPerformed
         Admin x = new Admin();
         x.addEm(String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldSurname.getText()));
+        p.removeAll();
+        manageemployees m1 = new manageemployees(p);
+        p.add(m1).setVisible(true);
     }//GEN-LAST:event_jButtonComfirmaddActionPerformed
+
+    private void jTextFieldIDemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDemployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDemployeeActionPerformed
+
+    private void jTextFieldIDcustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDcustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDcustomerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
