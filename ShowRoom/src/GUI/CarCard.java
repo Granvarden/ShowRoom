@@ -37,6 +37,7 @@ public class CarCard extends javax.swing.JPanel {
 
         picture.setText("picture");
 
+        detailbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         detailbutton.setText("Detail");
         detailbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,6 +45,7 @@ public class CarCard extends javax.swing.JPanel {
             }
         });
 
+        testDriveButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         testDriveButton.setText("Test drive");
         testDriveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,8 +53,10 @@ public class CarCard extends javax.swing.JPanel {
             }
         });
 
+        priceTag.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         priceTag.setText("Price");
 
+        carName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         carName.setText("carname");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -69,8 +73,8 @@ public class CarCard extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(picture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(priceTag, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(priceTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(testDriveButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(detailbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -92,9 +96,7 @@ public class CarCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void testDriveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testDriveButtonActionPerformed
-        BookingAndTestDrive btd1 = new BookingAndTestDrive();
-        btd1.setVisible(true);
-        this.setVisible(false);
+        main.testdriveforcard();
     }//GEN-LAST:event_testDriveButtonActionPerformed
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed

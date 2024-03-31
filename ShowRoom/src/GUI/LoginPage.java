@@ -182,7 +182,9 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        main.changetoreg(); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
