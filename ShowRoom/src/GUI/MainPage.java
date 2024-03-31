@@ -897,7 +897,7 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         compare.revalidate();
         Home.setVisible(false);
-        
+        addDetail();
         for (int i = 0; i < (sh.getAllCars()).size();i++) {
             ArrayList<Car> cars = (sh.getAllCars()).get(i);
             for (Car car : cars) {
@@ -920,6 +920,7 @@ public class MainPage extends javax.swing.JFrame {
         graceful.setVisible(false);
         graceful.revalidate();
         graceful.repaint();
+        jDesktopPane2.removeAll();
         }
         
     
@@ -967,7 +968,7 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         compare.revalidate();
         Home.setVisible(false);
-        
+        addDetail();
         for (int i = 0; i < (sh.getAllCars()).size();i++) {
             ArrayList<Car> cars = (sh.getAllCars()).get(i);
             for (Car car : cars) {
