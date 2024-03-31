@@ -1,7 +1,6 @@
 package GUI;
 import Class.*;
 import java.util.*;
-import java.awt.GridLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -108,7 +107,7 @@ public class MainPage extends javax.swing.JFrame {
         graceful = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        jButtonHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(50, 50));
@@ -224,6 +223,11 @@ public class MainPage extends javax.swing.JFrame {
         jScrollPaneHome.setViewportView(jPanel5);
 
         jButtonDetail.setText("Detail");
+        jButtonDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetailActionPerformed(evt);
+            }
+        });
 
         jButtontestdrive.setText("Test drive");
 
@@ -837,10 +841,10 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText("Home");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        jButtonHome.setText("Home");
+        jButtonHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                jButtonHomeActionPerformed(evt);
             }
         });
 
@@ -850,7 +854,7 @@ public class MainPage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(93, 93, 93)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -865,7 +869,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
@@ -894,14 +898,15 @@ public class MainPage extends javax.swing.JFrame {
         compare.revalidate();
         Home.setVisible(false);
         
-        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
-        for (int i = 0; i < 10; i++) {
-            jPanel7.add(new CarCard());
-            
+        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+            ArrayList<Car> cars = (sh.getAllCars()).get(i);
+            for (Car car : cars) {
+                jPanel7.add(new CarCard(this, car));
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
         jScrollPaneHome.revalidate();
         jScrollPaneHome.repaint();
         if (!Home.isVisible()) {
@@ -918,7 +923,7 @@ public class MainPage extends javax.swing.JFrame {
         }
         
     
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         bookingandtest.setVisible(true);
@@ -957,6 +962,19 @@ public class MainPage extends javax.swing.JFrame {
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNameActionPerformed
+
+    private void jButtonDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetailActionPerformed
+        compare.setVisible(true);
+        compare.revalidate();
+        Home.setVisible(false);
+        
+        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+            ArrayList<Car> cars = (sh.getAllCars()).get(i);
+            for (Car car : cars) {
+                jPanel7.add(new CarCard(this, car));
+            }
+        }
+    }//GEN-LAST:event_jButtonDetailActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1001,9 +1019,11 @@ public class MainPage extends javax.swing.JFrame {
         compare.setVisible(true);
         Home.setVisible(false);
         //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
-        for (int i = 0; i < 10; i++) {
-            jPanel7.add(new CarCard());
-            
+        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+            ArrayList<Car> cars = (sh.getAllCars()).get(i);
+            for (Car car : cars) {
+                jPanel7.add(new CarCard(this, car));
+            }
         }
         DetailCar dc = new DetailCar();
         jDesktopPane2.add(dc).setVisible(true);
@@ -1021,8 +1041,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonDetail;
+    private javax.swing.JButton jButtonHome;
     private javax.swing.JButton jButtontestdrive;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
