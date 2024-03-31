@@ -9,7 +9,9 @@ import Class.Admin;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
 import javax.swing.JTable;
 
 public class managecar extends javax.swing.JInternalFrame {
@@ -184,6 +186,11 @@ public class managecar extends javax.swing.JInternalFrame {
         });
 
         Addpicture.setText("Add picture");
+        Addpicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddpictureActionPerformed(evt);
+            }
+        });
 
         jButtonConfirmAdd.setText("Confirm");
         jButtonConfirmAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -408,6 +415,12 @@ public class managecar extends javax.swing.JInternalFrame {
         managecar c1 = new managecar(p);
         p.add(c1).setVisible(true);
     }//GEN-LAST:event_jButtonConfirmDeleteActionPerformed
+
+    private void AddpictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddpictureActionPerformed
+        JFileChooser fc = new JFileChooser();
+        fc.showOpenDialog(this);
+        File f = fc.getSelectedFile();
+    }//GEN-LAST:event_AddpictureActionPerformed
     //public void actionPerformed(ActionEvent e) {
     //    if (e.getSource().equals(jButtonConfirmAdd)){
     //        Admin x = new Admin();
