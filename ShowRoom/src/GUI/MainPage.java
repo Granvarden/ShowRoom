@@ -1295,19 +1295,15 @@ public class MainPage extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        for (int i = 0; i < (sh.getAllCars()).size()-1;i++) {
-            ArrayList<Car> cars = (sh.getAllCars()).get(i);
-            for (Car car : cars) {
-                jPanel5.add(new CarCard(this, car));
-            }
+        
+        for (Car car : sh.getAllCars()) {
+            jPanel5.add(new CarCard(this, car));
         }
         
-        for (int i = 0; i < (sh.getAllCars()).size();i++) {
-            ArrayList<Car> cars = (sh.getAllCars()).get(i);
-            for (Car car : cars) {
-                jPanel7.add(new CarCard(this, car));
-            }
+        for (Car car : sh.getAllCars()) {
+            jPanel7.add(new CarCard(this, car));
         }
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1319,11 +1315,8 @@ public class MainPage extends javax.swing.JFrame {
         compare.revalidate();
         Home.setVisible(false);
         addDetailnewcar();
-        for (int i = 0; i < (sh.getAllCars()).size();i++) {
-            ArrayList<Car> cars = (sh.getAllCars()).get(i);
-            for (Car car : cars) {
-                jPanel7.add(new CarCard(this, car));
-            }
+        for (Car car : sh.getAllCars()) {
+            jPanel7.add(new CarCard(this, car));
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
