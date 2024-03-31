@@ -43,26 +43,42 @@ public class ShowRoom {
         db.disconnect();
     }
     
-    
-    
-    public void addCar(Car car){
-        if(car.getType().equals("Sedan")){
-            ((ArrayList<Car>)carList.get(SEDAN)).add(car);
+    public void reload(){
+        carList.removeAll(carList);
+        carList.add(new ArrayList<Car>()); //SUV
+        carList.add(new ArrayList<Car>()); //Sedan
+        carList.add(new ArrayList<Car>()); //Sport
+        try {
+            db = new TestConnection();
+            ResultSet rs = db.getConnect("select * from car");
+            while (rs.next()){
+                String name = rs.getString("name");
+                String type = rs.getString("type");
+                int cc = rs.getInt("cc");
+                double price = rs.getDouble("price");
+                int stock = rs.getInt("stock");
+                int wheel = rs.getInt("wheel");
+                int door = rs.getInt("door");
+                int capacity = rs.getInt("capacity");
+                if(type.equals("Sedan")){
+                    ((ArrayList<Car>)carList.get(SEDAN)).add(new SedanCar(name, cc, price, type, door, stock, wheel, capacity, false));
+                }
+                else if(type.equals("SUV")){
+                    ((ArrayList<Car>)carList.get(SUV)).add(new SUVCar(name, cc, price, type, door, stock, wheel, capacity, false));
+                }
+                else if(type.equals("Sport")){
+                    ((ArrayList<Car>)carList.get(SPORT)).add(new SportCar(name, cc, price, type, door, stock, wheel, capacity, false));
+                }
+            }
+            
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        else if(car.getType().equals("SUV")){
-            ((ArrayList<Car>)carList.get(SUV)).add(car);
-        }
-        else if(car.getType().equals("Sport")){
-            ((ArrayList<Car>)carList.get(SPORT)).add(car);
-        }
+        db.disconnect();
     }
     
     public ArrayList<ArrayList> getAllCars() {
         return carList;
     }
     
-    public static void main(String[] args) {
-        ShowRoom sh = new ShowRoom();
-        
-    }
 }
