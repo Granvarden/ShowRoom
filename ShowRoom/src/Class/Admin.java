@@ -9,6 +9,24 @@ public class Admin {
     public String getUsername(){
         return username;
     }
+    public String checkReserve(String name, String surname){
+        db = new TestConnection();
+        String car = "X";
+        try
+        {
+            ResultSet rs = db.getConnect(String.format("select car_book from customer where name = '%s' and surname = '%s'", name, surname));
+            while(rs.next())
+            {
+                car = rs.getString("car_book");
+                return car;
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return car;
+    }
     
     public String getPassword(){
         return password;
