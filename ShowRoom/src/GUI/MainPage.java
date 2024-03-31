@@ -1119,13 +1119,13 @@ public class MainPage extends javax.swing.JFrame {
                                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldLastName)
                                     .addComponent(jTextFieldEmail1)))
-                            .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addComponent(jButtonhaveacc))))
+                            .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(628, 628, 628)
-                        .addComponent(jButtonSummit, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonSummit, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(584, 584, 584)
+                        .addComponent(jButtonhaveacc)))
                 .addGap(444, 444, 444))
         );
         jPanel6Layout.setVerticalGroup(
