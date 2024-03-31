@@ -5,6 +5,7 @@ public class CarCard extends javax.swing.JPanel {
     private MainPage main;
     private Vehicle vhi;
     public CarCard() {
+        
         initComponents();
     }
     public CarCard(MainPage main, Vehicle vhi) {
@@ -99,7 +100,7 @@ public class CarCard extends javax.swing.JPanel {
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
         
        main.addDetail();
-
+       
     }//GEN-LAST:event_detailbuttonActionPerformed
 
 
