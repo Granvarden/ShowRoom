@@ -3,10 +3,8 @@ import Class.*;
 public class CarCard extends javax.swing.JPanel {
 
     private MainPage main;
-    private CarFullDetailsAndComparison cfd;
     private Vehicle vhi;
-    public CarCard(CarFullDetailsAndComparison cfd) {
-        this.cfd = cfd;
+    public CarCard() {
         initComponents();
     }
     public CarCard(MainPage main, Vehicle vhi) {
@@ -100,13 +98,7 @@ public class CarCard extends javax.swing.JPanel {
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
         
-        try {
-            cfd.getDetail();
-        } catch (Exception e) {
-            CarFullDetailsAndComparison detail = new CarFullDetailsAndComparison(vhi);
-            detail.setVisible(true);
-            main.setVisible(false);
-        }
+       main.addDetail();
 
     }//GEN-LAST:event_detailbuttonActionPerformed
 
