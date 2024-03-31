@@ -3,20 +3,20 @@ import Class.*;
 public class CarCard extends javax.swing.JPanel {
 
     private MainPage main;
-    private Vehicle vhi;
+    private Car car;
     public CarCard() {
         
         initComponents();
     }
-    public CarCard(MainPage main, Vehicle vhi) {
+    public CarCard(MainPage main, Car car) {
         this.main = main;
-        this.vhi = vhi;
+        this.car = car;
         initComponents();
-        priceTag.setText(String.valueOf(vhi.getPrice()));
-        carName.setText(String.valueOf(vhi.getName()));
+        priceTag.setText(String.valueOf(car.getPrice()));
+        carName.setText(String.valueOf(car.getName()));
     }
     public Vehicle getCar(){
-        return vhi;
+        return car;
     }
     /**
      * This method is called from within the constructor to initialize the form.

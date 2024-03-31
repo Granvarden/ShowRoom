@@ -5,12 +5,12 @@ import java.util.*;
 
 
 public class ShowRoom {
-    private ArrayList carList;
+    private ArrayList<ArrayList> carList;
     private TestConnection db;
-    public final int SUV = 0, SEDAN = 1, SPORT = 2;
+    public static final int SUV = 0, SEDAN = 1, SPORT = 2;
     
     public ShowRoom(){
-        carList = new ArrayList();
+        carList = new ArrayList<ArrayList>();
         carList.add(new ArrayList<Car>()); //SUV
         carList.add(new ArrayList<Car>()); //Sedan
         carList.add(new ArrayList<Car>()); //Sport
@@ -49,12 +49,8 @@ public class ShowRoom {
         
     }
     
-    public String toString(){
-        for(int i = 0; i < carList.size(); i++)
-            for(int j = 0; j < ((ArrayList<Car>)carList.get(i)).size(); j++){
-                
-            }
-            
+    public ArrayList<ArrayList> getAllCars() {
+        return carList;
     }
     
     public static void main(String[] args) {

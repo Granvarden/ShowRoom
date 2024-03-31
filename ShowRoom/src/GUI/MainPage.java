@@ -1,17 +1,20 @@
 package GUI;
 import Class.*;
+import java.util.*;
 import java.awt.GridLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
+    private ShowRoom sh;
     //test
     /**
      * Creates new form MainPage
      */
     public MainPage() {
         initComponents();
+        sh = new ShowRoom();
         Home.setVisible(true);
         compare.setVisible(false);
         bookingandtest.setVisible(false);
@@ -873,10 +876,12 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
-        for (int i = 0; i < 20; i++) {
-            jPanel5.add(new CarCard());
-            
+        
+        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+            ArrayList<Car> cars = (sh.getAllCars()).get(i);
+            for (Car car : cars) {
+                jPanel5.add(new CarCard(this, car));
+            }
         }
     }//GEN-LAST:event_formWindowOpened
 
