@@ -7,19 +7,24 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import Class.TestConnection;
+import Class.Admin;
 
 /**
  *
  * @author admin
  */
 public class managecustomer extends javax.swing.JInternalFrame {
-    TestConnection db;
-    private JTable jTable1;
+    private TestConnection db;
+    private JDesktopPane p;
 
     /**
-     * Creates new form managecustomer
+     * Creates new form manageCustomer
      */
-    public managecustomer() {
+    public managecustomer(JDesktopPane p) {
+        this.p = p;
+        forTable();
+    }
+    public void forTable(){
         initComponents();
         DefaultTableModel model = null;
         try{
@@ -48,7 +53,6 @@ public class managecustomer extends javax.swing.JInternalFrame {
         jTable1.setModel(model);
         jScrollPane2.setViewportView(jTable1);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,7 +82,7 @@ public class managecustomer extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Cencel reservation");
+        jLabel1.setText("Cancel reservation");
 
         jTextFieldCustomerID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -144,7 +148,11 @@ public class managecustomer extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonConfirmDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDelActionPerformed
-        // TODO add your handling code here:
+        Admin x = new Admin();
+        x.calcelCus(String.valueOf(jTextFieldCustomerID.getText()));
+        p.removeAll();
+        managecustomer cu = new managecustomer(p);
+        p.add(cu).setVisible(true);
     }//GEN-LAST:event_jButtonConfirmDelActionPerformed
 
 

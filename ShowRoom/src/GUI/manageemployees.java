@@ -6,8 +6,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class manageemployees extends javax.swing.JInternalFrame {
-    TestConnection db;
-    JDesktopPane p;
+    private TestConnection db;
+    private JDesktopPane p;
     /**
      * Creates new form manageEmployees
      */

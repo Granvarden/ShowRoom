@@ -13,9 +13,9 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTable;
 
 public class managecar extends javax.swing.JInternalFrame {
-    TestConnection db;
-    DefaultTableModel model = null;
-    JDesktopPane p;
+    private TestConnection db;
+    private DefaultTableModel model = null;
+    private JDesktopPane p;
     /**
      * Creates new form manageCar
      */
