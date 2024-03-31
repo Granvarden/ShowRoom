@@ -2,9 +2,14 @@ package Class;
 
 public abstract class Car extends Vehicle{
     private String type;
+    private int Stock, Wheel, Capacity, Door;
     private boolean booked;
-    protected Car(String name, int cc, double price, String type, boolean booked){
+    protected Car(String name, int cc, double price, String type, int Door, int Stock, int Wheel, int Capacity, boolean booked){
         super(name, cc, price);
+        this.Door = Door;
+        this.Stock = Stock;
+        this.Wheel = Wheel;
+        this.Capacity = Capacity;
         this.type = type;
         this.booked = booked;
     }
