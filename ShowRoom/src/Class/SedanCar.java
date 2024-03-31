@@ -3,8 +3,8 @@ package Class;
 import java.sql.*;
 public class SedanCar extends Car{
     private TestConnection db;
-    public SedanCar(String name, int cc, double price, String type, boolean booked) {
-        super(name, cc, price, type, booked);
+    public SedanCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked) {
+        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked);
     }
     @Override
     public void showDetails() {
@@ -27,8 +27,5 @@ public class SedanCar extends Car{
         //}
         //System.out.println("Price: " + super.getPrice());
     }
-    public static void main(String[] args) {
-        SedanCar x = new SedanCar("Yaris ATIV", 1000, 1000, "Sedan", false);
-        x.showDetails();
-    }
+    
 }

@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class SUVCar extends Car{
     private TestConnection db;
-    public SUVCar(String name, int cc, int price, String type, boolean booked) {
-        super(name, cc, price, type, booked);
+    public SUVCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked) {
+        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked);
     }
     @Override
     public void showDetails() {
@@ -30,8 +30,5 @@ public class SUVCar extends Car{
         //}
         //System.out.println("Price: " + super.getPrice());
     }
-    public static void main(String[] args) {
-        SedanCar x = new SedanCar("C-HR", 1000, 1000, "SUV", false);
-        x.showDetails();
-    }
+    
 }
