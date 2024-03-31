@@ -14,8 +14,6 @@ public class ShowRoom {
         carList.add(new ArrayList<Car>()); //SUV
         carList.add(new ArrayList<Car>()); //Sedan
         carList.add(new ArrayList<Car>()); //Sport
-    }
-    public void addCar(){
         try {
             db = new TestConnection();
             ResultSet rs = db.getConnect("select * from car");
@@ -45,8 +43,22 @@ public class ShowRoom {
         db.disconnect();
     }
     
+    
+    
+    public void addCar(){
+        
+    }
+    
+    public String toString(){
+        for(int i = 0; i < carList.size(); i++)
+            for(int j = 0; j < ((ArrayList<Car>)carList.get(i)).size(); j++){
+                
+            }
+            
+    }
+    
     public static void main(String[] args) {
         ShowRoom sh = new ShowRoom();
-        sh.addCar();
+        
     }
 }
