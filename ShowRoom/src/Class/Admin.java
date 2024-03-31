@@ -42,8 +42,12 @@ public class Admin {
     }
 
    
-    public void assignEmployee(Employee e) {
-        
+    public void workEm(String em_id, String cus_id) {
+        db = new TestConnection();
+        String sql1 = String.format("update customer set em_id = '%s' where id = '%s'", em_id, cus_id);
+        db.getUpdate(sql1);
+        String sql2 = String.format("update employees set queue = queue + 1 where id = '%s'",em_id);
+        db.getUpdate(sql2);
     }
 
     

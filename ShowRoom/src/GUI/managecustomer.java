@@ -25,7 +25,7 @@ public class managecustomer extends javax.swing.JInternalFrame {
         try{
             db = new TestConnection();
             ResultSet rs = db.getConnect("select * from customer");
-            String[] colname = {"id", "name", "surname", "phone", "email", "budget"};
+            String[] colname = {"id", "name", "surname", "phone", "email", "budget", "em_id"};
             int i = 0;
             model = new DefaultTableModel(colname, 0);
             while (rs.next()){
@@ -36,7 +36,8 @@ public class managecustomer extends javax.swing.JInternalFrame {
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
                 String budget = rs.getString("budget");
-                String[] row = {id, name, surname, phone, email, budget};
+                String em_id = rs.getString("em_id");
+                String[] row = {id, name, surname, phone, email, budget, em_id};
                 model.addRow(row);
             }
         } catch (SQLException e){
