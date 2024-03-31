@@ -86,13 +86,18 @@ public class managecar extends javax.swing.JInternalFrame {
         jTextFieldDoor = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldCapacity = new javax.swing.JTextField();
-        Addpicture = new javax.swing.JButton();
         jButtonConfirmAdd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextFieldNameDelete = new javax.swing.JTextField();
+        jTextFieldNameAddPic = new javax.swing.JTextField();
         jButtonConfirmDelete = new javax.swing.JButton();
+        Addpicture = new javax.swing.JButton();
+        jTextFieldNameDelete = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        confirmButtonAddPic = new javax.swing.JButton();
+        jTextFieldAddPic1 = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -185,13 +190,6 @@ public class managecar extends javax.swing.JInternalFrame {
             }
         });
 
-        Addpicture.setText("Add picture");
-        Addpicture.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddpictureActionPerformed(evt);
-            }
-        });
-
         jButtonConfirmAdd.setText("Confirm");
         jButtonConfirmAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,11 +213,10 @@ public class managecar extends javax.swing.JInternalFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldName)
+                            .addComponent(jTextFieldName, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                             .addComponent(jTextFieldCC)
                             .addComponent(jTextFieldWheel)
-                            .addComponent(jTextFieldDoor)
-                            .addComponent(Addpicture, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                            .addComponent(jTextFieldDoor))
                         .addGap(89, 89, 89)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,9 +276,7 @@ public class managecar extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Addpicture, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConfirmAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButtonConfirmAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -293,10 +288,10 @@ public class managecar extends javax.swing.JInternalFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel11.setText("Name");
 
-        jTextFieldNameDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextFieldNameDelete.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNameAddPic.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextFieldNameAddPic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNameDeleteActionPerformed(evt);
+                jTextFieldNameAddPicActionPerformed(evt);
             }
         });
 
@@ -307,37 +302,95 @@ public class managecar extends javax.swing.JInternalFrame {
             }
         });
 
+        Addpicture.setText("Add picture");
+        Addpicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddpictureActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNameDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextFieldNameDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel12.setText("Add Picture");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel13.setText("Name");
+
+        confirmButtonAddPic.setText("Confirm");
+        confirmButtonAddPic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonAddPicActionPerformed(evt);
+            }
+        });
+
+        jTextFieldAddPic1.setEditable(false);
+        jTextFieldAddPic1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextFieldAddPic1.setText("FilePath");
+        jTextFieldAddPic1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAddPic1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextFieldNameDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(59, 59, 59))
+                        .addGap(110, 110, 110)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(jTextFieldNameDelete))
+                        .addGap(88, 88, 88)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNameAddPic)
+                            .addComponent(Addpicture, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(confirmButtonAddPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldAddPic1))))
+                .addGap(58, 58, 58))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldNameDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldNameDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21))
+                        .addComponent(jButtonConfirmDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jTextFieldNameAddPic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAddPic1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Addpicture)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(confirmButtonAddPic)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -389,9 +442,9 @@ public class managecar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCapacityActionPerformed
 
-    private void jTextFieldNameDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameDeleteActionPerformed
+    private void jTextFieldNameAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameAddPicActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNameDeleteActionPerformed
+    }//GEN-LAST:event_jTextFieldNameAddPicActionPerformed
 
     private void jButtonConfirmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmAddActionPerformed
             Admin x = new Admin();
@@ -410,7 +463,7 @@ public class managecar extends javax.swing.JInternalFrame {
 
     private void jButtonConfirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDeleteActionPerformed
         Admin x = new Admin();
-        x.removeCar(String.valueOf(jTextFieldNameDelete.getText()));
+        x.removeCar(String.valueOf(jTextFieldNameAddPic.getText()));
         p.removeAll();
         managecar c1 = new managecar(p);
         p.add(c1).setVisible(true);
@@ -421,6 +474,18 @@ public class managecar extends javax.swing.JInternalFrame {
         fc.showOpenDialog(this);
         File f = fc.getSelectedFile();
     }//GEN-LAST:event_AddpictureActionPerformed
+
+    private void jTextFieldNameDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNameDeleteActionPerformed
+
+    private void confirmButtonAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonAddPicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmButtonAddPicActionPerformed
+
+    private void jTextFieldAddPic1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAddPic1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldAddPic1ActionPerformed
     //public void actionPerformed(ActionEvent e) {
     //    if (e.getSource().equals(jButtonConfirmAdd)){
     //        Admin x = new Admin();
@@ -437,11 +502,14 @@ public class managecar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Addpicture;
+    private javax.swing.JButton confirmButtonAddPic;
     private javax.swing.JButton jButtonConfirmAdd;
     private javax.swing.JButton jButtonConfirmDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -454,10 +522,12 @@ public class managecar extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextFieldAddPic1;
     private javax.swing.JTextField jTextFieldCC;
     private javax.swing.JTextField jTextFieldCapacity;
     private javax.swing.JTextField jTextFieldDoor;
     private javax.swing.JTextField jTextFieldName;
+    private javax.swing.JTextField jTextFieldNameAddPic;
     private javax.swing.JTextField jTextFieldNameDelete;
     private javax.swing.JTextField jTextFieldPrice;
     private javax.swing.JTextField jTextFieldStock;

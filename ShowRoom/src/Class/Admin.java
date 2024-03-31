@@ -13,6 +13,10 @@ public class Admin {
     public String getPassword(){
         return password;
     }
+    public void addPic(String picPath){
+        db = new TestConnection();
+        //String sql = String.format(pic, picPath);
+    }
     public void calcelCus(String id){
         db = new TestConnection();
         String em_id = null;
