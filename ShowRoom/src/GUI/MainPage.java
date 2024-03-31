@@ -750,9 +750,9 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
+        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
         for (int i = 0; i < 10; i++) {
-            jPanel5.add(new CarCard(this, sedan));
+            jPanel5.add(new CarCard());
             
         }
     }//GEN-LAST:event_formWindowOpened
@@ -764,9 +764,9 @@ public class MainPage extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         compare.setVisible(true);
         Home.setVisible(false);
-        SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
+        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
         for (int i = 0; i < 10; i++) {
-            jPanel7.add(new CarCard(this, sedan));
+            jPanel7.add(new CarCard());
             
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -848,9 +848,9 @@ public class MainPage extends javax.swing.JFrame {
     public void addDetail(){
         compare.setVisible(true);
         Home.setVisible(false);
-        SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
+        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
         for (int i = 0; i < 10; i++) {
-            jPanel7.add(new CarCard(this, sedan));
+            jPanel7.add(new CarCard());
             
         }
         DetailCar dc = new DetailCar();
