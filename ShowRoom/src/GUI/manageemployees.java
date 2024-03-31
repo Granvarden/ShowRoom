@@ -68,9 +68,6 @@ public class manageemployees extends javax.swing.JInternalFrame {
         jTextFieldIDcustomer = new javax.swing.JTextField();
         jButtoncomfirmwork = new javax.swing.JButton();
 
-        setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
         setTitle("Employees");
         setPreferredSize(new java.awt.Dimension(1077, 687));
 

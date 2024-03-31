@@ -64,9 +64,6 @@ public class managecustomer extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jButtonConfirmDel = new javax.swing.JButton();
 
-        setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
         setTitle("Customer");
         setMinimumSize(new java.awt.Dimension(1088, 692));
         setPreferredSize(new java.awt.Dimension(1077, 687));
