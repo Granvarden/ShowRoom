@@ -28,6 +28,8 @@ public class Admin {
         db.getUpdate(sql1);
         String sql2 = String.format("update customer set em_id = null where id = '%s'", id);
         db.getUpdate(sql2);
+        String sql3 = String.format("update employees set free = case when queue = 0 then 1 else 0 end where id = '%s'", id);
+        db.getUpdate(sql3);
     }
     public void addEm(String first_name, String last_name){
             db = new TestConnection();
@@ -61,6 +63,8 @@ public class Admin {
         db.getUpdate(sql1);
         String sql2 = String.format("update employees set queue = queue + 1 where id = '%s'",em_id);
         db.getUpdate(sql2);
+        String sql3 = String.format("update employees set free = case when queue = 0 then 1 else 0 end where id = '%s'", em_id);
+        db.getUpdate(sql3);
     }
 
     
