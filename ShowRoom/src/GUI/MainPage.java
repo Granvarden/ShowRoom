@@ -1505,7 +1505,7 @@ public class MainPage extends javax.swing.JFrame {
     public void addDetail(CarCard cc){
         compare.setVisible(true);
         Home.setVisible(false);
-        //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
+        
         
         DetailCar dc = new DetailCar(cc.getCar());
         jDesktopPane2.add(dc).setVisible(true);
