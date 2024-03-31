@@ -1015,7 +1015,7 @@ public class MainPage extends javax.swing.JFrame {
         });
         
     }
-    public void addDetail(){
+    public void addDetail(CarCard cc){
         compare.setVisible(true);
         Home.setVisible(false);
         //SedanCar sedan = new SedanCar("edan", 0, 0, "",  false);
@@ -1025,7 +1025,7 @@ public class MainPage extends javax.swing.JFrame {
                 jPanel7.add(new CarCard(this, car));
             }
         }
-        DetailCar dc = new DetailCar();
+        DetailCar dc = new DetailCar(cc.getCar());
         jDesktopPane2.add(dc).setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

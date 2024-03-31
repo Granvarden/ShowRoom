@@ -13,6 +13,30 @@ public abstract class Car extends Vehicle{
         this.type = type;
         this.booked = booked;
     }
+    public int getDoor(){
+        return Door;
+    }
+    public void setDoor(int Door){
+        this.Door = Door;
+    }
+    public int getStock(){
+        return Stock;
+    }
+    public void setStock(int Stock){
+        this.Stock = Stock;
+    }
+    public int getCapacity(){
+        return Capacity;
+    }
+    public  void setCapacity(int Capa){
+        this.Capacity = Capa;
+    }
+    public int getWheel(){
+        return Wheel;
+    }
+    public void setWheel(int Wheel){
+        this.Wheel = Wheel;
+    }
     public void setType(String type){
         this.type = type;
     }

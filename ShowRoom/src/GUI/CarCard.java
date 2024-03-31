@@ -15,7 +15,7 @@ public class CarCard extends javax.swing.JPanel {
         priceTag.setText(String.valueOf(car.getPrice()));
         carName.setText(String.valueOf(car.getName()));
     }
-    public Vehicle getCar(){
+    public Car getCar(){
         return car;
     }
     /**
@@ -99,7 +99,7 @@ public class CarCard extends javax.swing.JPanel {
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
         
-       main.addDetail();
+       main.addDetail(this);
        
     }//GEN-LAST:event_detailbuttonActionPerformed
 
