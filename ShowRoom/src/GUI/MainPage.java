@@ -876,8 +876,8 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
-        for (int i = 0; i < (sh.getAllCars()).size();i++) {
+
+        for (int i = 0; i < (sh.getAllCars()).size()-1;i++) {
             ArrayList<Car> cars = (sh.getAllCars()).get(i);
             for (Car car : cars) {
                 jPanel5.add(new CarCard(this, car));

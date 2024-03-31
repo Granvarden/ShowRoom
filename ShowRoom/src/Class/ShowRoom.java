@@ -45,8 +45,16 @@ public class ShowRoom {
     
     
     
-    public void addCar(){
-        
+    public void addCar(Car car){
+        if(car.getType().equals("Sedan")){
+            ((ArrayList<Car>)carList.get(SEDAN)).add(car);
+        }
+        else if(car.getType().equals("SUV")){
+            ((ArrayList<Car>)carList.get(SUV)).add(car);
+        }
+        else if(car.getType().equals("Sport")){
+            ((ArrayList<Car>)carList.get(SPORT)).add(car);
+        }
     }
     
     public ArrayList<ArrayList> getAllCars() {
