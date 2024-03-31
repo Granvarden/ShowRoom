@@ -20,6 +20,7 @@ public class MainPage extends javax.swing.JFrame {
         graceful.setVisible(false);
         reservation.setVisible(false);
         registration.setVisible(false);
+        //hello
     }
 
     /**
