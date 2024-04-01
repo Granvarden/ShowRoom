@@ -13,13 +13,13 @@ public class DetailCar extends javax.swing.JInternalFrame {
     public DetailCar(Car car) {
         initComponents();
         this.car = car;
-        carNameLabel.setText("Car name : " + car.getName());
-        typeLabel.setText("Type : " + car.getType());
-        capacityLabel.setText("Capacity : " + car.getCapacity());
-        ccLabel.setText("CC : " + car.getCC());
-        doorLabel.setText("Door : " +  car.getDoor());
-        wheelLabel.setText("Wheel : " + car.getWheel());
-        priceLabel.setText("Price : " + car.getPrice());
+        carNameLabel.setText(String.valueOf(car.getName()));
+        typeLabel.setText(String.valueOf(car.getType()));
+        capacityLabel.setText(String.valueOf(car.getCapacity()));
+        ccLabel.setText(String.valueOf(car.getCC()));
+        doorLabel.setText(String.valueOf(car.getDoor()));
+        wheelLabel.setText(String.valueOf(car.getWheel()));
+        priceLabel.setText(String.valueOf(car.getPrice()));
         picture.setIcon(car.getImg());
     }
 

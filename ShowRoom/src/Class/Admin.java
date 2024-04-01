@@ -114,6 +114,19 @@ public class Admin {
                ", Phone Number: " + phoneNumber + 
                ", Email: " + email;                
     }
+    
+    public boolean checkUsernameDuplicate(String username) throws SQLException {
+        db = new TestConnection();
+        try {
+            ResultSet rs = db.getConnect(String.format("SELECT username FROM customer WHERE username = '%s'", username));
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            db.disconnect();
+        }
+    }
 
     
     public void cancelBooking(Book booking) {
