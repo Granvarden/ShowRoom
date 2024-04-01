@@ -227,6 +227,7 @@ public class LoginPage extends javax.swing.JFrame {
                 adpage.setVisible(false);
                 main.setVisible(true);
                 main.setlogintrue();
+                main.createCustomer(username);
             } else {
                 jLabel4.setText("*incorrect username or password*");
             }

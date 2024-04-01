@@ -2,21 +2,26 @@ package GUI;
 import Class.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import java.time.LocalDate;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
     private ShowRoom sh;
+    private Customer cus;
     private TestConnection db;
     public ResultSet rs;
     private ArrayList<CarCard> carCardList;
     private boolean checklogin = false;
+    private Book booked;
     public MainPage() {
         initComponents();
+        booked = null;
         sh = new ShowRoom();
         carCardList = new ArrayList<CarCard>();
         Home.setVisible(true);
@@ -1587,7 +1592,7 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       
+
         
         for (Car car : sh.getAllCars()) {
             CarCard card = new CarCard(this, car);
@@ -1641,7 +1646,31 @@ public class MainPage extends javax.swing.JFrame {
         
     
     }//GEN-LAST:event_jButtonHomeActionPerformed
-
+    public void createCustomer(String username){
+        db = new TestConnection();
+        if(checklogin){
+           String sql = String.format("select * from customer where username = '%s'", username);
+           try{
+               
+                ResultSet rs = db.getConnect(sql);
+                if(rs.next()){
+                    String userName = rs.getString("username");
+                    String passWord = rs.getString("password");
+                    String pNum = rs.getString("phone");
+                    double budget = rs.getDouble("budget");
+                    String email = rs.getString("email");
+                    String name = rs.getString("name");
+                    String surname = rs.getString("surname");
+                    if(username.equals(userName)){
+                        cus = new Customer(userName, passWord, pNum, budget, email, name, surname);
+                    }
+                }
+           }catch(Exception e){
+               e.printStackTrace();
+           }
+           
+        }
+    }
     private void CheckNameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckNameTfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckNameTfActionPerformed
@@ -1802,9 +1831,7 @@ public class MainPage extends javax.swing.JFrame {
             for(CarCard carCard : carCardList){
                 for(Car car : sh.getFilterdCar()){
                     if(car.getName().equals(carCard.getCar().getName())){
-                        jPanel7.add(carCard);
-                       
-                        
+                        jPanel7.add(carCard);                     
                     }
                 }
             }  
@@ -1850,16 +1877,25 @@ public class MainPage extends javax.swing.JFrame {
         if (jTextFielddate1.getText().equals("") | jTextFieldmonth1.getText().equals("") |
             jTextFieldyear1.getText().equals("") | jTextFieldbudget1.getText().equals("") | planComboBox.getSelectedIndex() == 0) {
             jLabelBookingerror1.setText("*Please in complete information*");
-        }
-//        else if (!jTextFielddate1.getText().equals("") || !jTextFieldmonth1.getText().equals("") ||
-//            !jTextFieldyear1.getText().equals("") || !jTextFieldbudget1.getText().equals("") || planComboBox.getSelectedIndex() == 0){
-//        }
+        }        
         else {
+            Car selectedCar = null;
+
             booking.setVisible(false);
             graceful.setVisible(true);
+            for(Car car : sh.getAllCars()){
+                if(car.getName().equals(carNameLabelbooking.getText())){
+                    selectedCar = car;
+                }
+            }
+            LocalDate specificDate = LocalDate.parse(jTextFielddate1.getText() + jTextFieldmonth1.getText() + "-" + jTextFieldyear1.getText());
+            cus.setBudget(Double.parseDouble(jTextFieldbudget1.getText()));
+            booked = cus.Booking(selectedCar, cus, specificDate, String.valueOf(planComboBox.getSelectedItem()));
         }
     }//GEN-LAST:event_BookingConfirmActionPerformed
-
+    public void confirmBooking(){
+        
+    }
     private void planComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planComboBoxActionPerformed
         
     }//GEN-LAST:event_planComboBoxActionPerformed
