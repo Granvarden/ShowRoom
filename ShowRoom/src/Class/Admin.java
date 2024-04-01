@@ -33,7 +33,9 @@ public class Admin {
     }
     public void addPic(String picPath, String car_name){
         db = new TestConnection();
-        String sql = String.format("update car set img = load_file('%s') where name = '%s'", picPath, car_name);
+        
+        System.out.println("picpath : " + picPath.replace("\\", "\\\\") + " name : " + car_name);
+        String sql = String.format("update car set img = load_file('%s') where name = '%s'", picPath.replace("\\", "\\\\"), car_name);
         System.out.println(sql);
         db.getUpdate(sql);
         //String sql = String.format(pic, picPath);
