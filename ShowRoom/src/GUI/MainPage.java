@@ -1,6 +1,9 @@
 package GUI;
 import Class.*;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -1616,48 +1619,62 @@ public class MainPage extends javax.swing.JFrame {
         if ("".equals(jTextFieldName.getText()) || "".equals(jTextFieldLastName.getText()) || "".equals(jTextFieldPhoneNumber.getText())
            || "".equals(jTextFieldEmail.getText()) || "".equals(jTextFieldUsername.getText()) || "".equals(jTextFieldPassword.getText())) {
            jLabelError.setText("Please Don't Left The Blank!!!");
-       }
-       else {
+        }
+        else {
            try {
                int phoneNumber = Integer.parseInt(jTextFieldPhoneNumber.getText());
                jLabelError.setText("");
 
-               Customer customer = new Customer(jTextFieldPhoneNumber.getText(), 0, jTextFieldEmail.getText(), jTextFieldName.getText());
+               String username = jTextFieldUsername.getText();
+               String password = jTextFieldPassword.getText();
+               String name = jTextFieldName.getText();
+               String lastName = jTextFieldLastName.getText();
+               String phone = jTextFieldPhoneNumber.getText();
+               String email = jTextFieldEmail.getText();
+
                Admin x = new Admin();
-               x.registerCus(String.valueOf(jTextFieldUsername.getText()), String.valueOf(jTextFieldPassword.getText()), String.valueOf(jTextFieldName.getText()),
-               String.valueOf(jTextFieldLastName.getText()), String.valueOf(jTextFieldPhoneNumber.getText()), String.valueOf(jTextFieldEmail.getText()));
-               jTextFieldName.setText("");
-               jTextFieldLastName.setText("");
-               jTextFieldPhoneNumber.setText("");
-               jTextFieldUsername.setText("");
-               jTextFieldPassword.setText("");
-               jTextFieldEmail.setText("");
-               jScrollPaneHome.revalidate();
-               jScrollPaneHome.repaint();
-                Home.setVisible(true);
-                compare.setVisible(false);
-                compare.revalidate();
-                compare.repaint();
-                booking.setVisible(false);
-                booking.revalidate();
-                booking.repaint();
-                testdrive.setVisible(false);
-                testdrive.revalidate();
-                testdrive.repaint();
-                graceful.setVisible(false);
-                graceful.revalidate();
-                graceful.repaint();
-                reservation.setVisible(false);
-                reservation.revalidate();
-                reservation.repaint();
-                registration.setVisible(false);
-                registration.revalidate();
-                registration.repaint();
-                jDesktopPane2.removeAll();
-           } catch (NumberFormatException ex) {
+
+               if (x.checkUsernameDuplicate(jTextFieldUsername.getText())) {
+                   jLabelError.setText("Username already exists");
+               } else {
+                   x.registerCus(username, password, name, lastName, phone, email);
+
+                   jTextFieldName.setText("");
+                   jTextFieldLastName.setText("");
+                   jTextFieldPhoneNumber.setText("");
+                   jTextFieldUsername.setText("");
+                   jTextFieldPassword.setText("");
+                   jTextFieldEmail.setText("");
+
+                   jScrollPaneHome.revalidate();
+                   jScrollPaneHome.repaint();
+                   Home.setVisible(true);
+                   compare.setVisible(false);
+                   compare.revalidate();
+                   compare.repaint();
+                   booking.setVisible(false);
+                   booking.revalidate();
+                   booking.repaint();
+                   testdrive.setVisible(false);
+                   testdrive.revalidate();
+                   testdrive.repaint();
+                   graceful.setVisible(false);
+                   graceful.revalidate();
+                   graceful.repaint();
+                   reservation.setVisible(false);
+                   reservation.revalidate();
+                   reservation.repaint();
+                   registration.setVisible(false);
+                   registration.revalidate();
+                   registration.repaint();
+                   jDesktopPane2.removeAll();
+                }
+            } catch (NumberFormatException ex) {
                jLabelError.setText("Please Enter Number Only!!!");
-           }
-       }
+            } catch (SQLException ex) {
+               jLabelError.setText("Please Enter Number Only!!!");
+            }
+        }
     }//GEN-LAST:event_jButtonSummitActionPerformed
 
     private void jButtonhaveaccMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonhaveaccMouseEntered
