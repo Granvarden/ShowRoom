@@ -24,31 +24,31 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="priceL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="wheelL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="doorL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ccL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="capaL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="typeL" alignment="0" max="32767" attributes="0"/>
+                  <Component id="nameL" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="picture" min="-2" pref="265" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="priceL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="wheelL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="doorL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ccL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="capaL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="typeL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="nameL" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="carNameLabel" max="32767" attributes="0"/>
-                          <Component id="capacityLabel" max="32767" attributes="0"/>
-                          <Component id="typeLabel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="doorLabel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ccLabel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="wheelLabel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="priceLabel" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="carNameLabel" pref="164" max="32767" attributes="0"/>
+                  <Component id="capacityLabel" max="32767" attributes="0"/>
+                  <Component id="typeLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="doorLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ccLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="wheelLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="priceLabel" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="picture" min="-2" pref="291" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,8 +56,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="picture" min="-2" pref="146" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="picture" min="-2" pref="158" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nameL" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="carNameLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>

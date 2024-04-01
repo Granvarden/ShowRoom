@@ -1565,6 +1565,9 @@ public class MainPage extends javax.swing.JFrame {
             reservation.setVisible(false);
             reservation.revalidate();
             reservation.repaint();
+            registration.setVisible(false);
+            registration.revalidate();
+            registration.repaint();
             jDesktopPane2.removeAll();
         }
         
