@@ -46,6 +46,23 @@ public class ShowRoom {
         }
         db.disconnect();
     }
+    
+    public Boolean loginCheck(String inputUsername, String inputPassword){
+        try{
+            ResultSet rs = db.getConnect("select * from customer");
+            while(rs.next()){
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                if(username.equals(inputUsername) & inputPassword.equals(password)){
+                    return true;
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
     public void filterCars(String type1, String name, double priceMin, double priceMax){
         filterdCars.removeAll(filterdCars);
         try{
