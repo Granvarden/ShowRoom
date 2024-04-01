@@ -1427,11 +1427,11 @@
                                           <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="jTextFieldPhoneNumber" alignment="0" pref="303" max="32767" attributes="0"/>
-                                              <Component id="jTextFieldName1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextFieldName" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextFieldPassword" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextFieldUsername" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextFieldLastName" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="jTextFieldEmail1" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="jTextFieldEmail" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="jLabelError" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
@@ -1468,7 +1468,7 @@
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1483,7 +1483,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldEmail1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabelError" min="-2" max="-2" attributes="0"/>
@@ -1565,7 +1565,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPasswordActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldName1">
+                <Component class="javax.swing.JTextField" name="jTextFieldName">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Leelawadee UI" size="18" style="0"/>
@@ -1597,7 +1597,7 @@
                     <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldEmail1">
+                <Component class="javax.swing.JTextField" name="jTextFieldEmail">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Leelawadee UI" size="18" style="0"/>

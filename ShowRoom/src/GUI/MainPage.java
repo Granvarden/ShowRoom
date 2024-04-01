@@ -124,11 +124,11 @@ public class MainPage extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jTextFieldUsername = new javax.swing.JTextField();
         jTextFieldPassword = new javax.swing.JTextField();
-        jTextFieldName1 = new javax.swing.JTextField();
+        jTextFieldName = new javax.swing.JTextField();
         jTextFieldLastName = new javax.swing.JTextField();
         jTextFieldPhoneNumber = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        jTextFieldEmail1 = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
         jButtonSummit = new javax.swing.JButton();
         jLabelError = new javax.swing.JLabel();
         jButtonhaveacc = new javax.swing.JButton();
@@ -917,7 +917,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldName1.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jTextFieldName.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
 
         jTextFieldLastName.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
 
@@ -931,7 +931,7 @@ public class MainPage extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel50.setText("Email");
 
-        jTextFieldEmail1.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jTextFieldEmail.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
 
         jButtonSummit.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jButtonSummit.setText("Summit");
@@ -980,11 +980,11 @@ public class MainPage extends javax.swing.JFrame {
                                 .addGap(85, 85, 85)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jTextFieldPhoneNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldName1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldPassword, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldLastName)
-                                    .addComponent(jTextFieldEmail1)))
+                                    .addComponent(jTextFieldEmail)))
                             .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(628, 628, 628)
@@ -1010,7 +1010,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
-                    .addComponent(jTextFieldName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
@@ -1022,7 +1022,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(jTextFieldEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelError)
                 .addGap(24, 24, 24)
@@ -1410,7 +1410,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
+                .addComponent(Main, javax.swing.GroupLayout.PREFERRED_SIZE, 704, Short.MAX_VALUE))
         );
 
         pack();
@@ -1505,6 +1505,21 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPhoneNumberActionPerformed
 
     private void jButtonSummitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSummitActionPerformed
+        if ("".equals(jTextFieldName.getText()) || "".equals(jTextFieldLastName.getText()) || "".equals(jTextFieldPhoneNumber.getText())
+           || "".equals(jTextFieldEmail.getText()) || "".equals(jTextFieldUsername.getText()) || "".equals(jTextFieldPassword.getText())) {
+           jLabelError.setText("Please Don't Left The Blank!!!");
+       }
+       else {
+           try {
+               int phoneNumber = Integer.parseInt(jTextFieldPhoneNumber.getText());
+               jLabelError.setText("");
+
+               Customer customer = new Customer(jTextFieldPhoneNumber.getText(), 0, jTextFieldEmail.getText(), jTextFieldName.getText());
+               
+           } catch (NumberFormatException ex) {
+               jLabelError.setText("Please Enter Number Only!!!");
+           }
+       }
     }//GEN-LAST:event_jButtonSummitActionPerformed
 
     private void jButtonhaveaccMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonhaveaccMouseEntered
@@ -1795,9 +1810,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneHome;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextFieldEmail1;
+    private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldLastName;
-    private javax.swing.JTextField jTextFieldName1;
+    private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldPassword;
     private javax.swing.JTextField jTextFieldPhoneNumber;
     private javax.swing.JTextField jTextFieldUsername;
