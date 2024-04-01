@@ -171,11 +171,15 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         admin = new Admin();
-        if (jTextField1.getText().equals(admin.getUsername())  & jPasswordField1.getText().equals(admin.getPassword())) {
+        if (main.checklogin()) {
+            jLabel4.setText("*You are already login*");
+        }
+        else if (jTextField1.getText().equals(admin.getUsername())  & jPasswordField1.getText().equals(admin.getPassword())) {
             this.setVisible(false);
             main.setVisible(false);
             AdminPage adpage = new AdminPage();
             adpage.setVisible(true);
+            main.setlogintrue();
         }else{
             jLabel4.setText("*incorrect username or password*");
         }
