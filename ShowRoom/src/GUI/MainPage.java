@@ -91,6 +91,7 @@ public class MainPage extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel90 = new javax.swing.JLabel();
         termjTextField = new javax.swing.JTextField();
+        reccommendDescription4 = new javax.swing.JLabel();
         BookingConfirm = new javax.swing.JButton();
         compare = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -516,30 +517,20 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jLabel83)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldbudget1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel90)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(termjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel84)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(planComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
+                    .addComponent(reccommendDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(reccommendDescription3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(reccommendDescription2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(reccommendDescription4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+                    .addComponent(jLabelBookingerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel77))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextArea1)
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(reccommendDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(reccommendDescription3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                                .addComponent(reccommendDescription2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabelBookingerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel77)
                             .addComponent(jLabel82)
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(jLabel79)
@@ -553,8 +544,21 @@ public class MainPage extends javax.swing.JFrame {
                                 .addComponent(jLabel81)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel78))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel78)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(jLabel83)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldbudget1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel90)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(termjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel84)
+                                .addGap(18, 18, 18)
+                                .addComponent(planComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 31, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,9 +593,11 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(reccommendDescription2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reccommendDescription3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reccommendDescription4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(34, 34, 34))
         );
 
         BookingConfirm.setBackground(new java.awt.Color(204, 255, 204));
@@ -637,7 +643,7 @@ public class MainPage extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1904,18 +1910,22 @@ public class MainPage extends javax.swing.JFrame {
                         double loanAmount = Double.parseDouble(jTextFieldbudget1.getText()) + carPrice; // Add car price to loan amount
                         double totalInterest = (loanAmount * interestRate) * loanTerm;
                         double totalPayment = loanAmount + totalInterest;
+                        double monthlyPayment = totalPayment / (loanTerm * 12);
                         reccommendDescription.setText("We recommend Plan B");
-                        reccommendDescription2.setText("Your Total Interest is " + totalInterest);
-                        reccommendDescription3.setText("Your Total Payment is " + totalPayment);
+                        reccommendDescription2.setText("Your Total Interest is " + Math.round(totalInterest));
+                        reccommendDescription3.setText("Your Total Payment is " + Math.round(totalPayment));
+                        reccommendDescription4.setText("Your Monthly Payment is " + Math.round(monthlyPayment));
                     }
                     else {
                         double interestRate = 0.045;
                         double loanAmount = Double.parseDouble(jTextFieldbudget1.getText()) + carPrice; // Add car price to loan amount
                         double totalInterest = (loanAmount * interestRate) * loanTerm;
                         double totalPayment = loanAmount + totalInterest;
+                        double monthlyPayment = totalPayment / (loanTerm * 12);
                         reccommendDescription.setText("We recommend Plan A");
-                        reccommendDescription2.setText("Your Total Interest is " + totalInterest);
-                        reccommendDescription3.setText("Your Total Payment is " + totalPayment);
+                        reccommendDescription2.setText("Your Total Interest is " + Math.round(totalInterest));
+                        reccommendDescription3.setText("Your Total Payment is " + Math.round(totalPayment));
+                        reccommendDescription4.setText("Your Monthly Payment is " + Math.round(monthlyPayment));
                     }
                 }
             }
@@ -1948,18 +1958,22 @@ public class MainPage extends javax.swing.JFrame {
                     double loanAmount = Double.parseDouble(jTextFieldbudget1.getText()) + carPrice; // Add car price to loan amount
                     double totalInterest = (loanAmount * interestRate) * loanTerm;
                     double totalPayment = loanAmount + totalInterest;
+                    double monthlyPayment = totalPayment / (loanTerm * 12);
                     reccommendDescription.setText("We recommend Plan B");
-                    reccommendDescription2.setText("Your Total Interest is " + totalInterest);
-                    reccommendDescription3.setText("Your Total Payment is " + totalPayment);
+                    reccommendDescription2.setText("Your Total Interest is " + Math.round(totalInterest));
+                    reccommendDescription3.setText("Your Total Payment is " + Math.round(totalPayment));
+                    reccommendDescription4.setText("Your Monthly Payment is " + Math.round(monthlyPayment));
                 }
                 else {
                     double interestRate = 0.045;
                     double loanAmount = Double.parseDouble(jTextFieldbudget1.getText()) + carPrice; // Add car price to loan amount
                     double totalInterest = (loanAmount * interestRate) * loanTerm;
                     double totalPayment = loanAmount + totalInterest;
+                    double monthlyPayment = totalPayment / (loanTerm * 12);
                     reccommendDescription.setText("We recommend Plan A");
-                    reccommendDescription2.setText("Your Total Interest is " + totalInterest);
-                    reccommendDescription3.setText("Your Total Payment is " + totalPayment);
+                    reccommendDescription2.setText("Your Total Interest is " + Math.round(totalInterest));
+                    reccommendDescription3.setText("Your Total Payment is " + Math.round(totalPayment));
+                    reccommendDescription4.setText("Your Monthly Payment is " + Math.round(monthlyPayment));
                 }
             }
         }
@@ -2232,6 +2246,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel reccommendDescription;
     private javax.swing.JLabel reccommendDescription2;
     private javax.swing.JLabel reccommendDescription3;
+    private javax.swing.JLabel reccommendDescription4;
     private javax.swing.JPanel registration;
     private javax.swing.JPanel reservation;
     private javax.swing.JTextField termjTextField;
