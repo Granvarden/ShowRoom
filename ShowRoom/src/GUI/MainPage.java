@@ -8,10 +8,7 @@ public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
     private ShowRoom sh;
     private ArrayList<CarCard> carCardList;
-    //test
-    /**
-     * Creates new form MainPage
-     */
+    private boolean checklogin = false;
     public MainPage() {
         initComponents();
         sh = new ShowRoom();
@@ -1391,9 +1388,9 @@ public class MainPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(93, 93, 93)
+                .addGap(72, 72, 72)
                 .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
@@ -1410,7 +1407,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main, javax.swing.GroupLayout.PREFERRED_SIZE, 704, Short.MAX_VALUE))
+                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
         );
 
         pack();
@@ -1705,6 +1702,14 @@ public class MainPage extends javax.swing.JFrame {
         booking.setVisible(false);
         graceful.setVisible(false);
         reservation.setVisible(false);
+    }
+    
+    public boolean checklogin(){
+        return checklogin;
+    }
+    
+    public void setlogintrue(){
+        checklogin = true;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BookingConfirm;
