@@ -13,6 +13,12 @@ public class Customer implements Human{
     private Book awd;
 
     //constructor
+    public Customer(String phoneNumber, int moneyBudget, String email, String name) {
+        this.phoneNumber = phoneNumber;
+        this.moneyBudget = moneyBudget;
+        this.email = email;
+        this.name = name;
+    }
     public Customer(String userName, String password, String phoneNumber, int moneyBudget, String email, String name, String surname) {
         this.userName = userName;
         this.password = password;
