@@ -1,5 +1,6 @@
 package GUI;
 import Class.*;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
@@ -10,6 +11,8 @@ import javax.swing.UIManager;
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
     private ShowRoom sh;
+    private TestConnection db;
+    public ResultSet rs;
     private ArrayList<CarCard> carCardList;
     private boolean checklogin = false;
     public MainPage() {
@@ -1889,6 +1892,18 @@ public class MainPage extends javax.swing.JFrame {
     public boolean checklogin(){
         return checklogin;
     }
+    
+    public boolean checkLogin(String username, String password) {
+        db = new TestConnection();
+        String sql = String.format("SELECT * FROM customer WHERE username = '%s' AND password = '%s'", username, password);
+
+        try (ResultSet rs = db.getConnect(sql)) {
+            return rs.next();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+}
     
     public void setlogintrue(){
         checklogin = true;

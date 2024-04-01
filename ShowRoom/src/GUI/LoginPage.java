@@ -86,6 +86,11 @@ public class LoginPage extends javax.swing.JFrame {
 
         jButtonCustomer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonCustomer.setText("Customer login");
+        jButtonCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCustomerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -186,14 +191,19 @@ public class LoginPage extends javax.swing.JFrame {
         if (main.checklogin()) {
             jLabel4.setText("*You are already login*");
         }
-        else if (jTextField1.getText().equals(admin.getUsername())  & jPasswordField1.getText().equals(admin.getPassword())) {
-            this.setVisible(false);
-            main.setVisible(false);
-            AdminPage adpage = new AdminPage();
-            adpage.setVisible(true);
-            main.setlogintrue();
-        }else{
-            jLabel4.setText("*incorrect username or password*");
+        else {
+            String username = jTextField1.getText();
+            String password = new String(jPasswordField1.getPassword());
+
+            if (main.checkLogin("Admin", "1234")) {
+                this.setVisible(false);
+                main.setVisible(false);
+                AdminPage adpage = new AdminPage();
+                adpage.setVisible(true);
+                main.setlogintrue();
+            } else {
+                jLabel4.setText("*incorrect username or password*");
+            }
         }
     }//GEN-LAST:event_jButtonAdminActionPerformed
 
@@ -209,6 +219,28 @@ public class LoginPage extends javax.swing.JFrame {
         jPasswordField1.setText("");
         jLabel4.setText("");
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButtonCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCustomerActionPerformed
+        admin = new Admin();
+        if (main.checklogin()) {
+            jLabel4.setText("*You are already login*");
+        }
+        else {
+            String username = jTextField1.getText();
+            String password = new String(jPasswordField1.getPassword());
+
+            if (main.checkLogin(username, password)) {
+                this.setVisible(false);
+                main.setVisible(false);
+                AdminPage adpage = new AdminPage();
+                adpage.setVisible(false);
+                main.setVisible(true);
+                main.setlogintrue();
+            } else {
+                jLabel4.setText("*incorrect username or password*");
+            }
+        }
+    }//GEN-LAST:event_jButtonCustomerActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
