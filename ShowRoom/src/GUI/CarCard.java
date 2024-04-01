@@ -1,5 +1,6 @@
 package GUI;
 import Class.*;
+import javax.swing.ImageIcon;
 public class CarCard extends javax.swing.JPanel {
 
     private MainPage main;
@@ -14,6 +15,7 @@ public class CarCard extends javax.swing.JPanel {
         initComponents();
         priceTag.setText(String.valueOf(car.getPrice()));
         carName.setText(String.valueOf(car.getName()));
+        picture.setIcon(car.getImg());
     }
     public Car getCar(){
         return car;
@@ -34,8 +36,6 @@ public class CarCard extends javax.swing.JPanel {
         carName = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
-
-        picture.setText("picture");
 
         detailbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         detailbutton.setText("Detail");
