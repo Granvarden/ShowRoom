@@ -1893,6 +1893,14 @@ public class MainPage extends javax.swing.JFrame {
         return checklogin;
     }
     
+    public boolean checkAdminLogin(String username, String password) {
+        if (username.equals("Admin") && password.equals("1234")) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+}
     public boolean checkLogin(String username, String password) {
         db = new TestConnection();
         String sql = String.format("SELECT * FROM customer WHERE username = '%s' AND password = '%s'", username, password);
