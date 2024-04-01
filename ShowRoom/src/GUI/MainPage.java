@@ -166,7 +166,7 @@ public class MainPage extends javax.swing.JFrame {
         jLabel72 = new javax.swing.JLabel();
         jTextFieldplans1 = new javax.swing.JTextField();
         jLabelBookingerror1 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        BookingComfirmButton = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButtonHome = new javax.swing.JButton();
 
@@ -1353,11 +1353,11 @@ public class MainPage extends javax.swing.JFrame {
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        jButton13.setBackground(new java.awt.Color(204, 255, 204));
-        jButton13.setText("Confirm");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        BookingComfirmButton.setBackground(new java.awt.Color(204, 255, 204));
+        BookingComfirmButton.setText("Confirm");
+        BookingComfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                BookingComfirmButtonActionPerformed(evt);
             }
         });
 
@@ -1371,7 +1371,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addContainerGap(204, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BookingComfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
         jPanel17Layout.setVerticalGroup(
@@ -1380,7 +1380,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BookingComfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -1443,7 +1443,7 @@ public class MainPage extends javax.swing.JFrame {
         MainLayout.setHorizontalGroup(
             MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainLayout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 15, Short.MAX_VALUE)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainLayout.createSequentialGroup()
@@ -1551,7 +1551,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
+                .addComponent(Main, javax.swing.GroupLayout.PREFERRED_SIZE, 704, Short.MAX_VALUE))
         );
 
         pack();
@@ -1596,6 +1596,9 @@ public class MainPage extends javax.swing.JFrame {
             testdrive.setVisible(false);
             testdrive.revalidate();
             testdrive.repaint();
+            booking.setVisible(false);
+            booking.revalidate();
+            booking.repaint();
             graceful.setVisible(false);
             graceful.revalidate();
             graceful.repaint();
@@ -1732,7 +1735,7 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldplans1ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void BookingComfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingComfirmButtonActionPerformed
         if (jTextFielddate1.getText().equals("") | jTextFieldmonth1.getText().equals("") |
             jTextFieldyear1.getText().equals("") | jTextFieldbudget1.getText().equals("") | jTextFieldplans1.getText().equals("")) {
             jLabelBookingerror1.setText("*Please in complete information*");
@@ -1740,7 +1743,7 @@ public class MainPage extends javax.swing.JFrame {
             booking.setVisible(false);
             graceful.setVisible(true);
         }
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_BookingComfirmButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1814,6 +1817,7 @@ public class MainPage extends javax.swing.JFrame {
         reservation.setVisible(false);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BookingComfirmButton;
     private javax.swing.JButton CheckBtnTf;
     private javax.swing.JTextField CheckNameTf;
     private javax.swing.JTextField CheckSurnameTf;
@@ -1827,7 +1831,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel fillterbar;
     private javax.swing.JPanel graceful;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
