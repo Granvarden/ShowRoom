@@ -116,22 +116,7 @@ public class Admin {
     }
 
     
-    public String showDetailsEmployee(Employee e) {
-        String employeeName = e.getName();
-        
-        return "Employee Name: " + employeeName;
-    }
-
     
-    public String showDetailsCustomer(Customer c) {
-        String customerName = c.getName();
-        String phoneNumber = c.getPhoneNumber();
-        String email = c.getEmail();
-        
-        return "Customer Name: " + customerName + 
-               ", Phone Number: " + phoneNumber + 
-               ", Email: " + email;                
-    }
     
     public boolean checkUsernameDuplicate(String username) throws SQLException {
         db = new TestConnection();
@@ -145,10 +130,4 @@ public class Admin {
             db.disconnect();
         }
     }
-
-    
-    public void cancelBooking(Book booking) {
-        Car car_1 = booking.getCar();
-    }
-    
 }
