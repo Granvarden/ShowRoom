@@ -47,7 +47,12 @@ public class managecar extends javax.swing.JInternalFrame {
                 String wheel = rs.getString("wheel");
                 String door = rs.getString("door");
                 String capacity = rs.getString("capacity");
-                String img = rs.getString("img");
+                String img;
+                if (rs.getString("img") == null){
+                    img = "0";
+                } else {
+                    img = "1";
+                }
                 String[] row = {id, name, type, cc, price, stock, wheel, door, capacity, img};
                 model.addRow(row);
 
