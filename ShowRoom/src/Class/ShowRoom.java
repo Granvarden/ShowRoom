@@ -195,7 +195,7 @@ public class ShowRoom {
                 byte[] imgBytes = rs.getBytes("img");
                 ImageIcon imageIcon = new ImageIcon(imgBytes);
                 Image image = imageIcon.getImage();
-                Image scaledImage = image.getScaledInstance(1920, 1080, Image.SCALE_SMOOTH);
+                Image scaledImage = image.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
                 ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
                 
                 if(type.equals("Sedan")){

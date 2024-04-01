@@ -1534,7 +1534,7 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
+       
         
         for (Car car : sh.getAllCars()) {
             CarCard card = new CarCard(this, car);
