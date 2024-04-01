@@ -33,7 +33,7 @@ public class managecar extends javax.swing.JInternalFrame {
         try {
             db = new TestConnection();
             ResultSet rs = db.getConnect("select * from car");
-            String[] colname = {"id", "name", "type", "cc", "price", "stock", "wheel", "door", "capacity"};
+            String[] colname = {"id", "name", "type", "cc", "price", "stock", "wheel", "door", "capacity", "img"};
             int i = 0;
             model = new DefaultTableModel(colname, 0);
             while (rs.next()) {
@@ -47,7 +47,13 @@ public class managecar extends javax.swing.JInternalFrame {
                 String wheel = rs.getString("wheel");
                 String door = rs.getString("door");
                 String capacity = rs.getString("capacity");
-                String[] row = {id, name, type, cc, price, stock, wheel, door, capacity};
+                String img;
+                if (rs.getString("img") == null){
+                    img = "0";
+                } else {
+                    img = "1";
+                }
+                String[] row = {id, name, type, cc, price, stock, wheel, door, capacity, img};
                 model.addRow(row);
 
             }
