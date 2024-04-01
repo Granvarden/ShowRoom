@@ -1723,6 +1723,7 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonfillActionPerformed
 
+<<<<<<< HEAD
     private void jTextFielddate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFielddate1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFielddate1ActionPerformed
@@ -1745,6 +1746,8 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BookingComfirmButtonActionPerformed
 
+=======
+>>>>>>> parent of f9e93a0 (filter finish)
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1824,9 +1827,13 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton DetailNewsCarButton;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel Main;
+<<<<<<< HEAD
     private javax.swing.JButton TestDriveNewCarButton;
     private javax.swing.JPanel booking;
     private javax.swing.JPanel bookingPanel;
+=======
+    private javax.swing.JPanel bookingandtest;
+>>>>>>> parent of f9e93a0 (filter finish)
     private javax.swing.JPanel compare;
     private javax.swing.JPanel fillterbar;
     private javax.swing.JPanel graceful;
