@@ -14,8 +14,7 @@ public class CarCard extends javax.swing.JPanel {
         initComponents();
         priceTag.setText(String.valueOf(car.getPrice()));
         carName.setText(String.valueOf(car.getName()));
-        picture.setIcon(car.getImg());
-   }
+    }
     public Car getCar(){
         return car;
     }
@@ -28,15 +27,15 @@ public class CarCard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        picture = new javax.swing.JLabel();
         detailbutton = new javax.swing.JButton();
         testDriveButton = new javax.swing.JButton();
         priceTag = new javax.swing.JLabel();
         carName = new javax.swing.JLabel();
-        BookingButton = new javax.swing.JButton();
-        Carpicture = new javax.swing.JPanel();
-        picture = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
+
+        picture.setText("picture");
 
         detailbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         detailbutton.setText("Detail");
@@ -60,33 +59,6 @@ public class CarCard extends javax.swing.JPanel {
         carName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         carName.setText("carname");
 
-        BookingButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BookingButton.setText("Booking");
-        BookingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BookingButtonActionPerformed(evt);
-            }
-        });
-
-        picture.setText("picture");
-
-        javax.swing.GroupLayout CarpictureLayout = new javax.swing.GroupLayout(Carpicture);
-        Carpicture.setLayout(CarpictureLayout);
-        CarpictureLayout.setHorizontalGroup(
-            CarpictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CarpictureLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        CarpictureLayout.setVerticalGroup(
-            CarpictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CarpictureLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,33 +66,31 @@ public class CarCard extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(priceTag, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BookingButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(testDriveButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(detailbutton)
-                        .addGap(15, 15, 15))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(carName, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Carpicture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(carName, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(picture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(priceTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(testDriveButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(detailbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(carName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Carpicture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(detailbutton)
                     .addComponent(testDriveButton)
-                    .addComponent(priceTag)
-                    .addComponent(BookingButton))
+                    .addComponent(priceTag))
                 .addGap(17, 17, 17))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -130,17 +100,13 @@ public class CarCard extends javax.swing.JPanel {
     }//GEN-LAST:event_testDriveButtonActionPerformed
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
-       main.addDetail(this);       
+        
+       main.addDetail(this);
+       
     }//GEN-LAST:event_detailbuttonActionPerformed
-
-    private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
-        //main.bokingforcard();
-    }//GEN-LAST:event_BookingButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BookingButton;
-    private javax.swing.JPanel Carpicture;
     private javax.swing.JLabel carName;
     private javax.swing.JButton detailbutton;
     private javax.swing.JLabel picture;

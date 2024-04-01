@@ -9,8 +9,8 @@ import java.io.*;
 
 public class CopyFile {
     public String CopyToUploadSQL(String filePath) {
-        
-        File sourceFile = new File(filePath.replace("\\", "\\\\"));
+        filePath.replace("\\", "\\\\");
+        File sourceFile = new File(filePath);
         System.out.println((sourceFile.getAbsolutePath()).replace("\\", "\\\\"));
         File destinationFolder = new File("C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads");
 
@@ -32,10 +32,11 @@ public class CopyFile {
             }
 
             System.out.println("File copied successfully.");
+            System.out.println("xxx");
             String copiedFilePath = destinationFile.getAbsolutePath();
             System.out.println("Copied file path Before: " + copiedFilePath + " BEFORE");
-            
-            System.out.println("Copied file path After: " + copiedFilePath.replace("\\", "\\\\") + " AFTER");
+            copiedFilePath.replace("\\", "\\\\");
+            System.out.println("Copied file path After: " + copiedFilePath + " AFTER");
             
             return copiedFilePath;
         } catch (IOException e) {

@@ -1,9 +1,7 @@
 
 package Class;
-import java.awt.Image;
 import java.sql.ResultSet;
 import java.util.*;
-import javax.swing.ImageIcon;
 
 
 public class ShowRoom {
@@ -26,21 +24,14 @@ public class ShowRoom {
                 int wheel = rs.getInt("wheel");
                 int door = rs.getInt("door");
                 int capacity = rs.getInt("capacity");
-                
-                byte[] imgBytes = rs.getBytes("img");
-                ImageIcon imageIcon = new ImageIcon(imgBytes);
-                Image image = imageIcon.getImage();
-                Image scaledImage = image.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
-                ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
-                
                 if(type.equals("Sedan")){
-                    carList.add(new SedanCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SedanCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
                 else if(type.equals("SUV")){
-                    carList.add(new SUVCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SUVCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
                 else if(type.equals("Sport")){
-                    carList.add(new SportCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SportCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
             }
             
@@ -49,7 +40,8 @@ public class ShowRoom {
         }
         db.disconnect();
     }
-    public ArrayList<Car> filterCars(String type1, String name, double priceMin, double priceMax){
+    public void filterCars(String type1, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -76,11 +68,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
     
-    public ArrayList<Car> filterCars(String type1, String type2, String name, double priceMin, double priceMax){
+    public void filterCars(String type1, String type2, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -107,11 +100,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+           
         }
     }
     
-     public ArrayList<Car> filterCars(String type1, String type2, String type3, String name, double priceMin, double priceMax){
+     public void filterCars(String type1, String type2, String type3, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -138,12 +132,13 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
      
      
-     public ArrayList<Car> filterCars(String name, double priceMin, double priceMax){
+     public void filterCars(String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -170,10 +165,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
-    
+    public ArrayList<Car> getFilterdCar(){
+        return filterdCars;
+    }
     public void reload(){
         carList.removeAll(carList);
         try {
@@ -188,21 +185,14 @@ public class ShowRoom {
                 int wheel = rs.getInt("wheel");
                 int door = rs.getInt("door");
                 int capacity = rs.getInt("capacity");
-                
-                byte[] imgBytes = rs.getBytes("img");
-                ImageIcon imageIcon = new ImageIcon(imgBytes);
-                Image image = imageIcon.getImage();
-                Image scaledImage = image.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
-                ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
-                
                 if(type.equals("Sedan")){
-                    carList.add(new SedanCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SedanCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
                 else if(type.equals("SUV")){
-                    carList.add(new SUVCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SUVCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
                 else if(type.equals("Sport")){
-                    carList.add(new SportCar(name, cc, price, type, door, stock, wheel, capacity, false, scaledImageIcon));
+                    carList.add(new SportCar(name, cc, price, type, door, stock, wheel, capacity, false));
                 }
             }
             

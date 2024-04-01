@@ -3,12 +3,11 @@ package Class;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.ImageIcon;
 
 public class SportCar extends Car{
     private TestConnection db;
-    public SportCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked, ImageIcon img) {
-        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked, img);
+    public SportCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked) {
+        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked);
     }
     @Override
     public void showDetails() {
