@@ -3,20 +3,32 @@ package Class;
 import java.time.LocalDate;
 public class Customer implements Human{
     private String phoneNumber;
+    private String userName;
+    private String password;
     private int moneyBudget;
     private String email;
     private int customerNumber;
     private String name;
+    private String surname;
     private Book awd;
 
     //constructor
-    public Customer(String phoneNumber, int moneyBudget, String email, String name) {
+    public Customer(String userName, String password, String phoneNumber, int moneyBudget, String email, String name, String surname) {
+        this.userName = userName;
+        this.password = password;
         this.phoneNumber = phoneNumber;
         this.moneyBudget = moneyBudget;
         this.email = email;
         this.name = name;
+        this.surname = surname;
     }
-
+    public void setUsernmae(String userName){
+        this.userName = userName;
+    }
+    public String getUserName(){
+        return userName;
+    }
+    
     //setter
     public void setPhonenumber(String num){
         this.phoneNumber = num;
@@ -43,15 +55,13 @@ public class Customer implements Human{
     public String getName() {
         return this.name;
     }
-
-    //methods
-    public void buyCar(Car car){
-
+    public String getSurname(){
+        return surname;
     }
 
+
     public void tryCar(Car car, LocalDate tryDate){
-        System.out.println("Test driving car: " + car.getName());
-        System.out.println("Your test drive request has been successfully sent to the manager. Thank you." + "Your date at " + tryDate);
+        
     }
     
 
