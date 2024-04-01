@@ -1625,7 +1625,34 @@ public class MainPage extends javax.swing.JFrame {
                Customer customer = new Customer(jTextFieldPhoneNumber.getText(), 0, jTextFieldEmail.getText(), jTextFieldName.getText());
                Admin x = new Admin();
                x.registerCus(String.valueOf(jTextFieldUsername.getText()), String.valueOf(jTextFieldPassword.getText()), String.valueOf(jTextFieldName.getText()), String.valueOf(jTextFieldLastName.getText()), String.valueOf(jTextFieldPhoneNumber.getText()), String.valueOf(jTextFieldEmail.getText()));
-               
+               jTextFieldName.setText("");
+               jTextFieldLastName.setText("");
+               jTextFieldPhoneNumber.setText("");
+               jTextFieldUsername.setText("");
+               jTextFieldPassword.setText("");
+               jTextFieldEmail.setText("");
+               jScrollPaneHome.revalidate();
+               jScrollPaneHome.repaint();
+                Home.setVisible(true);
+                compare.setVisible(false);
+                compare.revalidate();
+                compare.repaint();
+                booking.setVisible(false);
+                booking.revalidate();
+                booking.repaint();
+                testdrive.setVisible(false);
+                testdrive.revalidate();
+                testdrive.repaint();
+                graceful.setVisible(false);
+                graceful.revalidate();
+                graceful.repaint();
+                reservation.setVisible(false);
+                reservation.revalidate();
+                reservation.repaint();
+                registration.setVisible(false);
+                registration.revalidate();
+                registration.repaint();
+                jDesktopPane2.removeAll();
            } catch (NumberFormatException ex) {
                jLabelError.setText("Please Enter Number Only!!!");
            }

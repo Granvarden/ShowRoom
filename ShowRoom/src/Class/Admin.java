@@ -11,7 +11,7 @@ public class Admin {
     }
     public void registerCus(String username, String password, String name, String surname, String phone, String email){
         db = new TestConnection();
-        String sql = String.format("insert into customer (username, password, name, surname, phone, email) values (%s, %s, %s, %s, %s, %s)", username, password, name, surname, phone, email);
+        String sql = String.format("insert into customer (name, surname, phone, email, budget, em_id, car_book, date, username, password) values ('%s', '%s', '%s', '%s', null, null, null, null, '%s', '%s')", name, surname, phone, email, username, password);
         db.getUpdate(sql);
     }
     public String checkReserve(String name, String surname){
@@ -38,7 +38,7 @@ public class Admin {
     }
     public void addPic(String picPath, String car_name){
         db = new TestConnection();
-        String sql = String.format("update car set img = load_file('%s') where name = '%s'", picPath, car_name);
+        String sql = String.format("update car set img = load_file('%s') where name = '%s'", picPath.replace("\\", "\\\\"), car_name);
         System.out.println(sql);
         db.getUpdate(sql);
         //String sql = String.format(pic, picPath);
