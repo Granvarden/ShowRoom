@@ -9,6 +9,18 @@ public class Admin {
     public String getUsername(){
         return username;
     }
+    public void cancelReserveBooking(String name, String surname){
+        db = new TestConnection();
+        String sql = String.format("update customer set car_book = null, date = null where name = '%s' and surname = '%s'", name, surname);
+        db.getUpdate(sql);
+        this.checkReserve(name, surname);
+    }
+    public void cancelReserveTestDrive(String name, String surname){
+        db = new TestConnection();
+        String sql = String.format("update customer set date = null where name = '%s' and surname = '%s'", name, surname);
+        db.getUpdate(sql);
+        this.checkReserve(name, surname);
+    }
     public void registerCus(String username, String password, String name, String surname, String phone, String email){
         db = new TestConnection();
         String sql = String.format("insert into customer (name, surname, phone, email, budget, em_id, car_book, date, username, password) values ('%s', '%s', '%s', '%s', null, null, null, null, '%s', '%s')", name, surname, phone, email, username, password);
