@@ -819,6 +819,11 @@ public class MainPage extends javax.swing.JFrame {
         CheckSurnameTf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jButton7.setText("Cancel booking");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         CheckBtnTf.setText("Check");
         CheckBtnTf.addActionListener(new java.awt.event.ActionListener() {
@@ -892,6 +897,11 @@ public class MainPage extends javax.swing.JFrame {
         );
 
         jButton1.setText("Cancel test drive");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -934,10 +944,11 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(CheckNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CheckSurnameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CheckBtnTf, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CheckBtnTf, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(157, Short.MAX_VALUE))
@@ -1698,7 +1709,13 @@ public class MainPage extends javax.swing.JFrame {
 
     private void CheckBtnTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBtnTfActionPerformed
         Admin x = new Admin();
-        x.checkReserve(String.valueOf(CheckNameTf.getText()), String.valueOf(CheckSurnameTf.getText()));
+        String y[] = x.checkReserve(String.valueOf(CheckNameTf.getText()), String.valueOf(CheckSurnameTf.getText()));
+        jLabelnamereser.setText("Name: " + y[0]);
+        jLabelsurnamereser.setText("Surname: " + y[1]);
+        jLabelcarreser.setText("Car: " + y[2]);
+        jLabeldatereser.setText("Date: " + y[3]);
+        jLabelbudgetreser.setText("Budget: " + y[4]);
+        jLabelplanreser.setText("Plan: " + y[5]);
     }//GEN-LAST:event_CheckBtnTfActionPerformed
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
@@ -1804,6 +1821,19 @@ public class MainPage extends javax.swing.JFrame {
     private void planComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planComboBoxActionPerformed
         
     }//GEN-LAST:event_planComboBoxActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        Admin x = new Admin();
+        x.cancelReserveBooking(CheckNameTf.getText(), CheckSurnameTf.getText());
+        jLabelcarreser.setText("Car: null");
+        jLabeldatereser.setText("Date: null");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Admin x = new Admin();
+        x.cancelReserveTestDrive(CheckNameTf.getText(), CheckSurnameTf.getText());
+        jLabeldatereser.setText("Date: null");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
