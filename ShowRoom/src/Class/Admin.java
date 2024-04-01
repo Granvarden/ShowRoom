@@ -11,7 +11,7 @@ public class Admin {
     }
     public void registerCus(String username, String password, String name, String surname, String phone, String email){
         db = new TestConnection();
-        String sql = String.format("insert into customer (username, password, name, surname, phone, email) values (%s, %s, %s, %s, %s, %s)");
+        String sql = String.format("insert into customer (username, password, name, surname, phone, email) values (%s, %s, %s, %s, %s, %s)", username, password, name, surname, phone, email);
         db.getUpdate(sql);
     }
     public String checkReserve(String name, String surname){
