@@ -40,7 +40,8 @@ public class ShowRoom {
         }
         db.disconnect();
     }
-    public ArrayList<Car> filterCars(String type1, String name, double priceMin, double priceMax){
+    public void filterCars(String type1, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -67,11 +68,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
     
-    public ArrayList<Car> filterCars(String type1, String type2, String name, double priceMin, double priceMax){
+    public void filterCars(String type1, String type2, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -98,11 +100,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+           
         }
     }
     
-     public ArrayList<Car> filterCars(String type1, String type2, String type3, String name, double priceMin, double priceMax){
+     public void filterCars(String type1, String type2, String type3, String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -129,12 +132,13 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
      
      
-     public ArrayList<Car> filterCars(String name, double priceMin, double priceMax){
+     public void filterCars(String name, double priceMin, double priceMax){
+        filterdCars.removeAll(filterdCars);
         try{
             db = new TestConnection();
             ResultSet rs;
@@ -161,10 +165,12 @@ public class ShowRoom {
             e.printStackTrace();
         }finally{
             db.disconnect();
-            return filterdCars;
+            
         }
     }
-    
+    public ArrayList<Car> getFilterdCar(){
+        return filterdCars;
+    }
     public void reload(){
         carList.removeAll(carList);
         try {

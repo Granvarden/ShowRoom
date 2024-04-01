@@ -7,6 +7,7 @@ import javax.swing.UIManager;
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
     private ShowRoom sh;
+    private ArrayList<CarCard> carCardList;
     //test
     /**
      * Creates new form MainPage
@@ -14,6 +15,7 @@ public class MainPage extends javax.swing.JFrame {
     public MainPage() {
         initComponents();
         sh = new ShowRoom();
+        carCardList = new ArrayList<CarCard>();
         Home.setVisible(true);
         compare.setVisible(false);
         bookingandtest.setVisible(false);
@@ -98,11 +100,11 @@ public class MainPage extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         fillterbar = new javax.swing.JPanel();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        SUVBox = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        SportBox = new javax.swing.JCheckBox();
+        SedanBox = new javax.swing.JCheckBox();
         jLabel32 = new javax.swing.JLabel();
         jTextFieldmin = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
@@ -726,9 +728,9 @@ public class MainPage extends javax.swing.JFrame {
 
         fillterbar.setBackground(new java.awt.Color(255, 255, 255));
 
-        jCheckBox6.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jCheckBox6.setText("SUV");
+        SUVBox.setBackground(new java.awt.Color(255, 255, 255));
+        SUVBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SUVBox.setText("SUV");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Fillter");
@@ -736,13 +738,18 @@ public class MainPage extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel31.setText("Type");
 
-        jCheckBox7.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jCheckBox7.setText("Sport");
+        SportBox.setBackground(new java.awt.Color(255, 255, 255));
+        SportBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SportBox.setText("Sport");
 
-        jCheckBox8.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jCheckBox8.setText("Sedan");
+        SedanBox.setBackground(new java.awt.Color(255, 255, 255));
+        SedanBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SedanBox.setText("Sedan");
+        SedanBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SedanBoxActionPerformed(evt);
+            }
+        });
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel32.setText("Price");
@@ -804,9 +811,9 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(jTextFieldmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SedanBox, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SportBox, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SUVBox, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(fillterbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
@@ -831,11 +838,11 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(SUVBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox8)
+                .addComponent(SedanBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7)
+                .addComponent(SportBox)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1314,14 +1321,12 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
         
         for (Car car : sh.getAllCars()) {
+            CarCard card = new CarCard(this, car);
             jPanel5.add(new CarCard(this, car));
-        }
-        
-        for (Car car : sh.getAllCars()) {
-            jPanel7.add(new CarCard(this, car));
+            jPanel7.add(card);
+            carCardList.add(card);
         }
         
     }//GEN-LAST:event_formWindowOpened
@@ -1484,11 +1489,61 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBtnTfActionPerformed
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
+       
         if (Double.parseDouble(jTextFieldmin.getText()) <=  0) {
             jLabelnumerror.setText("Please enter a number");
             jLabelnumerror2.setText("greater than zero.");
         }
+        else{
+            String Carname = jTextFieldmin1.getText();
+            double minP = Double.valueOf(jTextFieldmin.getText());
+            double maxP = Double.valueOf(jTextFieldmax.getText());
+            if(SedanBox.isSelected() & SUVBox.isSelected() & SportBox.isSelected()){
+                sh.filterCars("Sedan", "SUV", "Sport", Carname, minP, maxP);
+            }
+            else if(SedanBox.isSelected() & SUVBox.isSelected()){
+                sh.filterCars("Sedan", "SUV", Carname, minP, maxP);
+            }
+            else if(SUVBox.isSelected() & SportBox.isSelected()){
+                sh.filterCars("Sport", "SUV", Carname,minP, maxP);
+            }
+            else if(SedanBox.isSelected() & SportBox.isSelected()){
+                sh.filterCars("Sedan", "Sport", Carname,minP, maxP);
+            }
+            else if(SedanBox.isSelected()){
+                sh.filterCars("Sedan", Carname,minP, maxP);
+            }
+            else if(SUVBox.isSelected()){
+                sh.filterCars("SUV", Carname,minP, maxP);
+            }
+            else if(SportBox.isSelected()){
+                sh.filterCars("Sport", Carname,minP, maxP);
+            }
+            else{
+                sh.filterCars(Carname, minP, maxP);
+            }
+            
+            jPanel7.removeAll();
+            for(CarCard carCard : carCardList){
+                for(Car car : sh.getFilterdCar()){
+                    if(car.getName().equals(carCard.getCar().getName())){
+                        jPanel7.add(carCard);
+                       
+                        
+                    }
+                }
+            }
+            jPanel7.revalidate();
+            jPanel7.repaint();
+        }
+        
+        
+        
     }//GEN-LAST:event_jButtonfillActionPerformed
+
+    private void SedanBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SedanBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SedanBoxActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1561,6 +1616,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField CheckSurnameTf;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel Main;
+    private javax.swing.JCheckBox SUVBox;
+    private javax.swing.JCheckBox SedanBox;
+    private javax.swing.JCheckBox SportBox;
     private javax.swing.JPanel bookingandtest;
     private javax.swing.JPanel compare;
     private javax.swing.JPanel fillterbar;
@@ -1577,9 +1635,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSummit;
     private javax.swing.JButton jButtonfill;
     private javax.swing.JButton jButtonhaveacc;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
