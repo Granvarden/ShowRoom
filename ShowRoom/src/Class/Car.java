@@ -1,10 +1,13 @@
 package Class;
+import java.sql.*;
+import javax.swing.ImageIcon;
 
 public abstract class Car extends Vehicle{
     private String type;
     private int Stock, Wheel, Capacity, Door;
     private boolean booked;
-    protected Car(String name, int cc, double price, String type, int Door, int Stock, int Wheel, int Capacity, boolean booked){
+    private ImageIcon img;
+    protected Car(String name, int cc, double price, String type, int Door, int Stock, int Wheel, int Capacity, boolean booked, ImageIcon img){
         super(name, cc, price);
         this.Door = Door;
         this.Stock = Stock;
@@ -12,6 +15,7 @@ public abstract class Car extends Vehicle{
         this.Capacity = Capacity;
         this.type = type;
         this.booked = booked;
+        this.img = img;
     }
     public int getDoor(){
         return Door;
@@ -42,6 +46,9 @@ public abstract class Car extends Vehicle{
     }
     public String getType(){
         return type;
+    }
+    public ImageIcon getImg(){
+        return img;
     }
     public void book(){
         this.booked = true;
