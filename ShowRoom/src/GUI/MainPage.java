@@ -1683,6 +1683,7 @@ public class MainPage extends javax.swing.JFrame {
             booking.setVisible(false);
             testdrive.setVisible(false);
             Home.setVisible(false);
+            graceful.setVisible(false);
             CheckNameTf.setText(cus.getName());
             CheckSurnameTf.setText(cus.getSurname());
             jLabelnamereser.setText("Name : " + cus.getName());
