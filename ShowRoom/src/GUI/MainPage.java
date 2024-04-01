@@ -1348,8 +1348,11 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBtnTfActionPerformed
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
-       
-        if (Double.parseDouble(jTextFieldmin.getText()) <=  0) {
+        
+        if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
+            jLabelnumerror.setText("Please don't let the blank");
+        }
+        else if (Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0) {
             jLabelnumerror.setText("Please enter a number");
             jLabelnumerror2.setText("greater than zero.");
         }
