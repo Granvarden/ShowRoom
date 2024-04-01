@@ -83,8 +83,10 @@ public class MainPage extends javax.swing.JFrame {
         jLabel83 = new javax.swing.JLabel();
         jTextFieldbudget1 = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
-        jTextFieldplans1 = new javax.swing.JTextField();
         jLabelBookingerror1 = new javax.swing.JLabel();
+        planComboBox = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         BookingConfirm = new javax.swing.JButton();
         compare = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -419,7 +421,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -467,15 +469,20 @@ public class MainPage extends javax.swing.JFrame {
         jLabel84.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel84.setText("plans");
 
-        jTextFieldplans1.setBackground(new java.awt.Color(242, 242, 242));
-        jTextFieldplans1.addActionListener(new java.awt.event.ActionListener() {
+        jLabelBookingerror1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelBookingerror1.setForeground(new java.awt.Color(255, 0, 0));
+
+        planComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Please Select Your Plan", "Plan A", "Plan B" }));
+        planComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldplansActionPerformed(evt);
+                planComboBoxActionPerformed(evt);
             }
         });
 
-        jLabelBookingerror1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelBookingerror1.setForeground(new java.awt.Color(255, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Plan A is a short-term installment plan with an interest rate of 0.07% per year, \nrequiring repayment over a period of 3 years or 36 installments or less.\n\nPlan B is a long-term installment plan with an interest rate of 0.045% per year,\nrequiring repayment over a minimum period of 5 years or 60 installments and beyond.");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -484,36 +491,35 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBookingerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel77)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel23Layout.createSequentialGroup()
-                                .addComponent(jLabel83)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldbudget1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel84)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldplans1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel82)
-                            .addGroup(jPanel23Layout.createSequentialGroup()
-                                .addComponent(jLabel79)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFielddate1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel80)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldmonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel81)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel78))
-                        .addGap(0, 109, Short.MAX_VALUE))
+                        .addComponent(jLabel83)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldbudget1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel84)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(planComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel82)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelBookingerror1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel77, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel79)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFielddate1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel80)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldmonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel81)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel78))
+                .addGap(48, 48, 48))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -539,8 +545,10 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jLabel83)
                     .addComponent(jTextFieldbudget1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel84)
-                    .addComponent(jTextFieldplans1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                    .addComponent(planComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         BookingConfirm.setBackground(new java.awt.Color(204, 255, 204));
@@ -555,21 +563,21 @@ public class MainPage extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BookingConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BookingConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
@@ -580,9 +588,9 @@ public class MainPage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,8 +604,7 @@ public class MainPage extends javax.swing.JFrame {
             bookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookingLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bookingLayout.setVerticalGroup(
             bookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -789,17 +796,17 @@ public class MainPage extends javax.swing.JFrame {
         graceful.setLayout(gracefulLayout);
         gracefulLayout.setHorizontalGroup(
             gracefulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gracefulLayout.createSequentialGroup()
-                .addGap(447, 447, 447)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(627, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gracefulLayout.createSequentialGroup()
+                .addGap(552, 552, 552)
+                .addComponent(jLabel8)
+                .addGap(552, 552, 552))
         );
         gracefulLayout.setVerticalGroup(
             gracefulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gracefulLayout.createSequentialGroup()
-                .addContainerGap(391, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(260, 260, 260))
+            .addGroup(gracefulLayout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(jLabel8)
+                .addGap(348, 348, 348))
         );
 
         jPanel11.setBackground(new java.awt.Color(204, 204, 204));
@@ -1579,6 +1586,8 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         reservation.setVisible(true);
+        booking.setVisible(false);
+        testdrive.setVisible(false);
         Home.setVisible(false); 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1757,10 +1766,6 @@ public class MainPage extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_TestDriveConfirmActionPerformed
 
-    private void jTextFieldplansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldplansActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldplansActionPerformed
-
     private void jTextFieldbudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbudgetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldbudgetActionPerformed
@@ -1775,13 +1780,21 @@ public class MainPage extends javax.swing.JFrame {
 
     private void BookingConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingConfirmActionPerformed
         if (jTextFielddate1.getText().equals("") | jTextFieldmonth1.getText().equals("") |
-            jTextFieldyear1.getText().equals("") | jTextFieldbudget1.getText().equals("") | jTextFieldplans1.getText().equals("")) {
+            jTextFieldyear1.getText().equals("") | jTextFieldbudget1.getText().equals("") | planComboBox.getSelectedIndex() == 0) {
             jLabelBookingerror1.setText("*Please in complete information*");
-        }else{
+        }
+//        else if (!jTextFielddate1.getText().equals("") || !jTextFieldmonth1.getText().equals("") ||
+//            !jTextFieldyear1.getText().equals("") || !jTextFieldbudget1.getText().equals("") || planComboBox.getSelectedIndex() == 0){
+//        }
+        else {
             booking.setVisible(false);
             graceful.setVisible(true);
         }
     }//GEN-LAST:event_BookingConfirmActionPerformed
+
+    private void planComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planComboBoxActionPerformed
+        
+    }//GEN-LAST:event_planComboBoxActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2018,9 +2031,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPaneHome;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldLastName;
     private javax.swing.JTextField jTextFieldName;
@@ -2033,8 +2048,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldmin;
     private javax.swing.JTextField jTextFieldmin1;
     private javax.swing.JTextField jTextFieldmonth1;
-    private javax.swing.JTextField jTextFieldplans1;
     private javax.swing.JTextField jTextFieldyear1;
+    private javax.swing.JComboBox<String> planComboBox;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel priceLabel1;
     private javax.swing.JLabel priceLabel3;
