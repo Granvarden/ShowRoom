@@ -51,15 +51,11 @@ public class ShowRoom {
         try{
             db = new TestConnection();
             ResultSet rs;
-            if(priceMax == 0){
-                Car maxPriceCar = Collections.max(carList, Comparator.comparingDouble(Car::getPrice));
-                priceMax = maxPriceCar.getPrice();
-            }
             if(name.equals("")){
                 rs = db.getConnect(String.format("select * from car where type = '%s'", type1));
             }
             else{
-                rs = db.getConnect(String.format("select * from car where type = '%s' and name = '%s'", type1, name));
+                rs = db.getConnect(String.format("select * from car where name = '%s'", name));
             }
             while (rs.next()){
                 String Carname = rs.getString("name");
@@ -83,15 +79,11 @@ public class ShowRoom {
         try{
             db = new TestConnection();
             ResultSet rs;
-            if(priceMax == 0){
-                Car maxPriceCar = Collections.max(carList, Comparator.comparingDouble(Car::getPrice));
-                priceMax = maxPriceCar.getPrice();
-            }
             if(name.equals("")){
-                rs = db.getConnect(String.format("select * from car where type = '%s' and type = '%s'", type1, type2));
+                rs = db.getConnect(String.format("select * from car where type = '%s' or type = '%s'", type1, type2));
             }
             else{
-                rs = db.getConnect(String.format("select * from car where type = '%s' and type = '%s' and name = '%s'", type1, type2, name));
+                rs = db.getConnect(String.format("select * from car where name = '%s'", name));
             }
             while (rs.next()){
                 String Carname = rs.getString("name");
@@ -115,15 +107,11 @@ public class ShowRoom {
         try{
             db = new TestConnection();
             ResultSet rs;
-            if(priceMax == 0){
-                Car maxPriceCar = Collections.max(carList, Comparator.comparingDouble(Car::getPrice));
-                priceMax = maxPriceCar.getPrice();
-            }
             if(name.equals("")){
-                rs = db.getConnect(String.format("select * from car where type = '%s' and type = '%s' and type = '%s'", type1, type2, type3));
+                rs = db.getConnect(String.format("select * from car where type = '%s' or type = '%s' or type = '%s'", type1, type2, type3));
             }
             else{
-                rs = db.getConnect(String.format("select * from car where type = '%s' and type = '%s' and type = '%s' and name = '%s'", type1, type2, type3, name));
+                rs = db.getConnect(String.format("select * from car where name = '%s'", name));
             }
             while (rs.next()){
                 String Carname = rs.getString("name");
@@ -148,10 +136,6 @@ public class ShowRoom {
         try{
             db = new TestConnection();
             ResultSet rs;
-            if(priceMax == 0){
-                Car maxPriceCar = Collections.max(carList, Comparator.comparingDouble(Car::getPrice));
-                priceMax = maxPriceCar.getPrice();
-            }
             if(name.equals("")){
                 rs = db.getConnect(String.format("select * from car"));
             }
