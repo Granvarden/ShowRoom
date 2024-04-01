@@ -1723,29 +1723,6 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonfillActionPerformed
 
-    private void jTextFielddate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFielddate1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFielddate1ActionPerformed
-
-    private void jTextFieldbudget1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbudget1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldbudget1ActionPerformed
-
-    private void jTextFieldplans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldplans1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldplans1ActionPerformed
-
-    private void BookingComfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingComfirmButtonActionPerformed
-        if (jTextFielddate1.getText().equals("") | jTextFieldmonth1.getText().equals("") |
-            jTextFieldyear1.getText().equals("") | jTextFieldbudget1.getText().equals("") | jTextFieldplans1.getText().equals("")) {
-            jLabelBookingerror1.setText("*Please in complete information*");
-        }else{
-            booking.setVisible(false);
-            graceful.setVisible(true);
-        }
-    }//GEN-LAST:event_BookingComfirmButtonActionPerformed
-
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1825,10 +1802,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton DetailNewsCarButton;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel Main;
-
-    private javax.swing.JButton TestDriveNewCarButton;
-    private javax.swing.JPanel booking;
-    private javax.swing.JPanel bookingPanel;
     private javax.swing.JPanel bookingandtest;
     private javax.swing.JPanel compare;
     private javax.swing.JPanel fillterbar;
