@@ -1,10 +1,11 @@
 package Class;
 
 import java.sql.*;
+import javax.swing.ImageIcon;
 public class SedanCar extends Car{
     private TestConnection db;
-    public SedanCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked) {
-        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked);
+    public SedanCar(String name, int cc, double price, String type, int door, int Stock, int Wheel, int Capacity, boolean booked, ImageIcon img) {
+        super(name, cc, price, type, door, Stock, Wheel, Capacity, booked, img);
     }
     @Override
     public void showDetails() {
