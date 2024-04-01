@@ -1,3 +1,4 @@
+package Class;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +8,7 @@ import java.io.IOException;
 import java.io.*;
 
 public class CopyFile {
-    public void CopyToUploadSQL(String filePath) {
+    public String CopyToUploadSQL(String filePath) {
         filePath.replace("\\", "\\\\");
         File sourceFile = new File(filePath);
         System.out.println((sourceFile.getAbsolutePath()).replace("\\", "\\\\"));
@@ -31,10 +32,21 @@ public class CopyFile {
             }
 
             System.out.println("File copied successfully.");
-
+            System.out.println("xxx");
+            String copiedFilePath = destinationFile.getAbsolutePath();
+            System.out.println("Copied file path Before: " + copiedFilePath + " BEFORE");
+            copiedFilePath.replace("\\", "\\\\");
+            System.out.println("Copied file path After: " + copiedFilePath + " AFTER");
+            
+            return copiedFilePath;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+    public static void main(String[] args) {
+        CopyFile x = new CopyFile();
+        x.CopyToUploadSQL("C:\\Users\\Kacha\\Downloads\\71GH3aYEljL._AC_SL1500_.jpg");
     }
 }
 

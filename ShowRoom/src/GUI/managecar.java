@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import Class.TestConnection;
 import Class.Admin;
-import Class.*;
+import Class.CopyFile;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -464,11 +464,13 @@ public class managecar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextFieldNameDeleteActionPerformed
 
     private void AddpictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddpictureActionPerformed
+        Admin x = new Admin();
         JFileChooser fc = new JFileChooser();
         CopyFile cc = new CopyFile();
         fc.showOpenDialog(this);
         File f = fc.getSelectedFile();
-        f.getAbsolutePath();
+        x.addPic( cc.CopyToUploadSQL(f.getAbsolutePath()), String.valueOf(jTextFieldNameAddPic.getText()));
+        System.out.println(cc.CopyToUploadSQL(f.getAbsolutePath()));
     }//GEN-LAST:event_AddpictureActionPerformed
 
     private void jButtonConfirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDeleteActionPerformed
