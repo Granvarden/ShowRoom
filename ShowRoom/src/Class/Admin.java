@@ -14,23 +14,29 @@ public class Admin {
         String sql = String.format("insert into customer (name, surname, phone, email, budget, em_id, car_book, date, username, password) values ('%s', '%s', '%s', '%s', null, null, null, null, '%s', '%s')", name, surname, phone, email, username, password);
         db.getUpdate(sql);
     }
-    public String checkReserve(String name, String surname){
+    public String[] checkReserve(String name, String surname){
         db = new TestConnection();
-        String car = "X";
+        String[] reserveString = {"", "", "", "", "", ""};
         try
         {
-            ResultSet rs = db.getConnect(String.format("select car_book from customer where name = '%s' and surname = '%s'", name, surname));
+            ResultSet rs = db.getConnect(String.format("select * from customer where name = '%s' and surname = '%s'", name, surname));
             while(rs.next())
             {
-                car = rs.getString("car_book");
-                return car;
+                reserveString[0] = rs.getString("name");
+                reserveString[1] = rs.getString("surname");
+                reserveString[2] = rs.getString("car_book");
+                //String price = rs.getString("price");
+                reserveString[3] = rs.getString("date");
+                reserveString[4] = rs.getString("budget");
+                reserveString[5] = rs.getString("plan");
+                return reserveString;
             }
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
-        return car;
+        return null;
     }
     
     public String getPassword(){
