@@ -1868,9 +1868,13 @@ public class MainPage extends javax.swing.JFrame {
                         selectedCar = car;
                     }
                 }
-                LocalDate specificDate = LocalDate.parse(testdriveYear.getText() + "-" + testdriveMonth.getText() + "-" + testdriveDate.getText());
+                String tempDate = testdriveYear.getText() + "-" + testdriveMonth.getText() + "-" + testdriveDate.getText();
+                LocalDate specificDate = LocalDate.parse(tempDate);
                 cus.setBudget(0);
                 booked = cus.Booking(selectedCar, cus, specificDate, "You have selected test drive");
+                db = new TestConnection();
+                String sql = String.format("update customer set date = '%s' where name = '%s' and surname = '%s'", tempDate, cus.getName(), cus.getSurname());
+                db.getUpdate(sql);
             }
     }//GEN-LAST:event_TestDriveConfirmActionPerformed
 
@@ -1901,9 +1905,15 @@ public class MainPage extends javax.swing.JFrame {
                     selectedCar = car;
                 }
             }
-            LocalDate specificDate = LocalDate.parse(jTextFieldyear1.getText() + "-" + jTextFieldmonth1.getText() + "-" + jTextFielddate1.getText());
-            cus.setBudget(Double.parseDouble(jTextFieldbudget1.getText()));
-            booked = cus.Booking(selectedCar, cus, specificDate, String.valueOf(planComboBox.getSelectedItem()));
+            String tempDate = (jTextFieldyear1.getText() + "-" + jTextFieldmonth1.getText() + "-" + jTextFielddate1.getText());
+            LocalDate specificDate = LocalDate.parse(tempDate);
+            String budgetTemp = jTextFieldbudget1.getText();
+            cus.setBudget(Double.parseDouble(budgetTemp));
+            String tempPlan = String.valueOf(planComboBox.getSelectedItem());
+            booked = cus.Booking(selectedCar, cus, specificDate, tempPlan);
+            db = new TestConnection();
+            String sql = String.format("update customer set date = '%s', budget = '%s', plan = '%s' where name = '%s' and surname = '%s'" , tempDate, budgetTemp, tempPlan, cus.getName(), cus.getSurname());
+            db.getUpdate(sql);
         }
     }//GEN-LAST:event_BookingConfirmActionPerformed
     public void confirmBooking(){
