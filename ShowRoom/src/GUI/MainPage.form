@@ -687,29 +687,23 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldbudget1" min="-2" pref="128" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="termjTextField" min="-2" pref="102" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="planComboBox" min="-2" pref="168" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="reccommendDescription" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="reccommendDescription3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="reccommendDescription2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="reccommendDescription4" alignment="0" pref="224" max="32767" attributes="0"/>
                                       </Group>
+                                      <Component id="jLabelBookingerror1" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
+                                      <Component id="jLabel77" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextArea1" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="reccommendDescription" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="reccommendDescription3" alignment="0" pref="224" max="32767" attributes="0"/>
-                                                  <Component id="reccommendDescription2" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabelBookingerror1" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
-                                              <Component id="jLabel77" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
@@ -725,15 +719,24 @@
                                                   <Component id="jTextFieldyear1" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldbudget1" min="-2" pref="128" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="termjTextField" min="-2" pref="102" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                                  <Component id="planComboBox" min="-2" pref="168" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextArea1" min="-2" pref="489" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -772,9 +775,11 @@
                                   <Component id="reccommendDescription2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="reccommendDescription3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="reccommendDescription4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="39" max="32767" attributes="0"/>
                                   <Component id="jTextArea1" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -914,6 +919,9 @@
                         <Component class="javax.swing.JTextArea" name="jTextArea1">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="66" red="66" type="rgb"/>
+                            </Property>
                             <Property name="rows" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="Plan A is a short-term installment plan with an interest rate of 0.07% per year, &#xa;requiring repayment over a period of 3 years or 36 installments or less.&#xa;&#xa;Plan B is a long-term installment plan with an interest rate of 0.045% per year,&#xa;requiring repayment over a minimum period of 5 years or 60 installments and beyond."/>
                           </Properties>
@@ -936,6 +944,8 @@
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="termjTextFieldMouseExited"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="termjTextFieldjTextFieldbudgetActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="reccommendDescription4">
                         </Component>
                       </SubComponents>
                     </Container>
