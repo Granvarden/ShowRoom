@@ -9,6 +9,11 @@ public class Admin {
     public String getUsername(){
         return username;
     }
+    public void registerCus(String username, String password, String name, String surname, String phone, String email){
+        db = new TestConnection();
+        String sql = String.format("insert into customer (username, password, name, surname, phone, email) values (%s, %s, %s, %s, %s, %s)");
+        db.getUpdate(sql);
+    }
     public String checkReserve(String name, String surname){
         db = new TestConnection();
         String car = "X";

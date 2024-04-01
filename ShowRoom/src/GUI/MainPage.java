@@ -1622,6 +1622,8 @@ public class MainPage extends javax.swing.JFrame {
                jLabelError.setText("");
 
                Customer customer = new Customer(jTextFieldPhoneNumber.getText(), 0, jTextFieldEmail.getText(), jTextFieldName.getText());
+               Admin x = new Admin();
+               x.registerCus(String.valueOf(jTextFieldUsername.getText()), String.valueOf(jTextFieldPassword.getText()), String.valueOf(jTextFieldName1.getText()), String.valueOf(jTextFieldLastName.getText()), String.valueOf(jTextFieldPhoneNumber.getText()), String.valueOf(jTextFieldEmail1.getText()));
                
            } catch (NumberFormatException ex) {
                jLabelError.setText("Please Enter Number Only!!!");
