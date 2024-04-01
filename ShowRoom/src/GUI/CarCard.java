@@ -13,7 +13,7 @@ public class CarCard extends javax.swing.JPanel {
         this.main = main;
         this.car = car;
         initComponents();
-        priceTag.setText(String.valueOf(car.getPrice()));
+        priceTag.setText(String.valueOf(car.getPrice())+ " ฿");
         carName.setText(String.valueOf(car.getName()));
         picture.setIcon(car.getImg());
     }

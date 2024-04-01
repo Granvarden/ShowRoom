@@ -19,7 +19,7 @@ public class DetailCar extends javax.swing.JInternalFrame {
         ccLabel.setText(String.valueOf(car.getCC()));
         doorLabel.setText(String.valueOf(car.getDoor()));
         wheelLabel.setText(String.valueOf(car.getWheel()));
-        priceLabel.setText(String.valueOf(car.getPrice()));
+        priceLabel.setText(String.valueOf(car.getPrice()) + " ฿");
         picture.setIcon(car.getImg());
     }
 
