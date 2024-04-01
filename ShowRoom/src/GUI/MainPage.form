@@ -1162,10 +1162,9 @@
                               <Component id="jLabel32" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButtonfill" min="-2" max="-2" attributes="0"/>
                                       <Component id="jTextFieldmin1" min="-2" pref="143" max="-2" attributes="0"/>
                                       <Component id="jLabel40" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldmax" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
                                       <Component id="jLabel39" min="-2" pref="69" max="-2" attributes="0"/>
                                       <Component id="jCheckBox8" min="-2" pref="159" max="-2" attributes="0"/>
                                       <Component id="jCheckBox7" min="-2" pref="159" max="-2" attributes="0"/>
@@ -1176,6 +1175,11 @@
                                       </Group>
                                       <Component id="jTextFieldmin" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
                                       <Component id="jLabel41" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jLabelnumerror" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldmax" alignment="0" pref="143" max="32767" attributes="0"/>
+                                          <Component id="jLabelnumerror2" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
                               </Group>
@@ -1211,9 +1215,13 @@
                           <Component id="jLabel40" min="-2" pref="23" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jTextFieldmax" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="jLabelnumerror" min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                          <Component id="jLabelnumerror2" min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButtonfill" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1330,9 +1338,32 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldmin1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="jButtonfill">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Fill"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonfillActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabelnumerror">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabelnumerror2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="ff" type="rgb"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>

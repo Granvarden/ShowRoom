@@ -110,7 +110,9 @@ public class MainPage extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jTextFieldmin1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jButtonfill = new javax.swing.JButton();
+        jLabelnumerror = new javax.swing.JLabel();
+        jLabelnumerror2 = new javax.swing.JLabel();
         graceful = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         reservation = new javax.swing.JPanel();
@@ -775,7 +777,18 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Fill");
+        jButtonfill.setText("Fill");
+        jButtonfill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonfillActionPerformed(evt);
+            }
+        });
+
+        jLabelnumerror.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelnumerror.setForeground(new java.awt.Color(255, 51, 51));
+
+        jLabelnumerror2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelnumerror2.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout fillterbarLayout = new javax.swing.GroupLayout(fillterbar);
         fillterbar.setLayout(fillterbarLayout);
@@ -787,10 +800,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(fillterbarLayout.createSequentialGroup()
                         .addGroup(fillterbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
+                            .addComponent(jButtonfill)
                             .addComponent(jTextFieldmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldmax, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -799,7 +811,11 @@ public class MainPage extends javax.swing.JFrame {
                                 .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
                             .addComponent(jTextFieldmin, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(fillterbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabelnumerror, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldmax, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                                .addComponent(jLabelnumerror2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 21, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -830,9 +846,13 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldmax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addComponent(jLabelnumerror, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabelnumerror2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonfill)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout compareLayout = new javax.swing.GroupLayout(compare);
@@ -1463,6 +1483,13 @@ public class MainPage extends javax.swing.JFrame {
         x.checkReserve(String.valueOf(CheckNameTf.getText()), String.valueOf(CheckSurnameTf.getText()));
     }//GEN-LAST:event_CheckBtnTfActionPerformed
 
+    private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
+        if (Double.parseDouble(jTextFieldmin.getText()) <=  0) {
+            jLabelnumerror.setText("Please enter a number");
+            jLabelnumerror2.setText("greater than zero.");
+        }
+    }//GEN-LAST:event_jButtonfillActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1540,7 +1567,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel graceful;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -1549,6 +1575,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonHome;
     private javax.swing.JButton jButtonSummit;
+    private javax.swing.JButton jButtonfill;
     private javax.swing.JButton jButtonhaveacc;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
@@ -1606,6 +1633,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelerror;
+    private javax.swing.JLabel jLabelnumerror;
+    private javax.swing.JLabel jLabelnumerror2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
