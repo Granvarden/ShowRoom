@@ -126,7 +126,6 @@ public class MainPage extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         CheckSurnameTf = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
-        CheckBtnTf = new javax.swing.JButton();
         CheckNameTf = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -421,7 +420,7 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 326, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
@@ -869,7 +868,13 @@ public class MainPage extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel33.setText("Surname");
 
+        CheckSurnameTf.setEditable(false);
         CheckSurnameTf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CheckSurnameTf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckSurnameTfActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Cancel booking");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -878,13 +883,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        CheckBtnTf.setText("Check");
-        CheckBtnTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBtnTfActionPerformed(evt);
-            }
-        });
-
+        CheckNameTf.setEditable(false);
         CheckNameTf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         CheckNameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -968,7 +967,6 @@ public class MainPage extends javax.swing.JFrame {
                         .addGroup(jPanel11Layout.createSequentialGroup()
                             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(CheckBtnTf, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(CheckNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(30, 30, 30)
                             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -999,9 +997,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(CheckBtnTf, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(157, Short.MAX_VALUE))
@@ -1682,10 +1678,22 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckNameTfActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        reservation.setVisible(true);
-        booking.setVisible(false);
-        testdrive.setVisible(false);
-        Home.setVisible(false); 
+        if(checklogin && booked != null){
+            reservation.setVisible(true);
+            booking.setVisible(false);
+            testdrive.setVisible(false);
+            Home.setVisible(false);
+            CheckNameTf.setText(cus.getName());
+            CheckSurnameTf.setText(cus.getSurname());
+            jLabelnamereser.setText("Name : " + cus.getName());
+            jLabelsurnamereser.setText("Surname : " + cus.getSurname());
+            jLabelcarreser.setText("Car : " + booked.getCar().getName());
+            jLabeldatereser.setText("Date : " +  booked.getBookingDate());
+            jLabelbudgetreser.setText("Budget : " + cus.getBudget() + " ฿");
+            jLabelplanreser.setText("Plan : " + booked.getPlan());
+            
+        }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextFieldminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldminActionPerformed
@@ -1784,17 +1792,6 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jButtonhaveaccActionPerformed
 
-    private void CheckBtnTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBtnTfActionPerformed
-        Admin x = new Admin();
-        String y[] = x.checkReserve(String.valueOf(CheckNameTf.getText()), String.valueOf(CheckSurnameTf.getText()));
-        jLabelnamereser.setText("Name: " + y[0]);
-        jLabelsurnamereser.setText("Surname: " + y[1]);
-        jLabelcarreser.setText("Car: " + y[2]);
-        jLabeldatereser.setText("Date: " + y[3]);
-        jLabelbudgetreser.setText("Budget: " + y[4]);
-        jLabelplanreser.setText("Plan: " + y[5]);
-    }//GEN-LAST:event_CheckBtnTfActionPerformed
-
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
         try {
           if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
@@ -1862,8 +1859,17 @@ public class MainPage extends javax.swing.JFrame {
                 testdriveYear.getText().equals("")) {
                 jLabelTestDriveerror.setText("*Please in complete information*");
             }else{
-                testdrive.setVisible(false);
+                Car selectedCar = null;
+                booking.setVisible(false);
                 graceful.setVisible(true);
+                for(Car car : sh.getAllCars()){
+                    if(car.getName().equals(carNameLabel.getText())){
+                        selectedCar = car;
+                    }
+                }
+                LocalDate specificDate = LocalDate.parse(testdriveYear.getText() + "-" + testdriveMonth.getText() + "-" + testdriveDate.getText());
+                cus.setBudget(0);
+                booked = cus.Booking(selectedCar, cus, specificDate, "You have selected test drive");
             }
     }//GEN-LAST:event_TestDriveConfirmActionPerformed
 
@@ -1894,7 +1900,7 @@ public class MainPage extends javax.swing.JFrame {
                     selectedCar = car;
                 }
             }
-            LocalDate specificDate = LocalDate.parse(jTextFielddate1.getText() + jTextFieldmonth1.getText() + "-" + jTextFieldyear1.getText());
+            LocalDate specificDate = LocalDate.parse(jTextFieldyear1.getText() + "-" + jTextFieldmonth1.getText() + "-" + jTextFielddate1.getText());
             cus.setBudget(Double.parseDouble(jTextFieldbudget1.getText()));
             booked = cus.Booking(selectedCar, cus, specificDate, String.valueOf(planComboBox.getSelectedItem()));
         }
@@ -2019,6 +2025,10 @@ public class MainPage extends javax.swing.JFrame {
             reccommendDescription3.setText(""); 
         }
     }//GEN-LAST:event_termjTextFieldMouseExited
+
+    private void CheckSurnameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckSurnameTfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckSurnameTfActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel *///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2148,7 +2158,6 @@ public class MainPage extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BookingConfirm;
-    private javax.swing.JButton CheckBtnTf;
     private javax.swing.JTextField CheckNameTf;
     private javax.swing.JTextField CheckSurnameTf;
     private javax.swing.JPanel Home;

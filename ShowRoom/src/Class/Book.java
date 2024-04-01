@@ -24,6 +24,9 @@ public class Book {
    public Customer getCustomer(){
       return customer;
    }
+   public String getPlan(){
+       return plan;
+   }
    public LocalDate getBookingDate(){
       return bookingDate;
    }

@@ -70,12 +70,13 @@ public class Customer {
     }
     
 
-    public void Booking(Car car, Customer customer, LocalDate bookingDate, String plan) {
+    public Book Booking(Car car, Customer customer, LocalDate bookingDate, String plan) {
         car.book();
         customerNumber +=1;
         int bookingId = customerNumber;
         Book booking = new Book(bookingId, car, customer, bookingDate, plan);
         booked = booking;
+        return booking;
     }
 
 }
