@@ -13,13 +13,14 @@ public class DetailCar extends javax.swing.JInternalFrame {
     public DetailCar(Car car) {
         initComponents();
         this.car = car;
-        nameL.setText("Car name : " + car.getName());
-        typeL.setText("Type : " + car.getType());
-        capaL.setText("Capacity : " + car.getCapacity());
-        ccL.setText("CC : " + car.getCC());
-        doorL.setText("Door : " +  car.getDoor());
-        wheelL.setText("Wheel : " + car.getWheel());
-        priceL.setText("Price : " + car.getPrice());
+        carNameLabel.setText("Car name : " + car.getName());
+        typeLabel.setText("Type : " + car.getType());
+        capacityLabel.setText("Capacity : " + car.getCapacity());
+        ccLabel.setText("CC : " + car.getCC());
+        doorLabel.setText("Door : " +  car.getDoor());
+        wheelLabel.setText("Wheel : " + car.getWheel());
+        priceLabel.setText("Price : " + car.getPrice());
+        picture.setIcon(car.getImg());
     }
 
     /**
@@ -33,7 +34,7 @@ public class DetailCar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        picture = new javax.swing.JLabel();
         typeL = new javax.swing.JLabel();
         nameL = new javax.swing.JLabel();
         capaL = new javax.swing.JLabel();
@@ -41,31 +42,50 @@ public class DetailCar extends javax.swing.JInternalFrame {
         doorL = new javax.swing.JLabel();
         ccL = new javax.swing.JLabel();
         priceL = new javax.swing.JLabel();
+        carNameLabel = new javax.swing.JLabel();
+        capacityLabel = new javax.swing.JLabel();
+        typeLabel = new javax.swing.JLabel();
+        doorLabel = new javax.swing.JLabel();
+        ccLabel = new javax.swing.JLabel();
+        wheelLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
 
         setClosable(true);
 
-        jLabel1.setText("Picture");
-
         typeL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        typeL.setText("Type:");
+        typeL.setText("Type :");
 
         nameL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nameL.setText("Car name:");
+        nameL.setText("Car name : ");
 
         capaL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        capaL.setText("Capacity:");
+        capaL.setText("Capacity :");
 
         wheelL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        wheelL.setText("Wheel:");
+        wheelL.setText("Wheel :");
 
         doorL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        doorL.setText("Door:");
+        doorL.setText("Door :");
 
         ccL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ccL.setText("CC:");
+        ccL.setText("CC :");
 
         priceL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        priceL.setText("Price:");
+        priceL.setText("Price :");
+
+        carNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        capacityLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        typeLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        doorLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        ccLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        wheelLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        priceLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,36 +93,61 @@ public class DetailCar extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(priceL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(wheelL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doorL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ccL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(capaL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(typeL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                    .addComponent(nameL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(priceL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(wheelL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(doorL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ccL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(capaL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(typeL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nameL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(carNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(capacityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(typeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(doorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ccLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(wheelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(priceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(nameL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(carNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(typeL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(typeL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(typeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(capaL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(capaL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(capacityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(ccL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ccL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ccLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(doorL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(doorL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(doorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(wheelL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(wheelL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(wheelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(priceL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(priceL, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
@@ -112,12 +157,19 @@ public class DetailCar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel capaL;
+    private javax.swing.JLabel capacityLabel;
+    private javax.swing.JLabel carNameLabel;
     private javax.swing.JLabel ccL;
+    private javax.swing.JLabel ccLabel;
     private javax.swing.JLabel doorL;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel doorLabel;
     private javax.swing.JLabel nameL;
+    private javax.swing.JLabel picture;
     private javax.swing.JLabel priceL;
+    private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel typeL;
+    private javax.swing.JLabel typeLabel;
     private javax.swing.JLabel wheelL;
+    private javax.swing.JLabel wheelLabel;
     // End of variables declaration//GEN-END:variables
 }

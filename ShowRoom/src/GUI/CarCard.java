@@ -108,17 +108,15 @@ public class CarCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void testDriveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testDriveButtonActionPerformed
-        main.testdriveforcard();
+        main.testdriveforcard(getCar());
     }//GEN-LAST:event_testDriveButtonActionPerformed
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
-        
        main.addDetail(this);
-       
     }//GEN-LAST:event_detailbuttonActionPerformed
 
     private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
-        main.bookingforcard();
+        main.bookingforcard(getCar());
     }//GEN-LAST:event_BookingButtonActionPerformed
 
 

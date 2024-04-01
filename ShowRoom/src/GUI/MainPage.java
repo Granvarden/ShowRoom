@@ -49,16 +49,23 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        bookingCarPicture = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        carNameLabelbooking = new javax.swing.JLabel();
+        typeLabelbooking = new javax.swing.JLabel();
+        capacityLabelbooking = new javax.swing.JLabel();
+        ccLabelbooking = new javax.swing.JLabel();
+        doorLabelbooking = new javax.swing.JLabel();
+        wheelLabelbooking = new javax.swing.JLabel();
+        priceLabelbooking = new javax.swing.JLabel();
+        priceLabel3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
@@ -137,16 +144,23 @@ public class MainPage extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
-        jLabel42 = new javax.swing.JLabel();
+        testdriveCarPicture = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
+        carNameLabel = new javax.swing.JLabel();
+        typeLabel = new javax.swing.JLabel();
+        capacityLabel = new javax.swing.JLabel();
+        ccLabel = new javax.swing.JLabel();
+        doorLabel = new javax.swing.JLabel();
+        wheelLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
+        priceLabel1 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         TestDriveConfirm = new javax.swing.JButton();
         jPanel24 = new javax.swing.JPanel();
@@ -264,78 +278,123 @@ public class MainPage extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bookingCarPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addComponent(bookingCarPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jLabel19.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel19.setText("Car name :");
+        jLabel51.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel51.setText("Car name :");
 
-        jLabel20.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel20.setText("Type :");
+        jLabel57.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel57.setText("Type :");
 
-        jLabel21.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel21.setText("Speed :");
+        jLabel58.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel58.setText("Capacity : ");
 
-        jLabel22.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel22.setText("Capacity : ");
+        jLabel59.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel59.setText("CC :");
 
-        jLabel23.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel23.setText("CC :");
+        jLabel60.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel60.setText("Doors :");
 
-        jLabel24.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel24.setText("Doors :");
+        jLabel61.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel61.setText("Wheels :");
 
-        jLabel25.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel25.setText("Wheels :");
+        jLabel62.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel62.setText("Price :");
 
-        jLabel26.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel26.setText("Price :");
+        carNameLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
+        typeLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        capacityLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        ccLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        doorLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        wheelLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        priceLabelbooking.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        priceLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51)
+                    .addComponent(jLabel57)
+                    .addComponent(jLabel58)
+                    .addComponent(jLabel59)
+                    .addComponent(jLabel60)
+                    .addComponent(jLabel61)
+                    .addComponent(jLabel62))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(doorLabelbooking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ccLabelbooking, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(capacityLabelbooking, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(carNameLabelbooking, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeLabelbooking, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(wheelLabelbooking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(priceLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(priceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(136, 136, 136)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel19)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel57))
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(carNameLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(typeLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(capacityLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel58))
+                        .addGap(18, 18, 18)
+                        .addComponent(ccLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel59))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel20)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(doorLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel21)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel22)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel23)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel24)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel25)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel26)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel61)
+                    .addComponent(wheelLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(priceLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel62)))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(priceLabelbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -345,18 +404,18 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -504,7 +563,7 @@ public class MainPage extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(150, Short.MAX_VALUE)
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100)
                 .addComponent(BookingConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1057,14 +1116,14 @@ public class MainPage extends javax.swing.JFrame {
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(testdriveCarPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addComponent(testdriveCarPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1073,9 +1132,6 @@ public class MainPage extends javax.swing.JFrame {
 
         jLabel44.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel44.setText("Type :");
-
-        jLabel51.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel51.setText("Speed :");
 
         jLabel52.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel52.setText("Capacity : ");
@@ -1092,6 +1148,22 @@ public class MainPage extends javax.swing.JFrame {
         jLabel56.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel56.setText("Price :");
 
+        carNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        typeLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        capacityLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        ccLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        doorLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        wheelLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        priceLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        priceLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -1101,34 +1173,66 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel43)
                     .addComponent(jLabel44)
-                    .addComponent(jLabel51)
                     .addComponent(jLabel52)
                     .addComponent(jLabel53)
                     .addComponent(jLabel54)
                     .addComponent(jLabel55)
                     .addComponent(jLabel56))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(doorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ccLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(capacityLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(carNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(wheelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(priceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(136, 136, 136)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel43)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(jLabel43)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel44))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(carNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(typeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(capacityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel52))
+                        .addGap(18, 18, 18)
+                        .addComponent(ccLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel53))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel44)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(doorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel54))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel51)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel52)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel53)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel54)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel55)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel56)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel55)
+                    .addComponent(wheelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(priceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel56)))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -1139,8 +1243,8 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(62, 62, 62))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1149,7 +1253,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
@@ -1410,7 +1514,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main, javax.swing.GroupLayout.PREFERRED_SIZE, 704, Short.MAX_VALUE))
+                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
         );
 
         pack();
@@ -1680,6 +1784,7 @@ public class MainPage extends javax.swing.JFrame {
         Home.setVisible(false);
         
         
+        
         DetailCar dc = new DetailCar(cc.getCar());
         jDesktopPane2.add(dc).setVisible(true);
     }
@@ -1691,12 +1796,39 @@ public class MainPage extends javax.swing.JFrame {
     public void testdriveforcard(){
         compare.setVisible(false);
         Home.setVisible(false);
-        booking.setVisible(true);
+        testdrive.setVisible(true);
+    }
+    public void testdriveforcard(Car car){
+        compare.setVisible(false);
+        Home.setVisible(false);
+        testdrive.setVisible(true);
+        testdriveCarPicture.setIcon(car.getImg());
+        carNameLabel.setText(car.getName());
+        typeLabel.setText(String.valueOf(car.getType()));
+        capacityLabel.setText(String.valueOf(car.getCapacity()));
+        ccLabel.setText(String.valueOf(car.getCC()));
+        doorLabel.setText(String.valueOf(car.getDoor()));
+        wheelLabel.setText(String.valueOf(car.getWheel()));
+        priceLabel.setText(String.valueOf(car.getPrice()));
     }
     public void bookingforcard(){
         compare.setVisible(false);
         Home.setVisible(false);
-        testdrive.setVisible(true);
+        booking.setVisible(true);
+
+    }
+    public void bookingforcard(Car car){
+        compare.setVisible(false);
+        Home.setVisible(false);
+        booking.setVisible(true);
+        bookingCarPicture.setIcon(car.getImg());
+        carNameLabelbooking.setText(car.getName());
+        typeLabelbooking.setText(String.valueOf(car.getType()));
+        capacityLabelbooking.setText(String.valueOf(car.getCapacity()));
+        ccLabelbooking.setText(String.valueOf(car.getCC()));
+        doorLabelbooking.setText(String.valueOf(car.getDoor()));
+        wheelLabelbooking.setText(String.valueOf(car.getWheel()));
+        priceLabelbooking.setText(String.valueOf(car.getPrice()));
     }
     public void changetoreg(){
         registration.setVisible(true);
@@ -1718,7 +1850,16 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JCheckBox SportBox;
     private javax.swing.JButton TestDriveConfirm;
     private javax.swing.JPanel booking;
+    private javax.swing.JLabel bookingCarPicture;
+    private javax.swing.JLabel capacityLabel;
+    private javax.swing.JLabel capacityLabelbooking;
+    private javax.swing.JLabel carNameLabel;
+    private javax.swing.JLabel carNameLabelbooking;
+    private javax.swing.JLabel ccLabel;
+    private javax.swing.JLabel ccLabelbooking;
     private javax.swing.JPanel compare;
+    private javax.swing.JLabel doorLabel;
+    private javax.swing.JLabel doorLabelbooking;
     private javax.swing.JPanel fillterbar;
     private javax.swing.JPanel graceful;
     private javax.swing.JButton jButton3;
@@ -1731,14 +1872,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1751,7 +1884,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1766,7 +1898,12 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
@@ -1796,10 +1933,10 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel4;
@@ -1827,11 +1964,20 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldmonth1;
     private javax.swing.JTextField jTextFieldplans1;
     private javax.swing.JTextField jTextFieldyear1;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JLabel priceLabel1;
+    private javax.swing.JLabel priceLabel3;
+    private javax.swing.JLabel priceLabelbooking;
     private javax.swing.JPanel registration;
     private javax.swing.JPanel reservation;
     private javax.swing.JPanel testdrive;
+    private javax.swing.JLabel testdriveCarPicture;
     private javax.swing.JTextField testdriveDate;
     private javax.swing.JTextField testdriveMonth;
     private javax.swing.JTextField testdriveYear;
+    private javax.swing.JLabel typeLabel;
+    private javax.swing.JLabel typeLabelbooking;
+    private javax.swing.JLabel wheelLabel;
+    private javax.swing.JLabel wheelLabelbooking;
     // End of variables declaration//GEN-END:variables
 }
