@@ -1642,8 +1642,8 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBtnTfActionPerformed
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
-       
-        if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
+        try {
+          if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
             jLabelnumerror.setText("Please don't let the blank");
         }
         else if (Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0) {
@@ -1688,11 +1688,15 @@ public class MainPage extends javax.swing.JFrame {
                         
                     }
                 }
-            }
-            jPanel7.revalidate();
-            jPanel7.repaint();
-        }
+            }  
         
+        
+            
+        }}catch (Exception e) {
+            jLabelnumerror.setText("Please enter number only.");    
+        }
+        jPanel7.revalidate();
+            jPanel7.repaint();
         
         
     }//GEN-LAST:event_jButtonfillActionPerformed
