@@ -1792,7 +1792,6 @@ public class MainPage extends javax.swing.JFrame {
                    jTextFieldUsername.setText("");
                    jTextFieldPassword.setText("");
                    jTextFieldEmail.setText("");
-
                    jScrollPaneHome.revalidate();
                    jScrollPaneHome.repaint();
                    Home.setVisible(true);
@@ -1835,37 +1834,68 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonhaveaccActionPerformed
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
-        try {
-          if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
-            jLabelnumerror.setText("Please don't let the blank.");
-        }
-        else if (Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0) {
-            jLabelnumerror.setText("Please enter a number");
-            jLabelnumerror2.setText("greater than zero.");
-        }
-        else{
+            jLabelnumerror.setText("");
+            double minP = 1;
+            double maxP = 1;
             String Carname = jTextFieldmin1.getText();
-            double minP = Double.valueOf(jTextFieldmin.getText());
-            double maxP = Double.valueOf(jTextFieldmax.getText());
-            if(SedanBox.isSelected() & SUVBox.isSelected() & SportBox.isSelected()){
+            if (jTextFieldmin.getText().isEmpty() | jTextFieldmax.getText().isEmpty()) {
+                if(jTextFieldmin.getText().equals("")){
+                    minP = 1;
+                    double max = 0;
+                    for(Car car : sh.getAllCars()){                        
+                        if(car.getPrice() >= max){
+                            max =  car.getPrice();
+                            maxP = car.getPrice();
+                        }
+                    } 
+                }
+            
+                if(jTextFieldmax.getText().equals("")){
+                    double max = 0;
+                    for(Car car : sh.getAllCars()){                        
+                        if(car.getPrice() >= max){
+                            max =  car.getPrice();
+                            maxP = car.getPrice();
+                        }
+                    }
+                    minP = 1;
+                    
+                }
+            }
+            else{
+                try{
+                    if ((Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0)) {
+                        jLabelnumerror.setText("Please enter a number");
+                        jLabelnumerror2.setText("greater than zero.");
+                    }
+                    else{
+                        minP = Double.parseDouble(jTextFieldmin.getText());
+                        maxP = Double.parseDouble(jTextFieldmax.getText());
+                    }
+                }catch(Exception e){
+                    jLabelnumerror.setText("Please enter number only.");
+                }
+            }
+            
+            if(SedanBox.isSelected() & SUVBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "SUV", "Sport", Carname, minP, maxP);
             }
-            else if(SedanBox.isSelected() & SUVBox.isSelected()){
+            else if(SedanBox.isSelected() & SUVBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "SUV", Carname, minP, maxP);
             }
-            else if(SUVBox.isSelected() & SportBox.isSelected()){
+            else if(SUVBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sport", "SUV", Carname,minP, maxP);
             }
-            else if(SedanBox.isSelected() & SportBox.isSelected()){
+            else if(SedanBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "Sport", Carname,minP, maxP);
             }
-            else if(SedanBox.isSelected()){
+            else if(SedanBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", Carname,minP, maxP);
             }
-            else if(SUVBox.isSelected()){
+            else if(SUVBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("SUV", Carname,minP, maxP);
             }
-            else if(SportBox.isSelected()){
+            else if(SportBox.isSelected()& jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sport", Carname,minP, maxP);
             }
             else{
@@ -1879,16 +1909,11 @@ public class MainPage extends javax.swing.JFrame {
                         jPanel7.add(carCard);                     
                     }
                 }
-            }  
+            }    
         
-        
-            
-        }}catch (Exception e) {
-            jLabelnumerror.setText("Please enter number only.");    
-        }
         jPanel7.revalidate();
-            jPanel7.repaint();
-        
+        jPanel7.repaint();
+    
         
     }//GEN-LAST:event_jButtonfillActionPerformed
 
