@@ -2012,6 +2012,7 @@ public class MainPage extends javax.swing.JFrame {
                         selectedCar = car;
                         String tempDate = String.format("%d-%02d-%02d", year, month, date);
                         LocalDate specificDate = LocalDate.parse(tempDate);
+                        cus.setBudget(budget);
                         booked = cus.Booking(selectedCar, cus, specificDate, selectedPlan);
                         db = new TestConnection();
                         String sql = String.format("UPDATE customer SET date = '%s', budget = %.2f, plan = '%s', car_book = '%s' WHERE name = '%s' AND surname = '%s'",
