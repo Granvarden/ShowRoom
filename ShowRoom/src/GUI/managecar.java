@@ -452,6 +452,9 @@ public class managecar extends javax.swing.JInternalFrame {
         fc.showOpenDialog(this);
         File f = fc.getSelectedFile();
         x.addPic( cc.CopyToUploadSQL(f.getAbsolutePath().replace("\\", "\\\\")), String.valueOf(jTextFieldAddPic.getText()));
+        p.removeAll();
+        managecar c1 = new managecar(p);
+        p.add(c1).setVisible(true);
     }//GEN-LAST:event_AddpictureActionPerformed
 
     private void jButtonConfirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDeleteActionPerformed

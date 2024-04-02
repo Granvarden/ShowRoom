@@ -36,7 +36,7 @@ public class CarCard extends javax.swing.JPanel {
         carName = new javax.swing.JLabel();
         BookingButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(249, 249, 249));
 
         detailbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         detailbutton.setText("Detail");
