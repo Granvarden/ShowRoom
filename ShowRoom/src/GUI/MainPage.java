@@ -1953,7 +1953,7 @@ public class MainPage extends javax.swing.JFrame {
             String tempPlan = String.valueOf(planComboBox.getSelectedItem());
             booked = cus.Booking(selectedCar, cus, specificDate, tempPlan);
             db = new TestConnection();
-            String sql = String.format("update customer set date = '%s', budget = '%s', plan = '%s' where name = '%s' and surname = '%s'" , tempDate, budgetTemp, tempPlan, cus.getName(), cus.getSurname());
+            String sql = String.format("update customer set date = '%s', budget = '%s', plan = '%s' car_book = '%s' where name = '%s' and surname = '%s'" , tempDate, budgetTemp, tempPlan, selectedCar.getName(), cus.getName(), cus.getSurname());
             db.getUpdate(sql);
         }
     }//GEN-LAST:event_BookingConfirmActionPerformed
