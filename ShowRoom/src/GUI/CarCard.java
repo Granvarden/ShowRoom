@@ -1,6 +1,7 @@
 package GUI;
 import Class.*;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 public class CarCard extends javax.swing.JPanel {
 
     private MainPage main;
@@ -108,7 +109,12 @@ public class CarCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void testDriveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testDriveButtonActionPerformed
-        main.testdriveforcard(getCar());
+        if (main.checklogin() == false) {
+            JOptionPane.showMessageDialog(null,"You need to login first.","",1);  
+        }else{
+         main.testdriveforcard(getCar());   
+        }
+        
     }//GEN-LAST:event_testDriveButtonActionPerformed
 
     private void detailbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailbuttonActionPerformed
@@ -116,7 +122,11 @@ public class CarCard extends javax.swing.JPanel {
     }//GEN-LAST:event_detailbuttonActionPerformed
 
     private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
+       if (main.checklogin() == false) {
+            JOptionPane.showMessageDialog(null,"You need to login first.","",1);  
+        }else{
         main.bookingforcard(getCar());
+       }
     }//GEN-LAST:event_BookingButtonActionPerformed
 
 
