@@ -74,7 +74,7 @@ public class Admin {
         }
         String sql1 = String.format("UPDATE employees SET queue = CASE WHEN queue <= 0 THEN 0 ELSE queue - 1 END WHERE id = '%s'", em_id);
         db.getUpdate(sql1);
-        String sql2 = String.format("update customer set em_id = null where id = '%s'", id);
+        String sql2 = String.format("update customer set em_id = null , date = null, car_book = null where id = '%s'", id);
         db.getUpdate(sql2);
         String sql3 = String.format("update employees set free = case when queue = 0 then 1 else 0 end where id = '%s'", id);
         db.getUpdate(sql3);
