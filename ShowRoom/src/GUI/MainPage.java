@@ -1837,7 +1837,7 @@ public class MainPage extends javax.swing.JFrame {
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
         try {
           if (jTextFieldmin.getText().equals("") | jTextFieldmax.getText().equals("")) {
-            jLabelnumerror.setText("Please don't let the blank");
+            jLabelnumerror.setText("Please don't let the blank.");
         }
         else if (Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0) {
             jLabelnumerror.setText("Please enter a number");
