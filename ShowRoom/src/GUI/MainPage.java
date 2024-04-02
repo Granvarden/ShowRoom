@@ -1651,7 +1651,7 @@ public class MainPage extends javax.swing.JFrame {
             registration.repaint();
             jDesktopPane2.removeAll();
         }
-        
+    
     
     }//GEN-LAST:event_jButtonHomeActionPerformed
     public void createCustomer(String username){
@@ -1669,8 +1669,31 @@ public class MainPage extends javax.swing.JFrame {
                     String email = rs.getString("email");
                     String name = rs.getString("name");
                     String surname = rs.getString("surname");
+                    String carBook = rs.getString("car_book");
+                    String date = rs.getString("date");
+                    String cusPlan = rs.getString("plan");
                     if(username.equals(userName)){
-                        cus = new Customer(userName, passWord, pNum, budget, email, name, surname);
+                        Car cusCar = null;
+                        if(date != null & cusPlan != null){
+                            cus = new Customer(userName, passWord, pNum, budget, email, name, surname);
+                            for(Car car : sh.getAllCars()){
+                                if(car.getName().equals(carBook)){
+                                    cusCar = car;
+                                }
+                            }
+                            booked = cus.Booking(cusCar, cus, LocalDate.parse(date), cusPlan);
+                        }
+                        else{
+                            cus = new Customer(userName, passWord, pNum, budget, email, name, surname);
+                            for(Car car : sh.getAllCars()){
+                                if(car.getName().equals(carBook)){
+                                    cusCar = car;
+                                }
+                            }
+                            booked = cus.Booking(cusCar, cus, null, "None");
+                        }
+                        
+                        
                     }
                 }
            }catch(Exception e){
@@ -1690,14 +1713,26 @@ public class MainPage extends javax.swing.JFrame {
             testdrive.setVisible(false);
             Home.setVisible(false);
             graceful.setVisible(false);
-            CheckNameTf.setText(cus.getName());
-            CheckSurnameTf.setText(cus.getSurname());
-            jLabelnamereser.setText("Name : " + cus.getName());
-            jLabelsurnamereser.setText("Surname : " + cus.getSurname());
-            jLabelcarreser.setText("Car : " + booked.getCar().getName());
-            jLabeldatereser.setText("Date : " +  booked.getBookingDate());
-            jLabelbudgetreser.setText("Budget : " + cus.getBudget() + " ฿");
-            jLabelplanreser.setText("Plan : " + booked.getPlan());
+            if(booked.getCar() != null & booked.getBookingDate() != null){
+                CheckNameTf.setText(cus.getName());
+                CheckSurnameTf.setText(cus.getSurname());
+                jLabelnamereser.setText("Name : " + cus.getName());
+                jLabelsurnamereser.setText("Surname : " + cus.getSurname());
+                jLabelcarreser.setText("Car : " + booked.getCar().getName());
+                jLabeldatereser.setText("Date : " +  booked.getBookingDate());
+                jLabelbudgetreser.setText("Budget : " + cus.getBudget() + " ฿");
+                jLabelplanreser.setText("Plan : " + booked.getPlan());
+            }
+            else{
+                CheckNameTf.setText(cus.getName());
+                CheckSurnameTf.setText(cus.getSurname());
+                jLabelnamereser.setText("Name : " + cus.getName());
+                jLabelsurnamereser.setText("Surname : " + cus.getSurname());
+                jLabelcarreser.setText("Car : ");
+                jLabeldatereser.setText("Date : ");
+                jLabelbudgetreser.setText("Budget : ");
+                jLabelplanreser.setText("Plan : " + booked.getPlan());
+            }
             
         }
         
@@ -1931,29 +1966,25 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Admin x = new Admin();
-        booked.setPlan("None");
-        booked.setCar(null);
-        //booked.setDate(LocalDate.parse("00-00-00"));
+        booked = cus.Booking(null, cus, null, "None");
         cus.setBudget(0);
-        jLabelbudgetreser.setText("budget : 0");
-        jLabelplanreser.setText("None");
+        jLabelbudgetreser.setText("budget : ");
+        jLabelplanreser.setText("Plan : ");
         x.cancelReserveBooking(CheckNameTf.getText(), CheckSurnameTf.getText());
-        jLabelcarreser.setText("Car: None");
-        jLabeldatereser.setText("Date: None");
+        jLabelcarreser.setText("Car: ");
+        jLabeldatereser.setText("Date: ");
         
         
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Admin x = new Admin();
-        booked.setPlan("None");
-        booked.setCar(null);
-        //booked.setDate(LocalDate.parse("00-00-00"));
+        booked = cus.Booking(null, cus, null, "None");
         cus.setBudget(0);
-        jLabelbudgetreser.setText("budget : 0");
-        jLabelplanreser.setText("None");
+        jLabelbudgetreser.setText("budget : ");
+        jLabelplanreser.setText("Plan : ");
         x.cancelReserveTestDrive(CheckNameTf.getText(), CheckSurnameTf.getText());
-        jLabeldatereser.setText("Date: null");
+        jLabeldatereser.setText("Date: ");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void termjTextFieldjTextFieldbudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termjTextFieldjTextFieldbudgetActionPerformed

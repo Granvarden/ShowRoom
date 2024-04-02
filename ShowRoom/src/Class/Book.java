@@ -2,22 +2,18 @@ package Class;
 
 import java.time.LocalDate;
 public class Book {
-   private int bookingid;
    private Car car;
    private Customer customer;
    private String plan;
    private LocalDate bookingDate;
 
-   public Book(int bookingid, Car car, Customer customer, LocalDate bookingDate, String plan) {
-      this.bookingid = bookingid;
+   public Book(Car car, Customer customer, LocalDate bookingDate, String plan) {
       this.car = car;
       this.customer = customer;
       this.bookingDate = bookingDate;
       this.plan = plan;
    }
-   public int getBookingid(){
-      return bookingid;
-   }
+   
    public Car getCar(){
       return car;
    }

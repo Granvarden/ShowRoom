@@ -12,7 +12,6 @@ public class Customer {
     private String password;
     private double moneyBudget;
     private String email;
-    private int customerNumber;
     private String name;
     private String surname;
     private Book booked;
@@ -71,10 +70,7 @@ public class Customer {
     
 
     public Book Booking(Car car, Customer customer, LocalDate bookingDate, String plan) {
-        car.book();
-        customerNumber +=1;
-        int bookingId = customerNumber;
-        Book booking = new Book(bookingId, car, customer, bookingDate, plan);
+        Book booking = new Book(car, customer, bookingDate, plan);
         booked = booking;
         return booking;
     }

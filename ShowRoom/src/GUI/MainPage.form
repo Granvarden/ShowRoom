@@ -1899,7 +1899,7 @@
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jPanel20" max="32767" attributes="0"/>
-                                  <Component id="jPanel21" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jPanel21" pref="334" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           </Group>
