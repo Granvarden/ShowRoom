@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
@@ -1708,6 +1708,9 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckNameTfActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(checklogin == false){
+            JOptionPane.showMessageDialog(null,"You need to login first.","",1);
+        }
         if(checklogin && booked != null){
             reservation.setVisible(true);
             booking.setVisible(false);
@@ -1836,28 +1839,17 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButtonfillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonfillActionPerformed
             jLabelnumerror.setText("");
-            jLabelnumerror.setText("");
-            jLabelnumerror2.setText("");
-            Boolean err = true;
             double minP = 1;
             double maxP = 1;
             String Carname = jTextFieldmin1.getText();
             if (jTextFieldmin.getText().isEmpty() | jTextFieldmax.getText().isEmpty()) {
                 if(jTextFieldmin.getText().equals("")){
-                    minP = 1;                   
-                    if(!jTextFieldmax.getText().isEmpty()){
-                        try{
-                            if ((Double.parseDouble(jTextFieldmax.getText()) <=  0)) {
-                                jLabelnumerror.setText("Please enter a number");
-                                jLabelnumerror2.setText("greater than zero.");
-                                err = false;
-                            }
-                            else{
-                                maxP = Double.parseDouble(jTextFieldmax.getText());
-                            }
-                        }catch(Exception e){
-                            jLabelnumerror.setText("Please enter number only.");
-                            err = false;
+                    minP = 1;
+                    double max = 0;
+                    for(Car car : sh.getAllCars()){                        
+                        if(car.getPrice() >= max){
+                            max =  car.getPrice();
+                            maxP = car.getPrice();
                         }
                     } 
                 }
@@ -1870,22 +1862,7 @@ public class MainPage extends javax.swing.JFrame {
                             maxP = car.getPrice();
                         }
                     }
-                    if(!jTextFieldmin.getText().isEmpty()){
-                        try{
-                            if ((Double.parseDouble(jTextFieldmin.getText()) <=  0)) {
-                                jLabelnumerror.setText("Please enter a number");
-                                jLabelnumerror2.setText("greater than zero.");
-                                err = false;
-                            }
-                            else{
-                                minP = Double.parseDouble(jTextFieldmin.getText());
-                            }
-                        }catch(Exception e){
-                            jLabelnumerror.setText("Please enter number only.");
-                            err = false;
-                        }
-                    }
-                    
+                    minP = 1;
                     
                 }
             }
@@ -1894,7 +1871,6 @@ public class MainPage extends javax.swing.JFrame {
                     if ((Double.parseDouble(jTextFieldmin.getText()) <=  0 | Double.parseDouble(jTextFieldmax.getText()) <=  0)) {
                         jLabelnumerror.setText("Please enter a number");
                         jLabelnumerror2.setText("greater than zero.");
-                        err = false;
                     }
                     else{
                         minP = Double.parseDouble(jTextFieldmin.getText());
@@ -1902,32 +1878,31 @@ public class MainPage extends javax.swing.JFrame {
                     }
                 }catch(Exception e){
                     jLabelnumerror.setText("Please enter number only.");
-                    err = false;
                 }
             }
             
-            if(SedanBox.isSelected() & SUVBox.isSelected() & SportBox.isSelected() & err){
+            if(SedanBox.isSelected() & SUVBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "SUV", "Sport", Carname, minP, maxP);
             }
-            else if(SedanBox.isSelected() & SUVBox.isSelected() & err){
+            else if(SedanBox.isSelected() & SUVBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "SUV", Carname, minP, maxP);
             }
-            else if(SUVBox.isSelected() & SportBox.isSelected() & err){
+            else if(SUVBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sport", "SUV", Carname,minP, maxP);
             }
-            else if(SedanBox.isSelected() & SportBox.isSelected() & err){
+            else if(SedanBox.isSelected() & SportBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", "Sport", Carname,minP, maxP);
             }
-            else if(SedanBox.isSelected() & err){
+            else if(SedanBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sedan", Carname,minP, maxP);
             }
-            else if(SUVBox.isSelected() & err){
+            else if(SUVBox.isSelected() & jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("SUV", Carname,minP, maxP);
             }
-            else if(SportBox.isSelected()& err){
+            else if(SportBox.isSelected()& jLabelnumerror.getText() != "Please enter number only."){
                 sh.filterCars("Sport", Carname,minP, maxP);
             }
-            else if(err){
+            else{
                 sh.filterCars(Carname, minP, maxP);
             }
             
@@ -1937,15 +1912,8 @@ public class MainPage extends javax.swing.JFrame {
                     if(car.getName().equals(carCard.getCar().getName())){
                         jPanel7.add(carCard);                     
                     }
-                    
                 }
-                
-            }
-            if(sh.getFilterdCar().size() == 1){
-                JPanel cc = new JPanel();
-                cc.setVisible(false);
-                jPanel7.add(cc);
-            }
+            }    
         
         jPanel7.revalidate();
         jPanel7.repaint();
