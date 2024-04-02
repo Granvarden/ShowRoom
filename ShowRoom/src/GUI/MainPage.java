@@ -10,6 +10,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import javax.swing.JOptionPane;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
@@ -1707,6 +1708,9 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckNameTfActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(checklogin == false){
+            JOptionPane.showMessageDialog(null,"You need to login first.","",1);
+        }
         if(checklogin && booked != null){
             reservation.setVisible(true);
             booking.setVisible(false);
