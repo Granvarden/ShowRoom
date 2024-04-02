@@ -62,22 +62,26 @@ public class Admin {
         //String sql = String.format(pic, picPath);
     }
     public void calcelCus(String id){
-        db = new TestConnection();
-        String em_id = null;
-        try{
-            ResultSet rs = db.getConnect(String.format("select em_id from customer where id = '%s'", id));
-            while (rs.next()){
-                em_id = rs.getString("em_id");
+        if (id != null && !id.isEmpty()) {
+            db = new TestConnection();
+            String em_id = null;
+            try {
+                ResultSet rs = db.getConnect(String.format("select em_id from customer where id = '%s'", id));
+                while (rs.next()) {
+                    em_id = rs.getString("em_id");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        }catch(SQLException e){
-            e.printStackTrace();
+            if (em_id != null && !em_id.isEmpty()) {
+                String sql1 = String.format("UPDATE employees SET queue = CASE WHEN queue <= 0 THEN 0 ELSE queue - 1 END WHERE id = '%s'", em_id);
+                db.getUpdate(sql1);
+            }
+            String sql2 = String.format("update customer set em_id = null , date = null, car_book = null where id = '%s'", id);
+            db.getUpdate(sql2);
+            String sql3 = String.format("update employees set free = case when queue = 0 then 1 else 0 end where id = '%s'", id);
+            db.getUpdate(sql3);
         }
-        String sql1 = String.format("UPDATE employees SET queue = CASE WHEN queue <= 0 THEN 0 ELSE queue - 1 END WHERE id = '%s'", em_id);
-        db.getUpdate(sql1);
-        String sql2 = String.format("update customer set em_id = null , date = null, car_book = null where id = '%s'", id);
-        db.getUpdate(sql2);
-        String sql3 = String.format("update employees set free = case when queue = 0 then 1 else 0 end where id = '%s'", id);
-        db.getUpdate(sql3);
     }
     public void addEm(String first_name, String last_name){
             db = new TestConnection();

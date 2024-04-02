@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 public class MainPage extends javax.swing.JFrame {
     LoginPage login = new LoginPage(this);
@@ -1900,7 +1901,7 @@ public class MainPage extends javax.swing.JFrame {
         if (testdriveDate.getText().equals("") | testdriveMonth.getText().equals("") |
                 testdriveYear.getText().equals("")) {
                 jLabelTestDriveerror.setText("*Please in complete information*");
-            }else{
+            }else {
                 Car selectedCar = null;
                 booking.setVisible(false);
                 graceful.setVisible(true);
@@ -1909,12 +1910,12 @@ public class MainPage extends javax.swing.JFrame {
                         selectedCar = car;
                     }
                 }
-                String tempDate = testdriveYear.getText() + "-" + testdriveMonth.getText() + "-" + testdriveDate.getText();
+                String tempDate = String.format("%d-%s-%s", Integer.parseInt(testdriveYear.getText()) - 543, testdriveMonth.getText(), testdriveDate.getText());
                 LocalDate specificDate = LocalDate.parse(tempDate);
                 cus.setBudget(0);
                 booked = cus.Booking(selectedCar, cus, specificDate, "You have selected test drive");
                 db = new TestConnection();
-                String sql = String.format("update customer set date = '%s' where name = '%s' and surname = '%s'", tempDate, cus.getName(), cus.getSurname());
+                String sql = String.format("UPDATE customer SET date = '%s', car_book = '%s' WHERE name = '%s' AND surname = '%s'", tempDate, selectedCar.getName(), cus.getName(), cus.getSurname());
                 db.getUpdate(sql);
             }
     }//GEN-LAST:event_TestDriveConfirmActionPerformed
@@ -1932,29 +1933,43 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_testdriveDatejTextFielddateActionPerformed
 
     private void BookingConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingConfirmActionPerformed
-        if (jTextFielddate1.getText().equals("") | jTextFieldmonth1.getText().equals("") |
-            jTextFieldyear1.getText().equals("") | jTextFieldbudget.getText().equals("") | planComboBox.getSelectedIndex() == 0) {
-            jLabelBookingerror1.setText("*Please in complete information*");
-        }        
-        else {
-            Car selectedCar = null;
+        String dateText = jTextFielddate1.getText();
+        String monthText = jTextFieldmonth1.getText();
+        String yearText = jTextFieldyear1.getText();
+        String budgetText = jTextFieldbudget.getText();
+        String selectedPlan = String.valueOf(planComboBox.getSelectedItem());
 
-            booking.setVisible(false);
-            graceful.setVisible(true);
-            for(Car car : sh.getAllCars()){
-                if(car.getName().equals(carNameLabelbooking.getText())){
-                    selectedCar = car;
+        if (!dateText.isEmpty() && !monthText.isEmpty() && !yearText.isEmpty() && !budgetText.isEmpty() && planComboBox.getSelectedIndex() != 0) {
+            try {
+                int date = Integer.parseInt(dateText);
+                int month = Integer.parseInt(monthText);
+                int year = Integer.parseInt(yearText);
+                double budget = Double.parseDouble(budgetText);
+                Car selectedCar = null;
+
+                for (Car car : sh.getAllCars()) {
+                    if (car.getName().equals(carNameLabelbooking.getText())) {
+                        selectedCar = car;
+                        String tempDate = String.format("%d-%02d-%02d", year, month, date);
+                        LocalDate specificDate = LocalDate.parse(tempDate);
+                        booked = cus.Booking(selectedCar, cus, specificDate, selectedPlan);
+                        db = new TestConnection();
+                        String sql = String.format("UPDATE customer SET date = '%s', budget = %.2f, plan = '%s', car_book = '%s' WHERE name = '%s' AND surname = '%s'",
+                                            tempDate, budget, selectedPlan, car.getName(), cus.getName(), cus.getSurname());
+                        db.getUpdate(sql);
+                        break;
+                    }
                 }
+                booking.setVisible(false);
+                graceful.setVisible(true);
+
+            } catch (NumberFormatException e) {
+                jLabelBookingerror1.setText("*Invalid input. Please enter numeric values for date and budget*");
+            } catch (DateTimeParseException e) {
+                jLabelBookingerror1.setText("*Invalid date format. Please enter a valid date*");
             }
-            String tempDate = (jTextFieldyear1.getText() + "-" + jTextFieldmonth1.getText() + "-" + jTextFielddate1.getText());
-            LocalDate specificDate = LocalDate.parse(tempDate);
-            String budgetTemp = jTextFieldbudget.getText();
-            cus.setBudget(Double.parseDouble(budgetTemp));
-            String tempPlan = String.valueOf(planComboBox.getSelectedItem());
-            booked = cus.Booking(selectedCar, cus, specificDate, tempPlan);
-            db = new TestConnection();
-            String sql = String.format("update customer set date = '%s', budget = '%s', plan = '%s' where name = '%s' and surname = '%s'" , tempDate, budgetTemp, tempPlan, cus.getName(), cus.getSurname());
-            db.getUpdate(sql);
+        } else {
+            jLabelBookingerror1.setText("*Please complete all information*");
         }
     }//GEN-LAST:event_BookingConfirmActionPerformed
     
