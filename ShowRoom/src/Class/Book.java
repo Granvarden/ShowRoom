@@ -21,14 +21,23 @@ public class Book {
    public Car getCar(){
       return car;
    }
+   public void setCar(Car car){
+       this.car = car;
+   }
    public Customer getCustomer(){
       return customer;
    }
    public String getPlan(){
        return plan;
    }
+   public void setPlan(String Plan){
+       this.plan = Plan;
+   }
    public LocalDate getBookingDate(){
       return bookingDate;
+   }
+   public void setDate(LocalDate date){
+       this.bookingDate = date;
    }
 
 }

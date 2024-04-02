@@ -1925,13 +1925,27 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Admin x = new Admin();
+        booked.setPlan("None");
+        booked.setCar(null);
+        //booked.setDate(LocalDate.parse("00-00-00"));
+        cus.setBudget(0);
+        jLabelbudgetreser.setText("budget : 0");
+        jLabelplanreser.setText("None");
         x.cancelReserveBooking(CheckNameTf.getText(), CheckSurnameTf.getText());
-        jLabelcarreser.setText("Car: null");
-        jLabeldatereser.setText("Date: null");
+        jLabelcarreser.setText("Car: None");
+        jLabeldatereser.setText("Date: None");
+        
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Admin x = new Admin();
+        booked.setPlan("None");
+        booked.setCar(null);
+        //booked.setDate(LocalDate.parse("00-00-00"));
+        cus.setBudget(0);
+        jLabelbudgetreser.setText("budget : 0");
+        jLabelplanreser.setText("None");
         x.cancelReserveTestDrive(CheckNameTf.getText(), CheckSurnameTf.getText());
         jLabeldatereser.setText("Date: null");
     }//GEN-LAST:event_jButton1ActionPerformed
